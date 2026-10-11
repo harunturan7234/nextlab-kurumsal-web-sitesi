@@ -1,0 +1,13 @@
+{
+  "name": "nextlab-ai-studio-preview",
+  "private": true,
+  "version": "1.0.0",
+  "description": "AI Studio preview layer for the PHP website",
+  "scripts": {
+    "start": "node preview-server.js",
+    "dev": "node preview-server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
