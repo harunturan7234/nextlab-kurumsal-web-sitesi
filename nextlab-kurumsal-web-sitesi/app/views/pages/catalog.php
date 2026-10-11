@@ -1,0 +1,3 @@
+<?php $title='Katalog'; ?>
+<section class="page-hero"><div class="container"><h1>Ürün Kataloğu</h1><?php $items=[['label'=>'Katalog']]; require __DIR__ . '/../components/breadcrumb.php'; ?></div></section>
+<section class="section"><div class="container"><div class="section-heading"><span>KATEGORİLER</span><h2>Nextlab ürün ailelerini inceleyin</h2><p>Dijital katalog dosyası ileride bu alana eklenebilir. Şimdilik güncel ürün gruplarına aşağıdan ulaşabilirsiniz.</p></div><div class="category-grid"><?php foreach ($categories as $category) require __DIR__ . '/../components/category-card.php'; ?></div></div></section>
