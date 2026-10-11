@@ -1,0 +1,110 @@
+name: Prepare AI Studio Preview
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Flatten uploaded project and build preview
+        shell: bash
+        run: |
+          set -e
+          if [ -d nextlab-kurumsal-web-sitesi ]; then
+            shopt -s dotglob
+            mv nextlab-kurumsal-web-sitesi/* .
+            rmdir nextlab-kurumsal-web-sitesi
+          fi
+
+          php -S 127.0.0.1:8765 router.php >/tmp/nextlab-php.log 2>&1 &
+          PHP_PID=$!
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:8765/ -o index.html; then
+              break
+            fi
+            sleep 1
+          done
+          kill $PHP_PID || true
+          test -s index.html
+
+          cat > package.json <<'JSON'
+          {
+            "name": "nextlab-ai-studio-preview",
+            "private": true,
+            "version": "1.0.0",
+            "description": "AI Studio preview layer for the PHP website",
+            "scripts": {
+              "start": "node preview-server.js",
+              "dev": "node preview-server.js"
+            },
+            "engines": {
+              "node": ">=18"
+            }
+          }
+          JSON
+
+          cat > preview-server.js <<'JS'
+          const http = require('http');
+          const fs = require('fs');
+          const path = require('path');
+
+          const root = __dirname;
+          const port = Number(process.env.PORT || 3000);
+          const mime = {
+            '.html': 'text/html; charset=utf-8',
+            '.css': 'text/css; charset=utf-8',
+            '.js': 'application/javascript; charset=utf-8',
+            '.svg': 'image/svg+xml',
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.jpeg': 'image/jpeg',
+            '.webp': 'image/webp',
+            '.ico': 'image/x-icon',
+            '.txt': 'text/plain; charset=utf-8',
+            '.xml': 'application/xml; charset=utf-8'
+          };
+
+          http.createServer((req, res) => {
+            const urlPath = decodeURIComponent((req.url || '/').split('?')[0]);
+            let requested = urlPath === '/' ? '/index.html' : urlPath;
+            let filePath = path.resolve(root, '.' + requested);
+
+            if (!filePath.startsWith(root) || !fs.existsSync(filePath) || fs.statSync(filePath).isDirectory()) {
+              filePath = path.join(root, 'index.html');
+            }
+
+            fs.readFile(filePath, (error, data) => {
+              if (error) {
+                res.writeHead(500, {'Content-Type': 'text/plain; charset=utf-8'});
+                res.end('Preview could not be loaded.');
+                return;
+              }
+              res.writeHead(200, {
+                'Content-Type': mime[path.extname(filePath).toLowerCase()] || 'application/octet-stream',
+                'Cache-Control': 'no-cache'
+              });
+              res.end(data);
+            });
+          }).listen(port, '0.0.0.0', () => {
+            console.log('NextLab preview running on port ' + port);
+          });
+          JS
+
+      - name: Commit prepared structure
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Fix repository root and add AI Studio preview"
+            git push
+          fi
