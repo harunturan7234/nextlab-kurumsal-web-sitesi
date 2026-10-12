@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const restart = () => {
       clearInterval(timer);
-      if (!paused && !hover && !document.hidden && !reduced.matches && !slider.matches(':focus-within')) timer = setInterval(() => show(active + 1), 3200);
+      if (!paused && !hover && !document.hidden && !reduced.matches && !slider.matches(':focus-within')) timer = setInterval(() => show(active + 1), 2000);
     };
     dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
     slider.querySelector('.hero-prev')?.addEventListener('click', () => { show(active - 1); restart(); });
