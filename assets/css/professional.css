@@ -167,11 +167,3 @@ button, a, input, summary { -webkit-tap-highlight-color: transparent; }
   .location-map { height: 230px; border-radius: 14px; }
   .location-map-badge { bottom: 10px; right: 10px; padding: 7px 11px; font-size: 11.5px; }
 }
-
-/* Hero tam-ekran görsel slaytları (4 yeni promosyon görseli) */
-.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.hero-slide-media { position: absolute; inset: 0; z-index: 0; }
-.hero-slide-pill { color: #0f172a; font-weight: 700; font-size: 13.5px; gap: 7px; }
-.hero-slide-pill span[aria-hidden] { color: #F26522; }
-.hero-slide-counter { display: inline-flex; align-items: center; padding: 8px 14px; border-radius: 999px; background: rgba(15,23,42,0.55); backdrop-filter: blur(6px); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
-@media (max-width: 680px) { .hero-slide-floating-bar { bottom: 16px; left: 16px; gap: 8px; } .hero-slide-counter { display: none; } }

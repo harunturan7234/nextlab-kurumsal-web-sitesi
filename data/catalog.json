@@ -424,54 +424,6 @@
         2,
         3
       ]
-    },
-    {
-      "id": 4,
-      "theme": "skincare",
-      "badge": "THE NEXTLAB",
-      "title": "Cilt Bakımında Yeni Nesil",
-      "subtitle": "",
-      "button_text": "Ürünleri Keşfet",
-      "button_url": "urunler",
-      "hero_image": "images/hero/skincare-botanical.webp",
-      "hero_alt": "The NextLab B12 ve C Vitamini serumları, Cica Cream ve SPF 50",
-      "product_ids": []
-    },
-    {
-      "id": 5,
-      "theme": "sunset",
-      "badge": "THE NEXTLAB",
-      "title": "Işıltılı ve Nemli Cilt",
-      "subtitle": "",
-      "button_text": "Cilt Bakımı Ürünleri",
-      "button_url": "urunler",
-      "hero_image": "images/hero/skincare-sunset.webp",
-      "hero_alt": "The NextLab Glow Serum, Hydra Serum, Cica Cream ve SPF 50 Sun Fluid",
-      "product_ids": []
-    },
-    {
-      "id": 6,
-      "theme": "home",
-      "badge": "NEXTLAB HOME",
-      "title": "Evde Hijyen ve Temizlik",
-      "subtitle": "",
-      "button_text": "Temizlik Ürünleri",
-      "button_url": "kategori/temizlik-ve-hijyen",
-      "hero_image": "images/hero/home-clean.webp",
-      "hero_alt": "NextLab Home yüzey temizleyici, çamaşır deterjanı, bulaşık sabunu ve dezenfektan",
-      "product_ids": []
-    },
-    {
-      "id": 7,
-      "theme": "brand",
-      "badge": "NEXTLAB",
-      "title": "Yeni Nesil Cilt Bakımı — Az, Öz, Etkili",
-      "subtitle": "",
-      "button_text": "Kurumsal",
-      "button_url": "kurumsal",
-      "hero_image": "images/hero/brand-nextlab.webp",
-      "hero_alt": "NextLab yeni nesil cilt bakımı ürünleri",
-      "product_ids": []
     }
   ],
   "faqs": [
