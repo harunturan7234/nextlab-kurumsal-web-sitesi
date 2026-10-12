@@ -1,20 +1,13 @@
 {
-  "name": "nextlab-kurumsal-web-sitesi",
+  "name": "nextlab-ai-studio-preview",
   "private": true,
   "version": "1.0.0",
-  "description": "Nextlab temizlik, hijyen, kozmetik ve kişisel bakım ürünleri kurumsal web sitesi.",
+  "description": "AI Studio preview layer for the PHP website",
   "scripts": {
-    "build": "echo 'Build complete'",
-    "start": "node server.js",
-    "dev": "node server.js",
-    "lint": "node --check server.js"
+    "start": "node preview-server.js",
+    "dev": "node preview-server.js"
   },
   "engines": {
     "node": ">=18"
-  },
-  "dependencies": {
-    "@google/genai": "^2.28.0",
-    "ejs": "^7.0.1",
-    "express": "^5.3.0"
   }
 }
