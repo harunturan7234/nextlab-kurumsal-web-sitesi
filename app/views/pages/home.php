@@ -166,7 +166,7 @@
 $nextlabAddress = 'Üniversite Sokak No: 7/B, Işık Plaza, Altunizade, Üsküdar / İstanbul';
 $nextlabMapQ    = 'NextLab Sağlık ve Kozmetik, Altunizade, Üsküdar, İstanbul';
 $nextlabMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($nextlabMapQ);
-$nextlabMapEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=29.0423,41.0184,29.0543,41.0254&layer=mapnik&marker=41.0219,29.0483';
+$nextlabMapEmbed = 'https://maps.google.com/maps?q=' . rawurlencode($nextlabMapQ) . '&z=15&output=embed';
 ?>
 <section class="location-section" aria-label="Nextlab konumu">
     <div class="container">
