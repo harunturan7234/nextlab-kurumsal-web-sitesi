@@ -162,4 +162,16 @@
         </div>
     </div>
 </section>
-<section class="location-section" aria-label="Nextlab konumu"><div class="container location-card"><div><span class="eyebrow dark">İSTANBUL • ÜSKÜDAR</span><h2>İhtiyaçlarınızı birlikte konuşalım.</h2><p>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</p></div><a class="outline-button" href="https://www.google.com/maps/search/?api=1&amp;query=Nextlab+Universite+Sokak+7%2FB+Altunizade+Uskudar" target="_blank" rel="noopener noreferrer">Haritada Aç ↗</a></div></section>
+<?php $nextlabMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode('NextLab Sağlık ve Kozmetik, Üniversite Sokak No: 7/B Işık Plaza, Altunizade, Üsküdar/İstanbul'); ?>
+<section class="location-section" aria-label="Nextlab konumu">
+    <div class="container">
+        <div class="location-heading">
+            <div><span class="eyebrow dark">İSTANBUL • ÜSKÜDAR</span><h2>İhtiyaçlarınızı birlikte konuşalım.</h2><p>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</p></div>
+            <a class="outline-button" href="<?= e($nextlabMapsUrl) ?>" target="_blank" rel="noopener noreferrer">Haritada Aç ↗</a>
+        </div>
+    </div>
+    <a class="map-link" href="<?= e($nextlabMapsUrl) ?>" target="_blank" rel="noopener noreferrer" aria-label="NextLab konumunu Google Haritalar'da aç">
+        <iframe title="NextLab Sağlık ve Kozmetik konumu" src="https://www.openstreetmap.org/export/embed.html?bbox=29.0423%2C41.0184%2C29.0543%2C41.0254&amp;layer=mapnik&amp;marker=41.0219%2C29.0483" width="100%" height="300" loading="lazy" tabindex="-1"></iframe>
+        <span>Haritada Aç ↗</span>
+    </a>
+</section>
