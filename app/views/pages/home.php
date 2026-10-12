@@ -1,8 +1,17 @@
 <?php /* Generated from views/pages/home.ejs; retain original layout. */ ?>
 <section class="hero-showcase" data-slider aria-roledescription="karusel" aria-label="Nextlab ürün dünyası">
+    <?php $heroTotal = str_pad((string) count($banners), 2, '0', STR_PAD_LEFT); ?>
     <div class="hero-slides-wrapper">
         <?php foreach ($banners as $index => $banner): ?>
         <article class="hero-slide hero-<?= e(($banner['theme'] ?? null)) ?> <?= e((($index === 0) ? 'is-active' : '')) ?>" data-slide="<?= e($index) ?>" aria-hidden="<?= e(($index !== 0)) ?>" <?= e((($index !== 0) ? 'inert' : '')) ?>>
+            <?php if (!empty($banner['hero_image'])): ?>
+            <h2 class="sr-only"><?= e(($banner['title'] ?? null)) ?></h2>
+            <img class="hero-slide-media" src="<?= e(asset(($banner['hero_image'] ?? null))) ?>" alt="<?= e(($banner['hero_alt'] ?? $banner['title'] ?? null)) ?>" width="1672" height="941" loading="<?= $index === 0 ? 'eager' : 'lazy' ?>" decoding="async" <?= $index === 0 ? 'fetchpriority="high"' : '' ?>>
+            <div class="hero-slide-floating-bar">
+                <?php if (($banner['button_url'] ?? null)): ?><a class="hero-slide-pill" href="<?= e(url(($banner['button_url'] ?? null))) ?>"><span><?= e(($banner['button_text'] ?? 'Keşfet')) ?></span><span aria-hidden="true">↗</span></a><?php endif; ?>
+                <span class="hero-slide-counter">0<?= e(($index + 1)) ?> / <?= e($heroTotal) ?></span>
+            </div>
+            <?php else: ?>
             <div class="container hero-composition">
                 <div class="hero-copy">
                     <span class="hero-eyebrow"><span></span><?= e(($banner['badge'] ?? null)) ?></span>
@@ -12,7 +21,7 @@
                         <a class="button" href="<?= e(url(($banner['button_url'] ?? null))) ?>"><?= e(($banner['button_text'] ?? null)) ?> <span aria-hidden="true">↗</span></a>
                         <?php if (($banner['secondary_url'] ?? null)): ?><a class="hero-secondary" href="<?= e(($banner['secondary_url'] ?? null)) ?>" target="_blank" rel="noopener noreferrer"><?= e(($banner['secondary_text'] ?? null)) ?></a><?php endif; ?>
                     </div>
-                    <span class="hero-counter">0<?= e(($index + 1)) ?> <span>/ 03</span></span>
+                    <span class="hero-counter">0<?= e(($index + 1)) ?> <span>/ <?= e($heroTotal) ?></span></span>
                 </div>
                 <?php if (($banner['image_path'] ?? null)): ?>
                 <div class="hero-photo">
@@ -33,6 +42,7 @@
                 </div>
                 <?php endif; ?>
             </div>
+            <?php endif; ?>
         </article>
         <?php endforeach; ?>
     </div>
