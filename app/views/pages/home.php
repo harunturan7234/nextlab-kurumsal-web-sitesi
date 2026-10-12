@@ -17,10 +17,10 @@
                 <?php if (($banner['image_path'] ?? null)): ?>
                 <div class="hero-photo">
                     <picture>
-                        <source media="(max-width: 680px)" srcset="<?= e(asset('images/verified/ceymop-temizlik-mobil-480.webp')) ?> 480w, <?= e(asset('images/verified/ceymop-temizlik-mobil-768.webp')) ?> 768w" sizes="100vw">
-                        <img src="<?= e(asset(($banner['image_path'] ?? null))) ?>" srcset="<?= e(mediaSrcset(($banner['image_path'] ?? null))) ?>" sizes="(max-width: 680px) 100vw, 56vw" width="1920" height="650" alt="Ceymop referansından profesyonel temizlik ekipmanları" loading="lazy">
+                        <source media="(max-width: 680px)" srcset="<?= e(asset('images/verified/temizlik-mobil-480.webp')) ?> 480w, <?= e(asset('images/verified/temizlik-mobil-768.webp')) ?> 768w" sizes="100vw">
+                        <img src="<?= e(asset(($banner['image_path'] ?? null))) ?>" srcset="<?= e(mediaSrcset(($banner['image_path'] ?? null))) ?>" sizes="(max-width: 680px) 100vw, 56vw" width="1920" height="650" alt="Profesyonel temizlik ekipmanları" loading="lazy">
                     </picture>
-                    <span class="photo-credit">CEYMOP • Profesyonel temizlik ekipmanları</span>
+                    <span class="photo-credit">Profesyonel temizlik ekipmanları</span>
                 </div>
                 <?php else: ?>
                 <div class="hero-product-composition">

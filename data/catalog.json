@@ -5,8 +5,8 @@
       "parent_id": null,
       "name": "Temizlik ve Hijyen",
       "slug": "temizlik-ve-hijyen",
-      "description": "Ceymop temizlik ekipmanları ve Nextlab ortam kokulandırma çözümleri.",
-      "image_path": "images/verified/ceymop-temizlik-banner-960.webp",
+      "description": "Profesyonel temizlik ekipmanları ve Nextlab ortam kokulandırma çözümleri.",
+      "image_path": "images/verified/temizlik-banner-960.webp",
       "updated_at": "2026-10-12"
     },
     {
@@ -59,8 +59,8 @@
       "parent_id": 1,
       "name": "Mop Grubu",
       "slug": "mop-grubu",
-      "description": "Ceymop profesyonel temizlik mopları.",
-      "image_path": "images/verified/ceymop-mikrofiber-mop-640.webp",
+      "description": "Profesyonel temizlik mopları.",
+      "image_path": "images/verified/mikrofiber-mop-640.webp",
       "updated_at": "2026-10-12"
     },
     {
@@ -69,7 +69,7 @@
       "name": "Temizlik Bezleri",
       "slug": "temizlik-bezleri",
       "description": "Mastermop mikrofiber temizlik bezleri.",
-      "image_path": "images/verified/ceymop-mikrofiber-bez-640.webp",
+      "image_path": "images/verified/mikrofiber-bez-640.webp",
       "updated_at": "2026-10-12"
     },
     {
@@ -77,8 +77,8 @@
       "parent_id": 1,
       "name": "Kat Arabaları",
       "slug": "kat-arabalari",
-      "description": "Ceymop temizlik ve atık toplama ekipmanları.",
-      "image_path": "images/verified/ceymop-kat-arabasi-640.webp",
+      "description": "Temizlik ve atık toplama ekipmanları.",
+      "image_path": "images/verified/kat-arabasi-640.webp",
       "updated_at": "2026-10-12"
     }
   ],
@@ -316,19 +316,19 @@
     {
       "id": 11,
       "category_id": 7,
-      "brand_name": "Ceymop",
+      "brand_name": "Profesyonel Temizlik",
       "sku": "CYP-134",
       "name": "Mikrofiber Mop",
-      "slug": "ceymop-mikrofiber-mop",
-      "description": "Ceymop Mop Grubu içinde yer alan mikrofiber mop.",
-      "short_description": "Ceymop Mop Grubu içinde yer alan mikrofiber mop.",
+      "slug": "mikrofiber-mop",
+      "description": "Mop grubu içinde yer alan profesyonel mikrofiber mop.",
+      "short_description": "Mop grubu içinde yer alan profesyonel mikrofiber mop.",
       "usage": "Ürünün kullanım ve bakım talimatlarını izleyin. Boyut ve tedarik bilgisi için bizimle iletişime geçin.",
       "package_info": "",
-      "image_path": "images/verified/ceymop-mikrofiber-mop-640.webp",
+      "image_path": "images/verified/mikrofiber-mop-640.webp",
       "image_status": "verified",
       "is_featured": 1,
       "marketplace_url": null,
-      "source_url": "https://ceymop.com.tr/urun/mikrofiber-mop-cyp-134",
+      "source_url": "",
       "source_verified_at": "2026-10-12",
       "updated_at": "2026-10-12",
       "internal_sku": false,
@@ -338,19 +338,19 @@
     {
       "id": 12,
       "category_id": 8,
-      "brand_name": "Mastermop / Ceymop",
+      "brand_name": "Mastermop",
       "sku": "CYP-019",
       "name": "Mikrofiber Bez Mastermop",
-      "slug": "ceymop-mikrofiber-bez",
-      "description": "Ceymop Bez Grubu içinde yer alan Mastermop mikrofiber bez.",
-      "short_description": "Ceymop Bez Grubu içinde yer alan Mastermop mikrofiber bez.",
+      "slug": "mikrofiber-bez-mastermop",
+      "description": "Bez grubu içinde yer alan Mastermop mikrofiber bez.",
+      "short_description": "Bez grubu içinde yer alan Mastermop mikrofiber bez.",
       "usage": "Ürünün kullanım ve bakım talimatlarını izleyin. Boyut ve tedarik bilgisi için bizimle iletişime geçin.",
       "package_info": "",
-      "image_path": "images/verified/ceymop-mikrofiber-bez-640.webp",
+      "image_path": "images/verified/mikrofiber-bez-640.webp",
       "image_status": "verified",
       "is_featured": 1,
       "marketplace_url": null,
-      "source_url": "https://ceymop.com.tr/urun/mikrofiber-bez-mastermop-cyp-019",
+      "source_url": "",
       "source_verified_at": "2026-10-12",
       "updated_at": "2026-10-12",
       "internal_sku": false,
@@ -360,19 +360,19 @@
     {
       "id": 13,
       "category_id": 9,
-      "brand_name": "Ceymop",
+      "brand_name": "Profesyonel Temizlik",
       "sku": "CYP-820",
       "name": "Kat Arabası Çift Çöp Toplamalı 4 Kovalı",
-      "slug": "ceymop-kat-arabasi",
-      "description": "Çift çöp toplama bölümü ve dört kovası bulunan Ceymop kat arabası.",
-      "short_description": "Çift çöp toplama bölümü ve dört kovası bulunan Ceymop kat arabası.",
+      "slug": "kat-arabasi",
+      "description": "Çift çöp toplama bölümü ve dört kovası bulunan profesyonel kat arabası.",
+      "short_description": "Çift çöp toplama bölümü ve dört kovası bulunan profesyonel kat arabası.",
       "usage": "Ürünün kullanım ve bakım talimatlarını izleyin. Boyut ve tedarik bilgisi için bizimle iletişime geçin.",
       "package_info": "",
-      "image_path": "images/verified/ceymop-kat-arabasi-640.webp",
+      "image_path": "images/verified/kat-arabasi-640.webp",
       "image_status": "verified",
       "is_featured": 1,
       "marketplace_url": null,
-      "source_url": "https://ceymop.com.tr/urun/kat-arabasi-cift-cop-toplamali-4-kovali-cyp-820",
+      "source_url": "",
       "source_verified_at": "2026-10-12",
       "updated_at": "2026-10-12",
       "internal_sku": false,
@@ -400,14 +400,14 @@
     {
       "id": 2,
       "theme": "cleaning",
-      "badge": "CEYMOP TEMİZLİK EKİPMANLARI",
+      "badge": "PROFESYONEL TEMİZLİK EKİPMANLARI",
       "title": "Profesyonel Temizlik Çözümleri",
-      "subtitle": "Moplar, mikrofiber bezler ve kat arabaları. Ceymop’un gerçek ürünleriyle çalışma alanlarınıza uygun çözümler.",
+      "subtitle": "Moplar, mikrofiber bezler ve kat arabaları. Gerçek profesyonel ürünlerle çalışma alanlarınıza uygun çözümler.",
       "button_text": "Temizlik ve Hijyen",
       "button_url": "kategori/temizlik-ve-hijyen",
       "secondary_text": "Kurumsal Bilgi Alın",
       "secondary_url": null,
-      "image_path": "images/verified/ceymop-temizlik-banner-1280.webp"
+      "image_path": "images/verified/temizlik-banner-1280.webp"
     },
     {
       "id": 3,
@@ -431,7 +431,7 @@
       "id": 1,
       "category": "Ürünler",
       "question": "Nextlab ürün grupları nelerdir?",
-      "answer": "Kataloğumuzda Everyday kişisel bakım ve ağız bakım ürünleri, Nextlab ortam kokuları ve Ceymop profesyonel temizlik ekipmanları yer alır. Her ürünün markası kendi sayfasında belirtilir."
+      "answer": "Kataloğumuzda Everyday kişisel bakım ve ağız bakım ürünleri, Nextlab ortam kokuları ve profesyonel temizlik ekipmanları yer alır. Her ürünün markası kendi sayfasında belirtilir."
     },
     {
       "id": 2,
@@ -448,8 +448,8 @@
     {
       "id": 4,
       "category": "Temizlik",
-      "question": "Ceymop ürünleri Nextlab markalı mıdır?",
-      "answer": "Hayır. Ceymop ve Mastermop ürünleri kendi marka kimlikleriyle sunulur. Temizlik ekipmanlarının tedarik seçeneklerini Nextlab ekibinden öğrenebilirsiniz."
+      "question": "Temizlik ürünleri Nextlab markalı mıdır?",
+      "answer": "Hayır. Temizlik ekipmanları kendi marka kimlikleriyle (örneğin Mastermop) sunulur. Tedarik seçeneklerini Nextlab ekibinden öğrenebilirsiniz."
     },
     {
       "id": 5,
@@ -465,24 +465,6 @@
     }
   ],
   "distributorBrands": [
-    {
-      "id": 16,
-      "name": "Ceymop",
-      "slug": "ceymop",
-      "origin": "Türkiye",
-      "category": "Profesyonel Temizlik Ekipmanları",
-      "highlight": "Mop, mikrofiber bez ve kat arabaları",
-      "description": "Ceymop ürünlerini kendi marka kimlikleriyle kataloğumuzda inceleyebilir, kurumsal tedarik için Nextlab ekibiyle iletişime geçebilirsiniz.",
-      "badges": [
-        "Temizlik ekipmanları"
-      ],
-      "key_products": [
-        "Mikrofiber Mop",
-        "Mikrofiber Bez Mastermop",
-        "4 Kovalı Kat Arabası"
-      ],
-      "verified": true
-    },
     {
       "id": 1,
       "name": "Dr. Melaxin",

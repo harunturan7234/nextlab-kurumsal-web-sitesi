@@ -40,7 +40,7 @@ geliştirme araçlarını **içermez**.
      mysql -u KULLANICI -p VERITABANI < database.sql
      ```
 4. İçe aktarma sonrası `nextlab_categories`, `nextlab_products`, `nextlab_content`
-   tablolarının dolu olduğunu doğrulayın (9 kategori, 13 ürün, 32 içerik satırı).
+   tablolarının dolu olduğunu doğrulayın (9 kategori, 13 ürün, 30 içerik satırı).
 
 ## 3. config.php dosyasını oluşturun
 

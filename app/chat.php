@@ -18,5 +18,5 @@ function catalogAnswer(string $message, CatalogRepository $repo): string {
         $lines = array_map(fn($r) => '• [' . $r['product']['name'] . '](/urun/' . $r['product']['slug'] . ') — ' . $r['product']['short_description'], array_slice($ranked, 0, 4));
         return "Kataloğumuzdan ilgili ürünler:\n\n" . implode("\n", $lines) . "\n\nKullanım ve uyarılar için ambalaj talimatlarını izleyin.";
     }
-    return "Nextlab ürün rehberine hoş geldiniz. Everyday bakım bantları, ağız bakımı, Nextlab ortam kokuları ve Ceymop temizlik ekipmanları hakkında ürün adıyla arama yapabilirsiniz.\n\n[Ürün kataloğu](/urunler) · [Kurumsal iletişim](/iletisim)";
+    return "Nextlab ürün rehberine hoş geldiniz. Everyday bakım bantları, ağız bakımı, Nextlab ortam kokuları ve profesyonel temizlik ekipmanları hakkında ürün adıyla arama yapabilirsiniz.\n\n[Ürün kataloğu](/urunler) · [Kurumsal iletişim](/iletisim)";
 }

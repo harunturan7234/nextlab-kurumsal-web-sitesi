@@ -40,7 +40,7 @@ Test modu: hem `file` (JSON) hem `mysql` modunda doğrulandı.
 
 ## 3. Veritabanı (MySQL)
 - `database.sql` boş bir MySQL 8.0 veritabanına **hatasız içe aktarıldı**.
-- Satır sayıları: 9 kategori, 13 ürün, 32 içerik (3 banner + 6 SSS + 16 marka + 6 blog + 1 kanal).
+- Satır sayıları: 9 kategori, 13 ürün, 30 içerik (3 banner + 6 SSS + 15 marka + 5 blog + 1 kanal).
 - `config.php` `data_mode=mysql` iken site tüm sayfaları **veritabanından** render etti; çıktı `file` moduyla birebir aynı, PHP uyarısı/hatası yok.
 - Türkçe karakterler (utf8mb4) korundu.
 

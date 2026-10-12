@@ -12,7 +12,7 @@
             <div>
                 <span class="eyebrow dark">MARKA REHBERİ</span>
                 <h2>Markalar ve Kurumsal Tedarik</h2>
-                <p>Ceymop temizlik ekipmanlarını kataloğumuzdan inceleyebilirsiniz. Diğer markalar bilgi amaçlı listelenir; bu liste yetkili distribütörlük beyanı değildir. Güncel tedarik ve iş birliği bilgisi için bize ulaşın.</p>
+                <p>Profesyonel temizlik ekipmanlarını kataloğumuzdan inceleyebilirsiniz. Diğer markalar bilgi amaçlı listelenir; bu liste yetkili distribütörlük beyanı değildir. Güncel tedarik ve iş birliği bilgisi için bize ulaşın.</p>
             </div>
             <div class="distributors-stat-pill">
                 <strong><?= e(count($brands ?? [])) ?></strong>

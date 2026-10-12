@@ -52,7 +52,7 @@ try {
         case '/':
             renderPage('home', [
                 'page'=>'home','title'=>'Temizlik, Hijyen ve Kişisel Bakım',
-                'metaDescription'=>'Everyday kişisel bakım ürünleri, Nextlab ortam kokuları ve Ceymop profesyonel temizlik ekipmanlarını keşfedin.',
+                'metaDescription'=>'Everyday kişisel bakım ürünleri, Nextlab ortam kokuları ve profesyonel temizlik ekipmanlarını keşfedin.',
                 'banners'=>$repo->banners(),'categories'=>$repo->mainCategories(),
                 'featuredProducts'=>$repo->featuredProducts(),'faqs'=>$repo->faqs(),'latestBlogs'=>array_slice($repo->blogs(),0,3),
             ]); break;
@@ -67,16 +67,16 @@ try {
         case '/katalog':
             renderPage('catalog',['page'=>'catalog','title'=>'Ürün Kataloğu','metaDescription'=>'Nextlab temizlik ve kişisel bakım ürün gruplarını birlikte inceleyin.','categories'=>$repo->mainCategories()]); break;
         case '/urunler':
-            renderPage('category',['page'=>'products','title'=>'Tüm Ürünler','metaDescription'=>'Everyday, Nextlab, Ceymop ve Mastermop ürünlerini marka ve kategori bilgileriyle inceleyin.','category'=>['name'=>'Tüm Ürünler','slug'=>'urunler'],'categories'=>$repo->mainCategories(),'subCategories'=>[],'products'=>$repo->allProducts()]); break;
+            renderPage('category',['page'=>'products','title'=>'Tüm Ürünler','metaDescription'=>'Everyday, Nextlab ve Mastermop ürünlerini marka ve kategori bilgileriyle inceleyin.','category'=>['name'=>'Tüm Ürünler','slug'=>'urunler'],'categories'=>$repo->mainCategories(),'subCategories'=>[],'products'=>$repo->allProducts()]); break;
         case '/arama':
             $query = is_string($_GET['q'] ?? null) ? trim($_GET['q']) : '';
             if (strlen($query) > 400 || !preg_match('//u', $query)) $query = '';
             renderPage('search',['page'=>'search','title'=>$query ? '“' . $query . '” Arama Sonuçları' : 'Ürün Arama','metaDescription'=>'Nextlab ürünlerini ad, marka veya katalog koduna göre arayın.','query'=>$query,'products'=>preg_match_all('/./us',$query)>=2 ? $repo->search($query) : []]); break;
         case '/distributorlukler':
-            renderPage('distributors',['page'=>'distributors','title'=>'Markalar ve İş Birlikleri','metaDescription'=>'Nextlab marka rehberi, Ceymop ürünleri ve kurumsal tedarik bilgileri.','brands'=>$repo->distributorBrands()]); break;
+            renderPage('distributors',['page'=>'distributors','title'=>'Markalar ve İş Birlikleri','metaDescription'=>'Nextlab marka rehberi, profesyonel temizlik ürünleri ve kurumsal tedarik bilgileri.','brands'=>$repo->distributorBrands()]); break;
         case '/blog':
             $filter = is_string($_GET['kategori'] ?? null) ? $_GET['kategori'] : 'all';
-            renderPage('blog',['page'=>'blog','title'=>'Ürün ve Yaşam Alanları Rehberi','metaDescription'=>'Everyday bakım ürünleri, Ceymop temizlik ekipmanları ve Nextlab mağazaları için pratik rehberler.','blogs'=>$repo->blogsByCategory($filter),'allBlogs'=>$repo->blogs(),'featuredBlog'=>$repo->blogs()[0] ?? null,'currentCategory'=>$filter,'categories'=>$repo->blogCategories()]); break;
+            renderPage('blog',['page'=>'blog','title'=>'Ürün ve Yaşam Alanları Rehberi','metaDescription'=>'Everyday bakım ürünleri, profesyonel temizlik ekipmanları ve Nextlab mağazaları için pratik rehberler.','blogs'=>$repo->blogsByCategory($filter),'allBlogs'=>$repo->blogs(),'featuredBlog'=>$repo->blogs()[0] ?? null,'currentCategory'=>$filter,'categories'=>$repo->blogCategories()]); break;
         default:
             if (preg_match('~^/kategori/([a-z0-9-]+)$~D',$path,$m) && ($category=$repo->categoryBySlug($m[1]))) {
                 $items = $repo->productsByCategory($category['id']);

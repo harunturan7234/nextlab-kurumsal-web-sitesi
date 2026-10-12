@@ -52,3 +52,11 @@
     </div>
 </section>
 
+<?php $mapQuery = rawurlencode('NextLab Sağlık ve Kozmetik, Üniversite Sokak No: 7/B Işık Plaza, Altunizade, Üsküdar/İstanbul'); ?>
+<section class="location-section" aria-label="NextLab konumu">
+    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=<?= e($mapQuery) ?>" target="_blank" rel="noopener noreferrer" aria-label="NextLab merkez ofisini Google Haritalar'da aç">
+        <iframe title="NextLab Sağlık ve Kozmetik konumu" src="https://www.google.com/maps?q=<?= e($mapQuery) ?>&amp;output=embed" width="100%" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+        <span>Haritada Aç ↗</span>
+    </a>
+</section>
+

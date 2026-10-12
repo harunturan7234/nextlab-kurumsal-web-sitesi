@@ -269,506 +269,490 @@
     "originalHeight": 1800,
     "sha256": "b0f9964a85ff5eb77ef64115714156351b12aa080e0edee6f7d032d37826a78a"
   },
-  "images/verified/ceymop-mikrofiber-mop-320.webp": {
-    "file": "images/verified/ceymop-mikrofiber-mop-320.webp",
+  "images/verified/mikrofiber-mop-320.webp": {
+    "file": "images/verified/mikrofiber-mop-320.webp",
     "width": 320,
     "height": 320,
     "bytes": 2948,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-320.webp",
+        "file": "images/verified/mikrofiber-mop-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 2948
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-640.webp",
+        "file": "images/verified/mikrofiber-mop-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 10626
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-960.webp",
+        "file": "images/verified/mikrofiber-mop-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 23872
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-134.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "3c50c3551dd6944b7bdbe049d1d52b0b0b399427ec4772cc5255c1f40d2e0c5a"
   },
-  "images/verified/ceymop-mikrofiber-mop-640.webp": {
-    "file": "images/verified/ceymop-mikrofiber-mop-640.webp",
+  "images/verified/mikrofiber-mop-640.webp": {
+    "file": "images/verified/mikrofiber-mop-640.webp",
     "width": 640,
     "height": 640,
     "bytes": 10626,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-320.webp",
+        "file": "images/verified/mikrofiber-mop-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 2948
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-640.webp",
+        "file": "images/verified/mikrofiber-mop-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 10626
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-960.webp",
+        "file": "images/verified/mikrofiber-mop-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 23872
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-134.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "3c50c3551dd6944b7bdbe049d1d52b0b0b399427ec4772cc5255c1f40d2e0c5a"
   },
-  "images/verified/ceymop-mikrofiber-mop-960.webp": {
-    "file": "images/verified/ceymop-mikrofiber-mop-960.webp",
+  "images/verified/mikrofiber-mop-960.webp": {
+    "file": "images/verified/mikrofiber-mop-960.webp",
     "width": 960,
     "height": 960,
     "bytes": 23872,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-320.webp",
+        "file": "images/verified/mikrofiber-mop-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 2948
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-640.webp",
+        "file": "images/verified/mikrofiber-mop-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 10626
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-mop-960.webp",
+        "file": "images/verified/mikrofiber-mop-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 23872
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-134.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "3c50c3551dd6944b7bdbe049d1d52b0b0b399427ec4772cc5255c1f40d2e0c5a"
   },
-  "images/verified/ceymop-mikrofiber-bez-320.webp": {
-    "file": "images/verified/ceymop-mikrofiber-bez-320.webp",
+  "images/verified/mikrofiber-bez-320.webp": {
+    "file": "images/verified/mikrofiber-bez-320.webp",
     "width": 320,
     "height": 320,
     "bytes": 6694,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-320.webp",
+        "file": "images/verified/mikrofiber-bez-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 6694
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-640.webp",
+        "file": "images/verified/mikrofiber-bez-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 37982
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-960.webp",
+        "file": "images/verified/mikrofiber-bez-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 84994
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-019.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "1678480409b2a361fe401c27776bcbf20369266695d2721d023d6b6c253558fb"
   },
-  "images/verified/ceymop-mikrofiber-bez-640.webp": {
-    "file": "images/verified/ceymop-mikrofiber-bez-640.webp",
+  "images/verified/mikrofiber-bez-640.webp": {
+    "file": "images/verified/mikrofiber-bez-640.webp",
     "width": 640,
     "height": 640,
     "bytes": 37982,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-320.webp",
+        "file": "images/verified/mikrofiber-bez-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 6694
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-640.webp",
+        "file": "images/verified/mikrofiber-bez-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 37982
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-960.webp",
+        "file": "images/verified/mikrofiber-bez-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 84994
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-019.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "1678480409b2a361fe401c27776bcbf20369266695d2721d023d6b6c253558fb"
   },
-  "images/verified/ceymop-mikrofiber-bez-960.webp": {
-    "file": "images/verified/ceymop-mikrofiber-bez-960.webp",
+  "images/verified/mikrofiber-bez-960.webp": {
+    "file": "images/verified/mikrofiber-bez-960.webp",
     "width": 960,
     "height": 960,
     "bytes": 84994,
     "variants": [
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-320.webp",
+        "file": "images/verified/mikrofiber-bez-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 6694
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-640.webp",
+        "file": "images/verified/mikrofiber-bez-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 37982
       },
       {
-        "file": "images/verified/ceymop-mikrofiber-bez-960.webp",
+        "file": "images/verified/mikrofiber-bez-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 84994
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-019.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "1678480409b2a361fe401c27776bcbf20369266695d2721d023d6b6c253558fb"
   },
-  "images/verified/ceymop-kat-arabasi-320.webp": {
-    "file": "images/verified/ceymop-kat-arabasi-320.webp",
+  "images/verified/kat-arabasi-320.webp": {
+    "file": "images/verified/kat-arabasi-320.webp",
     "width": 320,
     "height": 320,
     "bytes": 12174,
     "variants": [
       {
-        "file": "images/verified/ceymop-kat-arabasi-320.webp",
+        "file": "images/verified/kat-arabasi-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 12174
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-640.webp",
+        "file": "images/verified/kat-arabasi-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 34290
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-960.webp",
+        "file": "images/verified/kat-arabasi-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 60902
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-820.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "df6e1c346ffff28f9be056f2f169cfecec0b2e7e35e304effad91fb1de8d35bc"
   },
-  "images/verified/ceymop-kat-arabasi-640.webp": {
-    "file": "images/verified/ceymop-kat-arabasi-640.webp",
+  "images/verified/kat-arabasi-640.webp": {
+    "file": "images/verified/kat-arabasi-640.webp",
     "width": 640,
     "height": 640,
     "bytes": 34290,
     "variants": [
       {
-        "file": "images/verified/ceymop-kat-arabasi-320.webp",
+        "file": "images/verified/kat-arabasi-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 12174
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-640.webp",
+        "file": "images/verified/kat-arabasi-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 34290
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-960.webp",
+        "file": "images/verified/kat-arabasi-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 60902
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-820.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "df6e1c346ffff28f9be056f2f169cfecec0b2e7e35e304effad91fb1de8d35bc"
   },
-  "images/verified/ceymop-kat-arabasi-960.webp": {
-    "file": "images/verified/ceymop-kat-arabasi-960.webp",
+  "images/verified/kat-arabasi-960.webp": {
+    "file": "images/verified/kat-arabasi-960.webp",
     "width": 960,
     "height": 960,
     "bytes": 60902,
     "variants": [
       {
-        "file": "images/verified/ceymop-kat-arabasi-320.webp",
+        "file": "images/verified/kat-arabasi-320.webp",
         "width": 320,
         "height": 320,
         "bytes": 12174
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-640.webp",
+        "file": "images/verified/kat-arabasi-640.webp",
         "width": 640,
         "height": 640,
         "bytes": 34290
       },
       {
-        "file": "images/verified/ceymop-kat-arabasi-960.webp",
+        "file": "images/verified/kat-arabasi-960.webp",
         "width": 960,
         "height": 960,
         "bytes": 60902
       }
     ],
-    "source": "https://ceymop.com.tr/media/cyp-820.webp",
     "originalWidth": 1600,
     "originalHeight": 1600,
     "sha256": "df6e1c346ffff28f9be056f2f169cfecec0b2e7e35e304effad91fb1de8d35bc"
   },
-  "images/verified/ceymop-temizlik-banner-480.webp": {
-    "file": "images/verified/ceymop-temizlik-banner-480.webp",
+  "images/verified/temizlik-banner-480.webp": {
+    "file": "images/verified/temizlik-banner-480.webp",
     "width": 480,
     "height": 163,
     "bytes": 14526,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-banner-480.webp",
+        "file": "images/verified/temizlik-banner-480.webp",
         "width": 480,
         "height": 163,
         "bytes": 14526
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-960.webp",
+        "file": "images/verified/temizlik-banner-960.webp",
         "width": 960,
         "height": 325,
         "bytes": 47340
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1280.webp",
+        "file": "images/verified/temizlik-banner-1280.webp",
         "width": 1280,
         "height": 433,
         "bytes": 74542
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1920.webp",
+        "file": "images/verified/temizlik-banner-1920.webp",
         "width": 1920,
         "height": 650,
         "bytes": 133842
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-01.webp",
     "originalWidth": 1920,
     "originalHeight": 650,
     "sha256": "e7b05c6d97df61383f2db4d750142985d968717662eaea27ba4c7ebbc27db69b"
   },
-  "images/verified/ceymop-temizlik-banner-960.webp": {
-    "file": "images/verified/ceymop-temizlik-banner-960.webp",
+  "images/verified/temizlik-banner-960.webp": {
+    "file": "images/verified/temizlik-banner-960.webp",
     "width": 960,
     "height": 325,
     "bytes": 47340,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-banner-480.webp",
+        "file": "images/verified/temizlik-banner-480.webp",
         "width": 480,
         "height": 163,
         "bytes": 14526
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-960.webp",
+        "file": "images/verified/temizlik-banner-960.webp",
         "width": 960,
         "height": 325,
         "bytes": 47340
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1280.webp",
+        "file": "images/verified/temizlik-banner-1280.webp",
         "width": 1280,
         "height": 433,
         "bytes": 74542
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1920.webp",
+        "file": "images/verified/temizlik-banner-1920.webp",
         "width": 1920,
         "height": 650,
         "bytes": 133842
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-01.webp",
     "originalWidth": 1920,
     "originalHeight": 650,
     "sha256": "e7b05c6d97df61383f2db4d750142985d968717662eaea27ba4c7ebbc27db69b"
   },
-  "images/verified/ceymop-temizlik-banner-1280.webp": {
-    "file": "images/verified/ceymop-temizlik-banner-1280.webp",
+  "images/verified/temizlik-banner-1280.webp": {
+    "file": "images/verified/temizlik-banner-1280.webp",
     "width": 1280,
     "height": 433,
     "bytes": 74542,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-banner-480.webp",
+        "file": "images/verified/temizlik-banner-480.webp",
         "width": 480,
         "height": 163,
         "bytes": 14526
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-960.webp",
+        "file": "images/verified/temizlik-banner-960.webp",
         "width": 960,
         "height": 325,
         "bytes": 47340
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1280.webp",
+        "file": "images/verified/temizlik-banner-1280.webp",
         "width": 1280,
         "height": 433,
         "bytes": 74542
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1920.webp",
+        "file": "images/verified/temizlik-banner-1920.webp",
         "width": 1920,
         "height": 650,
         "bytes": 133842
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-01.webp",
     "originalWidth": 1920,
     "originalHeight": 650,
     "sha256": "e7b05c6d97df61383f2db4d750142985d968717662eaea27ba4c7ebbc27db69b"
   },
-  "images/verified/ceymop-temizlik-banner-1920.webp": {
-    "file": "images/verified/ceymop-temizlik-banner-1920.webp",
+  "images/verified/temizlik-banner-1920.webp": {
+    "file": "images/verified/temizlik-banner-1920.webp",
     "width": 1920,
     "height": 650,
     "bytes": 133842,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-banner-480.webp",
+        "file": "images/verified/temizlik-banner-480.webp",
         "width": 480,
         "height": 163,
         "bytes": 14526
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-960.webp",
+        "file": "images/verified/temizlik-banner-960.webp",
         "width": 960,
         "height": 325,
         "bytes": 47340
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1280.webp",
+        "file": "images/verified/temizlik-banner-1280.webp",
         "width": 1280,
         "height": 433,
         "bytes": 74542
       },
       {
-        "file": "images/verified/ceymop-temizlik-banner-1920.webp",
+        "file": "images/verified/temizlik-banner-1920.webp",
         "width": 1920,
         "height": 650,
         "bytes": 133842
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-01.webp",
     "originalWidth": 1920,
     "originalHeight": 650,
     "sha256": "e7b05c6d97df61383f2db4d750142985d968717662eaea27ba4c7ebbc27db69b"
   },
-  "images/verified/ceymop-temizlik-mobil-480.webp": {
-    "file": "images/verified/ceymop-temizlik-mobil-480.webp",
+  "images/verified/temizlik-mobil-480.webp": {
+    "file": "images/verified/temizlik-mobil-480.webp",
     "width": 480,
     "height": 480,
     "bytes": 41844,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-mobil-480.webp",
+        "file": "images/verified/temizlik-mobil-480.webp",
         "width": 480,
         "height": 480,
         "bytes": 41844
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-768.webp",
+        "file": "images/verified/temizlik-mobil-768.webp",
         "width": 768,
         "height": 768,
         "bytes": 85784
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-1024.webp",
+        "file": "images/verified/temizlik-mobil-1024.webp",
         "width": 1024,
         "height": 1024,
         "bytes": 121044
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-mobile-01.webp",
     "originalWidth": 1024,
     "originalHeight": 1024,
     "sha256": "590f7969cef4ede1689550f72dc67aba784511afdcc8e9330b50dc7080f2dea8"
   },
-  "images/verified/ceymop-temizlik-mobil-768.webp": {
-    "file": "images/verified/ceymop-temizlik-mobil-768.webp",
+  "images/verified/temizlik-mobil-768.webp": {
+    "file": "images/verified/temizlik-mobil-768.webp",
     "width": 768,
     "height": 768,
     "bytes": 85784,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-mobil-480.webp",
+        "file": "images/verified/temizlik-mobil-480.webp",
         "width": 480,
         "height": 480,
         "bytes": 41844
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-768.webp",
+        "file": "images/verified/temizlik-mobil-768.webp",
         "width": 768,
         "height": 768,
         "bytes": 85784
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-1024.webp",
+        "file": "images/verified/temizlik-mobil-1024.webp",
         "width": 1024,
         "height": 1024,
         "bytes": 121044
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-mobile-01.webp",
     "originalWidth": 1024,
     "originalHeight": 1024,
     "sha256": "590f7969cef4ede1689550f72dc67aba784511afdcc8e9330b50dc7080f2dea8"
   },
-  "images/verified/ceymop-temizlik-mobil-1024.webp": {
-    "file": "images/verified/ceymop-temizlik-mobil-1024.webp",
+  "images/verified/temizlik-mobil-1024.webp": {
+    "file": "images/verified/temizlik-mobil-1024.webp",
     "width": 1024,
     "height": 1024,
     "bytes": 121044,
     "variants": [
       {
-        "file": "images/verified/ceymop-temizlik-mobil-480.webp",
+        "file": "images/verified/temizlik-mobil-480.webp",
         "width": 480,
         "height": 480,
         "bytes": 41844
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-768.webp",
+        "file": "images/verified/temizlik-mobil-768.webp",
         "width": 768,
         "height": 768,
         "bytes": 85784
       },
       {
-        "file": "images/verified/ceymop-temizlik-mobil-1024.webp",
+        "file": "images/verified/temizlik-mobil-1024.webp",
         "width": 1024,
         "height": 1024,
         "bytes": 121044
       }
     ],
-    "source": "https://ceymop.com.tr/media/ceymop-banner-mobile-01.webp",
     "originalWidth": 1024,
     "originalHeight": 1024,
     "sha256": "590f7969cef4ede1689550f72dc67aba784511afdcc8e9330b50dc7080f2dea8"

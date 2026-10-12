@@ -81,7 +81,7 @@
         <button type="button" class="chatbot-chip" data-query="Everyday sivilce bandı nasıl kullanılır?">Everyday Sivilce Bandı</button>
         <button type="button" class="chatbot-chip" data-query="Everyday bakım bantları">Everyday Bantlar</button>
         <button type="button" class="chatbot-chip" data-query="Nextlab ortam kokuları ve esans çeşitleri nelerdir?">Nextlab Ortam Kokuları</button>
-        <button type="button" class="chatbot-chip" data-query="Ceymop temizlik ekipmanları">Ceymop Ürünleri</button>
+        <button type="button" class="chatbot-chip" data-query="profesyonel temizlik ekipmanları">Temizlik Ürünleri</button>
       </div>
     </div>
 

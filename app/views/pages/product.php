@@ -14,7 +14,7 @@
         <a class="marketplace-text-link" href="<?= e(($channels['trendyol'] ?? null)) ?>" target="_blank" rel="noopener noreferrer"><img src="<?= e(asset('images/verified/trendyol-icon-40.webp')) ?>" alt="" width="24" height="24">Trendyol mağazamız ↗</a>
         <a class="marketplace-text-link" href="<?= e(($channels['hepsiburada'] ?? null)) ?>" target="_blank" rel="noopener noreferrer"><img src="<?= e(asset('images/verified/hepsiburada-icon-40.webp')) ?>" alt="" width="24" height="24">Hepsiburada mağazamız ↗</a></div>
         <?php else: ?><a class="button" href="<?= e(url('iletisim')) ?>">Ürün Hakkında Bilgi Alın ↗</a><?php endif; ?>
-        <p class="product-source"><a href="<?= e(($product['source_url'] ?? null)) ?>" target="_blank" rel="noopener noreferrer">Ürün bilgi kaynağı ↗</a></p>
+        <?php if (($product['source_url'] ?? null)): ?><p class="product-source"><a href="<?= e(($product['source_url'] ?? null)) ?>" target="_blank" rel="noopener noreferrer">Ürün bilgi kaynağı ↗</a></p><?php endif; ?>
     </div>
 </div></section>
 <?php if (($related && (count($related ?? []) > 0))): ?><section class="section related-section"><div class="container"><div class="section-heading"><span>AYNI KATEGORİDEN</span><h2>Diğer Ürünler</h2></div><div class="product-grid"><?php foreach ($related as $product): ?><?= view('components/product-card', ['product' => $product], get_defined_vars()) ?><?php endforeach; ?></div></div></section><?php endif; ?>
