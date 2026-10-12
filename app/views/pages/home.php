@@ -66,13 +66,6 @@
         </div>
     </div>
 </section>
-<section class="brand-family section">
-    <div class="container brand-family-grid">
-        <div><span class="eyebrow dark">ÜRÜN AİLELERİ</span><h2>İki odak, yalın bir ürün yaklaşımı</h2><p>Everyday günlük cilt ve kişisel bakım ürünlerini; NextLab ise ortam kokulandırma çözümlerini bir araya getirir.</p></div>
-        <div class="brand-tile everyday"><strong>everyday</strong><span>Günlük bakım ürünleri</span><a href="<?= e(url('kategori/kozmetik-ve-kisisel-bakim')) ?>">Ürünleri keşfet →</a></div>
-        <div class="brand-tile nextlab"><strong>NEXTLAB</strong><span>Ortam kokulandırma</span><a href="<?= e(url('kategori/ortam-kokulandirma')) ?>">Koleksiyonu incele →</a></div>
-    </div>
-</section>
 <section class="approach section">
     <div class="container content-split">
         <div class="approach-visual"><span>LESS</span><b>IS MORE</b></div>
