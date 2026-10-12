@@ -17,11 +17,6 @@
             <p>Nextlab Kozmetik olarak felsefemiz, cilt sağlığına yönelik çözüm odaklı ürünler geliştirmek üzerine kuruludur. 12 yılı aşkın ilaç ve kozmetik tecrübemizle bilimsel araştırma ve klinik veriler ışığında formüller oluşturuyor; tüketici ihtiyaçlarını merkeze alan sade ama etkili içeriklerle sürdürülebilir güzelliği savunuyoruz.</p>
             <p>Kendi markamız Everyday ile günlük kullanıma uygun; paraben, alkol, parfüm ve renklendirici içermeyen ürünler sunuyor, formüllerimizin pH dengesi ve aktif stabilitesiyle maksimum etkiyi hedefliyoruz. Hayvanlar üzerinde test yapmıyor, doğaya saygılı bir üretim anlayışı benimsiyoruz.</p>
             <p>“Az içerikle çok fayda” prensibiyle yalın, anlaşılır ve sonuç odaklı çözümler geliştiriyoruz. Aynı zamanda tüketiciyi eğiten, bilinçli cilt bakımı alışkanlıklarını destekleyen bir bilgi platformu olmayı hedefliyoruz. Çünkü bize göre sağlıklı cilt bir ayrıcalık değil, ulaşılabilir bir haktır.</p>
-            <div class="values">
-                <div><b>Bilim</b><span>Araştırma ve klinik veri ışığında formüller</span></div>
-                <div><b>Sadelik</b><span>Az içerikle çok fayda; yalın ve etkili</span></div>
-                <div><b>Sorumluluk</b><span>Hayvan deneyi yok, doğaya saygılı üretim</span></div>
-            </div>
         </div>
     </div>
 </section>
