@@ -12,12 +12,12 @@ PHP 8 ve MySQL/MariaDB ile çalışan, derleme gerektirmeyen kurumsal ürün kat
 
 1. Bu klasördeki tüm dosya ve klasörleri `public_html` içine yükleyin.
 2. Hosting panelinden boş bir MySQL veritabanı ve kullanıcı oluşturun.
-3. `database.sql` dosyasını phpMyAdmin üzerinden içe aktarın.
-4. Mevcut/ilk kurulum veritabanında `migrations/2026-10-11_professional_catalog.sql` dosyasını bir kez çalıştırın.
-5. `config.example.php` dosyasını `config.php` adıyla kopyalayın.
-6. `config.php` içindeki veritabanı adı, kullanıcı adı, parola ve `app.url` değerini gerçek bilgilerle değiştirin.
-7. `robots.txt` içindeki sitemap alanını gerçek alan adıyla güncelleyin.
-8. Alan adında `/`, `/urunler`, kategori, ürün detayı ve `/sitemap.xml` adreslerini kontrol edin.
+3. `database.sql` dosyasını phpMyAdmin üzerinden içe aktarın (tabloları kurar ve verileri yükler).
+4. `config.example.php` dosyasını `config.php` adıyla kopyalayın.
+5. `config.php` içindeki veritabanı adı, kullanıcı adı, parola ve `app.url` değerini gerçek bilgilerle değiştirin (`data_mode` = `mysql`).
+6. Alan adında `/`, `/urunler`, kategori, ürün detayı ve `/sitemap.xml` adreslerini kontrol edin.
+
+> Adım adım Natro rehberi için: [`NATRO-KURULUM.md`](NATRO-KURULUM.md). Yüklenecek temiz paketi `bash scripts/build-dist.sh` üretir (`dist/public_html/`).
 
 `config.php` git tarafından paylaşılmamalı ve web sunucusu tarafından doğrudan erişilemez durumdadır. Üretimde `debug=false` ve `demo_mode=false` kalmalıdır.
 
@@ -37,8 +37,8 @@ Ardından `http://127.0.0.1:8080` adresini açın. Apache ortamında `router.php
 - `app/CatalogRepository.php`: Tüm katalog veri erişimi; ileride panel aynı tabloları yönetebilir
 - `app/views`: Ortak layout, header/footer ve tekrar kullanılan kart bileşenleri
 - `assets`: Derleme gerektirmeyen CSS, JavaScript ve özgün yer tutucu görseller
-- `database.sql`: Şema ve başlangıç verileri
-- `sitemap.php`: Veritabanındaki kategori ve ürünlerden dinamik sitemap
+- `database.sql`: Şema ve başlangıç verileri (`scripts/export-sql.php` ile JSON'dan üretilir)
+- `/sitemap.xml` ve `/robots.txt`: `index.php` tarafından katalog verisinden dinamik üretilir
 
 Pazaryeri bağlantıları `marketplace_links` tablosunda çoklu mağaza yapısına hazırdır. Yönetim paneli bu sürümün kapsamı dışındadır.
 
