@@ -1,3 +1,19 @@
-<section class="page-hero"><div class="container"><h1><%= product.sku + ' - ' + product.name %></h1><%- include('../components/breadcrumb', { items: [{ label: 'Ürünler', url: url('urunler') }, { label: product.category_name, url: url('kategori/' + product.category_slug) }, { label: product.name }] }) %></div></section>
-<section class="section"><div class="container product-detail"><div class="detail-gallery"><div class="detail-image"><img src="<%= asset(product.image_path) %>" alt="<%= product.name %>" width="800" height="800"></div><p class="image-note">Geçici ürün görseli — onaylı marka görseli bekleniyor.</p></div><div class="detail-copy"><span class="product-code"><%= product.brand_name || 'Nextlab' %></span><h2><%= product.name %></h2><div class="detail-meta"><p><b>Kategori:</b> <a href="<%= url('kategori/' + product.category_slug) %>"><%= product.category_name %></a></p><p><b>Ürün Kodu:</b> <%= product.sku %></p><% if (product.package_info) { %><p><b>Ambalaj:</b> <%= product.package_info %></p><% } %></div><p class="lead"><%= product.description %></p><% if (product.usage) { %><div class="usage-box"><h3>Kullanım Bilgisi</h3><p><%= product.usage %></p></div><% } %><% if (product.marketplace_url) { %><a class="button" href="<%= product.marketplace_url %>" target="_blank" rel="noopener noreferrer sponsored"><%= product.marketplace_name || 'Mağazada' %> İncele ↗</a><% } else { %><a class="button" href="<%= url('iletisim') %>">Ürün Hakkında Bilgi Alın</a><% } %></div></div></section>
-<% if (typeof related !== 'undefined' && related && related.length > 0) { %><section class="section related-section"><div class="container"><div class="section-heading"><span>AYNI KATEGORİDEN</span><h2>Diğer Ürünler</h2></div><div class="product-grid"><% related.forEach(product => { %><%- include('../components/product-card', { product }) %><% }) %></div></div></section><% } %>
+<section class="page-hero"><div class="container"><h1><%= product.name %></h1><%- include('../components/breadcrumb', { items: [{ label: 'Ürünler', url: url('urunler') }, { label: product.category_name, url: url('kategori/' + product.category_slug) }, { label: product.name }] }) %></div></section>
+<section class="section"><div class="container product-detail">
+    <div class="detail-gallery"><div class="detail-image"><%- imageTag(product.image_path, product.name, { sizes: '(max-width: 680px) 92vw, 46vw', priority: true }) %></div>
+        <% if (!product.image_path) { %><p class="image-note">Bu ürünün fotoğrafı henüz eklenmedi.</p><% } %>
+    </div>
+    <div class="detail-copy"><span class="product-brand"><%= product.brand_name %></span><h2>Ürün hakkında</h2>
+        <div class="detail-meta"><p><b>Kategori:</b> <a href="<%= url('kategori/' + product.category_slug) %>"><%= product.category_name %></a></p><p><b><%= product.internal_sku ? 'Katalog kodu' : 'Ürün kodu' %>:</b> <%= product.sku %></p>
+        <% if (product.package_info) { %><p><b>Ambalaj:</b> <%= product.package_info %></p><% } %></div>
+        <p class="lead"><%= product.description %></p>
+        <div class="usage-box"><h3>Kullanım Bilgisi</h3><p><%= product.usage %></p></div>
+        <% if (product.marketplace_url) { %>
+        <div class="product-marketplaces"><a class="button" href="<%= product.marketplace_url %>" target="_blank" rel="noopener noreferrer"><%= product.marketplace_name %> ↗</a>
+        <a class="marketplace-text-link" href="<%= channels.trendyol %>" target="_blank" rel="noopener noreferrer"><img src="<%= asset('images/verified/trendyol-icon-40.webp') %>" alt="" width="24" height="24">Trendyol mağazamız ↗</a>
+        <a class="marketplace-text-link" href="<%= channels.hepsiburada %>" target="_blank" rel="noopener noreferrer"><img src="<%= asset('images/verified/hepsiburada-icon-40.webp') %>" alt="" width="24" height="24">Hepsiburada mağazamız ↗</a></div>
+        <% } else { %><a class="button" href="<%= url('iletisim') %>">Ürün Hakkında Bilgi Alın ↗</a><% } %>
+        <p class="product-source"><a href="<%= product.source_url %>" target="_blank" rel="noopener noreferrer">Ürün bilgi kaynağı ↗</a></p>
+    </div>
+</div></section>
+<% if (related && related.length > 0) { %><section class="section related-section"><div class="container"><div class="section-heading"><span>AYNI KATEGORİDEN</span><h2>Diğer Ürünler</h2></div><div class="product-grid"><% related.forEach(product => { %><%- include('../components/product-card', { product }) %><% }) %></div></div></section><% } %>

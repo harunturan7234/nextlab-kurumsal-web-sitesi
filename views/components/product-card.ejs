@@ -1,6 +1,6 @@
 <article class="product-card">
     <a class="product-image" href="<%= url('urun/' + product.slug) %>" aria-label="<%= product.name %>">
-        <img src="<%= asset(product.image_path) %>" alt="<%= product.name %>" width="600" height="600" loading="lazy">
+        <%- imageTag(product.image_path, product.name, { sizes: '(max-width: 680px) 44vw, (max-width: 980px) 30vw, 280px' }) %>
         <% if (product.package_info) { %>
             <span class="product-badge-pill"><%= product.package_info %></span>
         <% } %>
@@ -8,7 +8,7 @@
     <div class="product-card-body">
         <div class="product-meta-row">
             <span class="product-brand"><%= product.brand_name || 'NextLab' %></span>
-            <span class="product-code"><%= product.sku %></span>
+            <span class="product-code"><%= product.category_name %></span>
         </div>
         <h3 class="product-title">
             <a href="<%= url('urun/' + product.slug) %>"><%= product.name %></a>

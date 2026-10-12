@@ -1,0 +1,17 @@
+{
+  "stage": "before",
+  "base": "http://127.0.0.1:3000",
+  "pages": [
+    {
+      "url": "/",
+      "width": 1440,
+      "status": 200,
+      "title": "Anasayfa | Nextlab",
+      "h1": 0,
+      "overflow": false,
+      "broken": [],
+      "unsafeLinks": []
+    }
+  ],
+  "errors": []
+}

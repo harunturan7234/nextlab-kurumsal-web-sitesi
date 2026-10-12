@@ -25,8 +25,8 @@
     // Chat conversation memory in current session
     let conversationHistory = [];
     let isWaitingResponse = false;
-    const STORAGE_KEY = 'nextlab_chat_history_v2';
-    const INITIAL_WELCOME_TEXT = 'Merhaba! 👋 Ben Nextlab Akıllı Asistanı. İstediğinizi sorabilirsiniz ?';
+    const STORAGE_KEY = 'nextlab_chat_history_v3';
+    const INITIAL_WELCOME_TEXT = 'Merhaba! 👋 Ben Nextlab Ürün Rehberi. Katalog ürünleri ve mağaza bağlantıları hakkında yardımcı olabilirim.';
 
     // Format local time HH:MM
     function getCurrentTimeString() {
@@ -40,7 +40,9 @@
       let escaped = text
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
 
       // Links: [label](url)
       escaped = escaped.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+|\/[^\s)]+)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer" class="chatbot-link">$1 ↗</a>');
@@ -97,7 +99,7 @@
             <div class="chatbot-msg-text">
               <p>${escapeHtml(text)}</p>
             </div>
-            <span class="chatbot-msg-time">${timeStr}</span>
+            <span class="chatbot-msg-time">${escapeHtml(String(timeStr))}</span>
           </div>
         `;
       } else {
@@ -106,7 +108,7 @@
             <span>NL</span>
           </div>
           <div class="chatbot-msg-body">
-            <div class="chatbot-msg-sender">Nextlab Akıllı Asistanı</div>
+            <div class="chatbot-msg-sender">Nextlab Ürün Rehberi</div>
             <div class="chatbot-msg-text">
               ${formatMarkdown(text)}
             </div>
@@ -276,7 +278,7 @@
               <span>NL</span>
             </div>
             <div class="chatbot-msg-body">
-              <div class="chatbot-msg-sender">Nextlab Akıllı Asistanı</div>
+              <div class="chatbot-msg-sender">Nextlab Ürün Rehberi</div>
               <div class="chatbot-msg-text">
                 <p>${INITIAL_WELCOME_TEXT}</p>
               </div>

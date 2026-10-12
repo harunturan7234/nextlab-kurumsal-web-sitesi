@@ -1,0 +1,27 @@
+<?php /* Generated from views/pages/about.ejs; retain original layout. */ ?>
+<section class="page-hero">
+    <div class="container">
+        <h1>Kurumsal</h1>
+        <?= view('components/breadcrumb', ['items' => [['label' => 'Kurumsal']]], get_defined_vars()) ?>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container content-split">
+        <div class="content-visual about-visual">
+            <span>LESS</span>
+            <small>Azla çok etki yaklaşımı</small>
+        </div>
+        <div class="prose">
+            <span class="eyebrow dark">NEXTLAB KURUMSAL</span>
+            <h2>Cilt sağlığına yönelik çözüm odaklı ürünler.</h2>
+            <p>Nextlab Cosmetic, sade ve etkili içerik yaklaşımıyla günlük kullanıma yönelik kişisel bakım ve hijyen ürünleri geliştirir. Everyday markası, tüketici ihtiyacını merkezine alan ürün ailesini temsil eder.</p>
+            <p>Markanın resmî kurumsal açıklamasına göre formül geliştirme yaklaşımı bilimsel araştırma, uygun pH dengesi ve aktif stabilitesini dikkate alır. Nextlab aynı zamanda bilinçli cilt bakımı alışkanlıklarını destekleyen anlaşılır bir bilgi dili kurmayı hedefler.</p>
+            <div class="values">
+                <div><b>Sadelik</b><span>Anlaşılır ürün ve içerik iletişimi</span></div>
+                <div><b>Sorumluluk</b><span>Doğaya saygılı yaklaşım hedefi</span></div>
+                <div><b>Günlük Bakım</b><span>Erişilebilir ve pratik ürün deneyimi</span></div>
+            </div>
+        </div>
+    </div>
+</section>

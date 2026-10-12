@@ -4,7 +4,9 @@ const { catalogRepository, categories, products, banners, channels } = require('
 const { blogRepository } = require('./data/blogs');
 const { handleChat } = require('./services/chatbot');
 
+const { imageTag, mediaSrcset } = require('./lib/media');
 const app = express();
+app.disable('x-powered-by');
 const port = Number(process.env.PORT || 3000);
 
 app.set('view engine', 'ejs');
@@ -24,11 +26,15 @@ function renderPage(req, res, view, data = {}, status = 200) {
   const currentPath = req.path.replace(/^\/|\/$/g, '');
   const host = req.get('host') || `localhost:${port}`;
   const protocol = req.protocol || 'http';
-  const baseUrl = `${protocol}://${host}`;
+  const baseUrl = process.env.APP_URL || 'https://www.nextlabcosmetic.com';
 
   const helpers = {
     currentPath,
     baseUrl,
+    imageTag,
+    mediaSrcset,
+    channels,
+    bannerProducts: banner => (banner.product_ids || []).map(id => products.find(p => p.id === id)).filter(Boolean),
     title: '',
     metaDescription: '',
     canonicalUrl: '',
@@ -59,7 +65,7 @@ function renderPage(req, res, view, data = {}, status = 200) {
 app.get('/', (req, res) => {
   renderPage(req, res, 'home', {
     page: 'home',
-    title: 'Anasayfa',
+    title: 'Temizlik, Hijyen ve Kişisel Bakım',
     metaDescription: 'Nextlab ve Everyday ürünlerini keşfedin.',
     banners: catalogRepository.banners(),
     categories: catalogRepository.mainCategories(),
@@ -104,7 +110,7 @@ app.get('/distributorlukler', (req, res) => {
   renderPage(req, res, 'distributors', {
     page: 'distributors',
     title: 'Distribütörlükler',
-    metaDescription: 'Nextlab güvencesiyle Türkiye pazarına sunulan 15 küresel dermokozmetik ve cilt bakım markası.',
+    metaDescription: 'Nextlab marka rehberi, Ceymop temizlik ekipmanları ve kurumsal tedarik bilgileri.',
     brands: catalogRepository.distributorBrands()
   });
 });
@@ -113,12 +119,12 @@ app.get('/distributorlukler', (req, res) => {
 app.get('/distributorluk/:slug', (req, res) => {
   const brand = catalogRepository.distributorBrandBySlug(req.params.slug);
   if (!brand) {
-    return res.status(404).redirect('/distributorlukler');
+    return renderPage(req, res, '404', { page: '404', title: 'Sayfa Bulunamadı' }, 404);
   }
   renderPage(req, res, 'distributor-detail', {
     page: 'distributors',
-    title: `${brand.name} Distribütörlüğü`,
-    metaDescription: `${brand.name} Türkiye yetkili distribütörlüğü. ${brand.highlight}`,
+    title: `${brand.name} Marka Rehberi`,
+    metaDescription: `${brand.name} marka bilgileri ve kurumsal tedarik talepleri.`,
     brand,
     allBrands: catalogRepository.distributorBrands()
   });
@@ -137,8 +143,8 @@ app.get('/blog', (req, res) => {
 
   renderPage(req, res, 'blog', {
     page: 'blog',
-    title: 'Kozmetik & Cilt Bakımı Blogu',
-    metaDescription: 'Nextlab ve dermo-kozmetik uzmanlarından cilt bariyeri, K-Beauty çift aşamalı temizlik, güneş koruması ve içerik bilimini ele alan 6 güncel rehber.',
+    title: 'Ürün ve Yaşam Alanları Rehberi',
+    metaDescription: 'Everyday bakım ürünleri, Ceymop temizlik ekipmanları, Nextlab ortam kokuları ve mağaza bağlantıları için pratik rehberler.',
     blogs: filteredBlogs,
     allBlogs: blogRepository.all(),
     featuredBlog,
@@ -151,14 +157,15 @@ app.get('/blog', (req, res) => {
 app.get('/blog/:slug', (req, res) => {
   const article = blogRepository.bySlug(req.params.slug);
   if (!article) {
-    return res.status(404).redirect('/blog');
+    return renderPage(req, res, '404', { page: '404', title: 'Sayfa Bulunamadı' }, 404);
   }
 
+  if (article.slug !== req.params.slug) return res.redirect(301, '/blog/' + article.slug);
   const relatedArticles = blogRepository.related(article.id, 3);
   const host = req.get('host') || `localhost:${port}`;
   const protocol = req.protocol || 'http';
   const baseUrl = `${protocol}://${host}`;
-  const ogImage = `${baseUrl}/assets/${article.image_path.replace(/^\//, '')}`;
+  const ogImage = article.image_path ? `${baseUrl}/assets/${article.image_path.replace(/^\//, '')}` : `${baseUrl}/assets/images/verified/nextlab-logo-1200.webp`;
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -169,7 +176,7 @@ app.get('/blog/:slug', (req, res) => {
     datePublished: article.isoDate,
     dateModified: article.isoDate,
     author: {
-      '@type': 'Person',
+      '@type': 'Organization',
       name: article.author.name
     },
     publisher: {
@@ -273,7 +280,7 @@ app.get('/urun/:slug', (req, res) => {
   const host = req.get('host') || `localhost:${port}`;
   const protocol = req.protocol || 'http';
   const baseUrl = `${protocol}://${host}`;
-  const ogImage = `${baseUrl}/assets/${product.image_path.replace(/^\//, '')}`;
+  const ogImage = product.image_path ? `${baseUrl}/assets/${product.image_path.replace(/^\//, '')}` : '';
 
   const structuredData = {
     '@context': 'https://schema.org',
@@ -283,7 +290,7 @@ app.get('/urun/:slug', (req, res) => {
     brand: { '@type': 'Brand', name: product.brand_name || 'Nextlab' },
     category: product.category_name,
     description: product.short_description,
-    image: [ogImage],
+    ...(ogImage ? { image: [ogImage] } : {}),
     url: `${baseUrl}/urun/${product.slug}`
   };
 
@@ -326,7 +333,7 @@ app.get('/sitemap.xml', (req, res) => {
     urls.push({ loc: `${baseUrl}/blog/${b.slug}`, date: b.isoDate || today });
   });
 
-  catalogRepository.mainCategories().forEach(c => {
+  categories.forEach(c => {
     urls.push({ loc: `${baseUrl}/kategori/${c.slug}`, date: c.updated_at || today });
   });
 

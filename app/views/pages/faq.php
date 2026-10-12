@@ -1,0 +1,63 @@
+<?php /* Generated from views/pages/faq.ejs; retain original layout. */ ?>
+<section class="page-hero">
+    <div class="container">
+        <h1>Sıkça Sorulan Sorular</h1>
+        <?= view('components/breadcrumb', ['items' => [['label' => 'S.S.S']]], get_defined_vars()) ?>
+    </div>
+</section>
+
+<section class="faq-section faq-page-section" id="sss" aria-label="Sıkça Sorulan Sorular">
+    <div class="container">
+        <div class="faq-header">
+            <h2 class="faq-title">Sıkça Sorulan Sorular</h2>
+        </div>
+
+        <div class="faq-grid-2col" data-faq-accordion>
+            <div class="faq-col">
+                <?php foreach (array_slice(($faqs ?: []), 0, ((int) ceil((count(($faqs ?: []) ?? []) / 2)))) as $idx => $faq): ?>
+                <details class="faq-card-item" <?= e((($idx === 0) ? 'open' : '')) ?>>
+                    <summary class="faq-card-summary">
+                        <span class="faq-plus-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d71920" stroke-width="3.4" stroke-linecap="round">
+                                <line x1="12" y1="4" x2="12" y2="20"></line>
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                            </svg>
+                        </span>
+                        <h3 class="faq-card-title"><?= e(($faq['question'] ?? null)) ?></h3>
+                    </summary>
+                    <div class="faq-card-body">
+                        <p class="faq-card-text"><?= e(($faq['answer'] ?? null)) ?></p>
+                    </div>
+                </details>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="faq-col">
+                <?php foreach (array_slice(($faqs ?: []), ((int) ceil((count(($faqs ?: []) ?? []) / 2)))) as $faq): ?>
+                <details class="faq-card-item">
+                    <summary class="faq-card-summary">
+                        <span class="faq-plus-icon" aria-hidden="true">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d71920" stroke-width="3.4" stroke-linecap="round">
+                                <line x1="12" y1="4" x2="12" y2="20"></line>
+                                <line x1="4" y1="12" x2="20" y2="12"></line>
+                            </svg>
+                        </span>
+                        <h3 class="faq-card-title"><?= e(($faq['question'] ?? null)) ?></h3>
+                    </summary>
+                    <div class="faq-card-body">
+                        <p class="faq-card-text"><?= e(($faq['answer'] ?? null)) ?></p>
+                    </div>
+                </details>
+                <?php endforeach; ?>
+            </div>
+        </div>
+
+        <div class="faq-contact-box">
+            <div>
+                <h3>Sorunuzun yanıtını bulamadınız mı?</h3>
+                <p>Ürünlerimiz, distribütörlüklerimiz veya toptan sipariş süreçleriniz hakkında bilgi almak için müşteri destek ve kurumsal iletişim ekibimizle irtibata geçebilirsiniz.</p>
+            </div>
+            <a class="button" href="<?= e(url('iletisim')) ?>">Bize Ulaşın</a>
+        </div>
+    </div>
+</section>

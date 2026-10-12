@@ -1,50 +1,54 @@
-<section class="hero-showcase" data-slider aria-label="Nextlab öne çıkan ürün serileri">
+<section class="hero-showcase" data-slider aria-roledescription="karusel" aria-label="Nextlab ürün dünyası">
     <div class="hero-slides-wrapper">
         <% banners.forEach((banner, index) => { %>
-        <article class="hero-slide <%= index === 0 ? 'is-active' : '' %>" data-slide="<%= index %>" aria-hidden="<%= index === 0 ? 'false' : 'true' %>">
-            <a href="<%= url(banner.button_url) %>" class="hero-slide-link" aria-label="<%= banner.title %>">
-                <img 
-                    src="<%= asset(banner.image_path) %>" 
-                    alt="<%= banner.title %> - <%= banner.subtitle %>" 
-                    class="hero-slide-media" 
-                    width="1600" 
-                    height="700" 
-                    loading="<%= index === 0 ? 'eager' : 'lazy' %>"
-                    referrerpolicy="no-referrer"
-                />
-            </a>
-            <div class="hero-slide-floating-bar">
-                <a class="hero-slide-pill" href="<%= url(banner.button_url) %>">
-                    <span class="hero-pill-dot"></span>
-                    <span class="hero-pill-text"><%= banner.badge %></span>
-                    <span class="hero-pill-action"><%= banner.button_text %> →</span>
-                </a>
-                <% if (banner.secondary_url) { %>
-                <a class="hero-slide-market" href="<%= banner.secondary_url %>" target="_blank" rel="noopener noreferrer sponsored">
-                    <%= banner.secondary_text %>
-                </a>
+        <article class="hero-slide hero-<%= banner.theme %> <%= index === 0 ? 'is-active' : '' %>" data-slide="<%= index %>" aria-hidden="<%= index !== 0 %>" <%= index !== 0 ? 'inert' : '' %>>
+            <div class="container hero-composition">
+                <div class="hero-copy">
+                    <span class="hero-eyebrow"><span></span><%= banner.badge %></span>
+                    <% if (index === 0) { %><h1><%= banner.title %></h1><% } else { %><h2><%= banner.title %></h2><% } %>
+                    <p><%= banner.subtitle %></p>
+                    <div class="hero-actions">
+                        <a class="button" href="<%= url(banner.button_url) %>"><%= banner.button_text %> <span aria-hidden="true">↗</span></a>
+                        <% if (banner.secondary_url) { %><a class="hero-secondary" href="<%= banner.secondary_url %>" target="_blank" rel="noopener noreferrer"><%= banner.secondary_text %></a><% } %>
+                    </div>
+                    <span class="hero-counter">0<%= index + 1 %> <span>/ 03</span></span>
+                </div>
+                <% if (banner.image_path) { %>
+                <div class="hero-photo">
+                    <picture>
+                        <source media="(max-width: 680px)" srcset="<%= asset('images/verified/ceymop-temizlik-mobil-480.webp') %> 480w, <%= asset('images/verified/ceymop-temizlik-mobil-768.webp') %> 768w" sizes="100vw">
+                        <img src="<%= asset(banner.image_path) %>" srcset="<%= mediaSrcset(banner.image_path) %>" sizes="(max-width: 680px) 100vw, 56vw" width="1920" height="650" alt="Ceymop referansından profesyonel temizlik ekipmanları" loading="lazy">
+                    </picture>
+                    <span class="photo-credit">CEYMOP • Profesyonel temizlik ekipmanları</span>
+                </div>
+                <% } else { %>
+                <div class="hero-product-composition">
+                    <% bannerProducts(banner).forEach(item => { %>
+                    <a class="hero-product" href="<%= url('urun/' + item.slug) %>">
+                        <%- imageTag(item.image_path, item.name, { sizes: '(max-width: 680px) 30vw, 18vw', priority: index === 0 }) %>
+                        <span><b><%= item.brand_name %></b><%= item.name.replace(/^Everyday /, '') %></span>
+                    </a>
+                    <% }) %>
+                </div>
                 <% } %>
             </div>
         </article>
         <% }) %>
     </div>
-    
-    <button class="hero-nav-arrow hero-prev" type="button" aria-label="Önceki Görsel">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
-    </button>
-    <button class="hero-nav-arrow hero-next" type="button" aria-label="Sonraki Görsel">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
-    </button>
-
-    <div class="slider-dots" role="tablist" aria-label="Slayt seçimi">
-        <% banners.forEach((banner, index) => { %>
-        <button class="<%= index === 0 ? 'active' : '' %>" type="button" aria-label="<%= index + 1 %>. slayt: <%= banner.title %>"></button>
-        <% }) %>
+    <div class="slider-controls">
+        <button class="hero-nav-arrow hero-prev" type="button" aria-label="Önceki slayt">←</button>
+        <div class="slider-dots" role="group" aria-label="Slayt seçimi">
+            <% banners.forEach((banner, index) => { %>
+            <button class="<%= index === 0 ? 'active' : '' %>" type="button" aria-current="<%= index === 0 ? 'true' : 'false' %>" aria-label="<%= index + 1 %>. slayt: <%= banner.title %>"><span></span></button>
+            <% }) %>
+        </div>
+        <button class="hero-nav-arrow hero-next" type="button" aria-label="Sonraki slayt">→</button>
+        <button class="slider-pause" type="button" aria-pressed="true" aria-label="Slaytları otomatik oynat">Oynat</button>
     </div>
 </section>
 <section class="section categories-section">
     <div class="container">
-        <div class="section-heading"><span>ÜRÜN AİLEMİZ</span><h2>Kategoriler</h2><p>İhtiyacınıza uygun Nextlab ürün grubunu keşfedin.</p></div>
+        <div class="section-heading"><span>ÜRÜN AİLEMİZ</span><h2>Kategoriler</h2><p>İhtiyacınıza uygun ürünleri, kendi marka kimlikleriyle keşfedin.</p></div>
         <div class="category-grid">
             <% categories.forEach(category => { %>
                 <%- include('../components/category-card', { category }) %>
@@ -80,8 +84,8 @@
     <div class="container">
         <div class="section-heading row-heading">
             <div>
-                <span>EDİTÖRYAL &amp; BİLİMSEL İÇERİK</span>
-                <h2>Cilt Bakımı &amp; Kozmetik Rehberi</h2>
+                <span>NEXTLAB REHBERİ</span>
+                <h2>Ürünler &amp; Yaşam Alanları</h2>
             </div>
             <a class="outline-button" href="<%= url('blog') %>">Tüm Blog Yazıları (6) →</a>
         </div>
@@ -90,9 +94,7 @@
             <article class="blog-card" aria-label="<%= article.title %>">
                 <div class="card-media-wrap">
                     <a href="<%= url('blog/' + article.slug) %>" aria-label="<%= article.title %> yazısını oku">
-                        <img 
-                            src="<%= asset(article.image_path) %>" 
-                            alt="<%= article.image_alt %>" 
+                        <% if (article.image_path) { %><%- imageTag(article.image_path, article.image_alt, { sizes: '(max-width: 680px) 92vw, 400px' }) %><% } else { %><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><%= article.category %></strong></span><% } %>" 
                             width="800" 
                             height="500" 
                             loading="lazy"
@@ -164,9 +166,4 @@
         </div>
     </div>
 </section>
-<section class="location-section" aria-label="NextLab konumu">
-    <a class="map-link" href="https://www.google.com/maps/search/?api=1&amp;query=NextLab+Sa%C4%9Fl%C4%B1k+Kozmetik%2C+Altunizade%2C+%C3%9Cniversite+Sok.+No%3A7%2F1%2C+34674+%C3%9Csk%C3%BCdar%2F%C4%B0stanbul" target="_blank" rel="noopener noreferrer" aria-label="NextLab Sağlık Kozmetik işletmesini Google Maps'te aç">
-        <iframe title="NextLab Sağlık Kozmetik konumu" src="https://www.google.com/maps?q=NextLab%20Sa%C4%9Fl%C4%B1k%20Kozmetik%2C%20Altunizade%2C%20%C3%9Cniversite%20Sok.%20No%3A7%2F1%2C%2034674%20%C3%9Csk%C3%BCdar%2F%C4%B0stanbul&amp;output=embed" width="100%" height="300" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
-        <span>Haritada Aç ↗</span>
-    </a>
-</section>
+<section class="location-section" aria-label="Nextlab konumu"><div class="container location-card"><div><span class="eyebrow dark">İSTANBUL • ÜSKÜDAR</span><h2>İhtiyaçlarınızı birlikte konuşalım.</h2><p>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</p></div><a class="outline-button" href="https://www.google.com/maps/search/?api=1&amp;query=Nextlab+Universite+Sokak+7%2FB+Altunizade+Uskudar" target="_blank" rel="noopener noreferrer">Haritada Aç ↗</a></div></section>

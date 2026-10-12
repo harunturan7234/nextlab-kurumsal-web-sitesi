@@ -54,9 +54,7 @@
     <!-- Main Visual Cover Image -->
     <div class="container blog-cover-container">
         <figure class="detail-cover-figure">
-            <img 
-                src="<%= asset(article.image_path) %>" 
-                alt="<%= article.image_alt %>" 
+            <% if (article.image_path) { %><%- imageTag(article.image_path, article.image_alt, { sizes: '(max-width: 680px) 92vw, 400px' }) %><% } else { %><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><%= article.category %></strong></span><% } %>" 
                 width="1200" 
                 height="675"
                 class="detail-cover-media"
@@ -115,7 +113,7 @@
                 <div class="author-full-info">
                     <h4><%= article.author.name %></h4>
                     <p class="author-role-title"><%= article.author.role %></p>
-                    <p class="author-bio">Cilt biyolojisi, K-Beauty biyoaktif içerikleri ve klinik dermokozmetik formülasyonları üzerine bilimsel araştırmalar yürütmekte; NextLab sağlık ve kozmetik portföyüne danışmanlık vermektedir.</p>
+                    <p class="author-bio">Nextlab ürün kataloğundaki ürün gruplarını ve satış kanallarını tanıtan kurumsal içerikler.</p>
                 </div>
             </div>
         </div>
@@ -124,39 +122,14 @@
         <aside class="detail-sidebar" aria-label="İlgili markalar ve içerikler">
             <!-- Brand Links Card -->
             <div class="sidebar-card sidebar-distributor-card">
-                <span class="card-eyebrow">RESMİ DİSTRİBÜTÖRLÜKLER</span>
-                <h3>İlgili Markaları İnceleyin</h3>
-                <p>NextLab, küresel ölçekte tanınan 15 dermokozmetik markasının Türkiye yetkili distribütörüdür.</p>
-                <div class="sidebar-brand-links">
-                    <a href="<%= url('distributorluk/beauty-of-joseon') %>" class="sb-brand-row">
-                        <span>Beauty of Joseon</span>
-                        <small>Hanbang Pirinç &amp; Koruma ↗</small>
-                    </a>
-                    <a href="<%= url('distributorluk/skin1004') %>" class="sb-brand-row">
-                        <span>Skin1004</span>
-                        <small>Madagascar Centella ↗</small>
-                    </a>
-                    <a href="<%= url('distributorluk/cosrx') %>" class="sb-brand-row">
-                        <span>Cosrx</span>
-                        <small>BHA &amp; Klinik Çözümler ↗</small>
-                    </a>
-                    <a href="<%= url('distributorluk/tocobo') %>" class="sb-brand-row">
-                        <span>Tocobo</span>
-                        <small>Vegan SPF50+ Güneş ↗</small>
-                    </a>
-                    <a href="<%= url('distributorluk/torriden') %>" class="sb-brand-row">
-                        <span>Torriden</span>
-                        <small>5D Moleküler Nem ↗</small>
-                    </a>
-                </div>
-                <a href="<%= url('distributorlukler') %>" class="sidebar-all-link">Tüm 15 Markayı Gör →</a>
+                <span class="card-eyebrow">ÜRÜN GRUPLARI</span><h3>Kataloğu Keşfedin</h3><div class="sidebar-brand-links"><a class="sb-brand-row" href="<%= url('kategori/temizlik-ve-hijyen') %>">Temizlik ve Hijyen ↗</a><a class="sb-brand-row" href="<%= url('kategori/kozmetik-ve-kisisel-bakim') %>">Kozmetik ve Kişisel Bakım ↗</a><a class="sb-brand-row" href="<%= url('kategori/ortam-kokulandirma') %>">Ortam Kokulandırma ↗</a></div>
             </div>
 
             <!-- FAQ / Support Shortcut -->
             <div class="sidebar-card sidebar-help-card">
-                <span class="card-eyebrow">DESTEK &amp; MEVZUAT</span>
+                <span class="card-eyebrow">DESTEK</span>
                 <h3>Sıkça Sorulan Sorular</h3>
-                <p>Ürün güvenliği, ÜTS kayıtları ve sipariş süreçleri hakkında detaylı bilgi alın.</p>
+                <p>Ürünler, kullanım bilgisi ve mağazalarımız hakkındaki sorularınızı inceleyin.</p>
                 <a href="<%= url('sss') %>" class="outline-button full-btn">S.S.S Sayfasına Git</a>
             </div>
 
@@ -183,7 +156,7 @@
                 <article class="blog-card">
                     <div class="card-media-wrap">
                         <a href="<%= url('blog/' + rel.slug) %>">
-                            <img src="<%= asset(rel.image_path) %>" alt="<%= rel.image_alt %>" width="1200" height="675" loading="lazy" class="card-cover-img">
+                            <% if (rel.image_path) { %><%- imageTag(rel.image_path, rel.image_alt, { sizes: '(max-width: 680px) 92vw, 400px' }) %><% } else { %><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><%= rel.category %></strong></span><% } %>" width="1200" height="675" loading="lazy" class="card-cover-img">
                         </a>
                     </div>
                     <div class="card-body">

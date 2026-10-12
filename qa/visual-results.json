@@ -1,0 +1,560 @@
+{
+  "stage": "visual",
+  "base": "http://127.0.0.1:3000",
+  "pages": [
+    {
+      "url": "/",
+      "width": 1440,
+      "status": 200,
+      "title": "Temizlik, Hijyen ve Kişisel Bakım | Nextlab",
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "unsafeLinks": []
+    },
+    {
+      "url": "/",
+      "width": 768,
+      "status": 200,
+      "title": "Temizlik, Hijyen ve Kişisel Bakım | Nextlab",
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "unsafeLinks": []
+    },
+    {
+      "url": "/",
+      "width": 390,
+      "status": 200,
+      "title": "Temizlik, Hijyen ve Kişisel Bakım | Nextlab",
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "unsafeLinks": []
+    },
+    {
+      "url": "/",
+      "width": 320,
+      "status": 200,
+      "title": "Temizlik, Hijyen ve Kişisel Bakım | Nextlab",
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "unsafeLinks": []
+    },
+    {
+      "url": "/",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/hakkimizda",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/iletisim",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/katalog",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urunler",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorlukler",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/sss",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/cerez-politikasi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/ceymop",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/dr-melaxin",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/anua",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/medi-peel",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/cosrx",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/skin1004",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/beauty-of-joseon",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/round-lab",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/tocobo",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/torriden",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/isntree",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/klairs",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/haruharu-wonder",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/pyunkang-yul",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/axis-y",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/distributorluk/purito",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/everyday-bakim-bantlari-rehberi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/profesyonel-temizlik-ekipmanlarini-taniyin",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/nextlab-pazaryeri-magazalari",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/urun-ambalajini-okuma-rehberi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/ceymop-kurumsal-tedarik",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/blog/nextlab-ortam-kokulari-rehberi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/temizlik-ve-hijyen",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/kozmetik-ve-kisisel-bakim",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/cilt-bakim-bantlari",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/agiz-bakimi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/ortam-kokulandirma",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/burun-bantlari",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/mop-grubu",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/temizlik-bezleri",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/kat-arabalari",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/everyday-yetiskin-burun-bandi-12li",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/everyday-nose-patch-6li",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/everyday-hidrokolloid-acne-pimple-patch-36li",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/everyday-dis-fircasi-soft",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/everyday-dis-temizleme-pedi-3lu",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/nextlab-crystal-ortam-kokusu-350ml",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/nextlab-surrender-ortam-kokusu-350ml",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/nextlab-costus-homme-ortam-kokusu-350ml",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/nextlab-violet-ortam-kokusu-350ml",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/nextlab-beyaz-koku-makinesi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/ceymop-mikrofiber-mop",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/ceymop-mikrofiber-bez",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/ceymop-kat-arabasi",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/arama?q=Everyday",
+      "width": 320,
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/urun/yok",
+      "width": 320,
+      "status": 404,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    },
+    {
+      "url": "/kategori/yok",
+      "width": 320,
+      "status": 404,
+      "h1": 1,
+      "overflow": false,
+      "broken": [],
+      "jsonld": true
+    }
+  ],
+  "errors": [],
+  "menuOpens": true,
+  "sliderWorks": true,
+  "chat": {
+    "status": 200,
+    "body": {
+      "text": "Kataloğumuzdan ilgili ürünler:\n\n• [Everyday Yetişkin Burun Bandı 12’li](/urun/everyday-yetiskin-burun-bandi-12li) — Yetişkin kullanımı için 12 adet burun bandı.\n• [Everyday Nose Patch Temizleyici Burun Bandı 6’lı](/urun/everyday-nose-patch-6li) — Burun bölgesi için 6 adet temizleyici bakım bandı.\n• [Everyday Hidrokolloid Acne Pimple Patch 36’lı](/urun/everyday-hidrokolloid-acne-pimple-patch-36li) — Günlük cilt bakım rutini için 36 adet hidrokolloid bant.\n• [Everyday Diş Fırçası Soft](/urun/everyday-dis-fircasi-soft) — Günlük ağız bakımı için soft diş fırçası.\n\nKullanım ve uyarılar için ambalaj talimatlarını izleyin.",
+      "source": "catalog"
+    }
+  }
+}

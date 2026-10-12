@@ -1,115 +1,57 @@
 document.addEventListener('DOMContentLoaded', () => {
   const menu = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.main-nav');
-  if (menu && nav) {
-    menu.addEventListener('click', () => {
-      const open = menu.getAttribute('aria-expanded') === 'true';
-      menu.setAttribute('aria-expanded', String(!open));
-      nav.classList.toggle('open', !open);
-    });
-  }
-
-  document.querySelectorAll('.nav-dropdown > a').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      if (window.innerWidth <= 980) {
-        event.preventDefault();
-        link.parentElement.classList.toggle('open');
+  const closeMenu = () => { menu?.setAttribute('aria-expanded', 'false'); nav?.classList.remove('open'); };
+  menu?.addEventListener('click', () => {
+    const open = menu.getAttribute('aria-expanded') !== 'true';
+    menu.setAttribute('aria-expanded', String(open)); nav?.classList.toggle('open', open);
+  });
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+  document.addEventListener('click', event => { if (!event.target.closest('.site-header')) closeMenu(); });
+  document.querySelectorAll('.nav-dropdown > a').forEach(link => {
+    link.setAttribute('aria-expanded', 'false');
+    link.addEventListener('click', event => {
+      if (window.innerWidth <= 980 && !link.parentElement.classList.contains('open')) {
+        event.preventDefault(); link.parentElement.classList.add('open'); link.setAttribute('aria-expanded', 'true');
       }
     });
   });
-
-  const searchToggle = document.querySelector('.search-toggle');
-  const searchPanel = document.querySelector('.search-panel');
-  if (searchToggle && searchPanel) {
-    searchToggle.addEventListener('click', () => {
-      searchPanel.hidden = !searchPanel.hidden;
-      if (!searchPanel.hidden) {
-        const input = searchPanel.querySelector('input');
-        if (input) input.focus();
-      }
-    });
-  }
-
   const slider = document.querySelector('[data-slider]');
   if (slider) {
-    const slides = Array.from(slider.querySelectorAll('.hero-slide, .slide'));
-    const dots = Array.from(slider.querySelectorAll('.slider-dots button'));
-    const prevBtn = slider.querySelector('.hero-prev');
-    const nextBtn = slider.querySelector('.hero-next');
-    let active = 0;
-    let timer;
-
-    const show = (i) => {
-      active = (i + slides.length) % slides.length;
-      slides.forEach((s, n) => {
-        s.classList.toggle('is-active', n === active);
-        s.setAttribute('aria-hidden', String(n !== active));
-      });
-      dots.forEach((d, n) => d.classList.toggle('active', n === active));
+    const slides = [...slider.querySelectorAll('[data-slide]')];
+    const dots = [...slider.querySelectorAll('.slider-dots button')];
+    const pause = slider.querySelector('.slider-pause');
+    let active = 0, timer, paused = true, hover = false;
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const show = index => {
+      active = (index + slides.length) % slides.length;
+      slides.forEach((slide, i) => { slide.classList.toggle('is-active', i === active); slide.setAttribute('aria-hidden', String(i !== active)); slide.inert = i !== active; });
+      dots.forEach((dot, i) => { dot.classList.toggle('active', i === active); dot.setAttribute('aria-current', String(i === active)); });
     };
-
-    dots.forEach((dot, i) => {
-      dot.addEventListener('click', () => {
-        show(i);
-        restart();
-      });
-    });
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        show(active - 1);
-        restart();
-      });
-    }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        show(active + 1);
-        restart();
-      });
-    }
-
     const restart = () => {
       clearInterval(timer);
-      if (slides.length > 1) {
-        timer = setInterval(() => show(active + 1), 6000);
-      }
+      if (!paused && !hover && !document.hidden && !reduced.matches && !slider.matches(':focus-within')) timer = setInterval(() => show(active + 1), 7000);
     };
-
-    slider.addEventListener('mouseenter', () => clearInterval(timer));
-    slider.addEventListener('mouseleave', () => restart());
-
-    // Touch swipe support
-    let startX = 0;
-    slider.addEventListener('touchstart', (e) => {
-      if (e.touches && e.touches[0]) startX = e.touches[0].clientX;
-    }, { passive: true });
-    slider.addEventListener('touchend', (e) => {
-      if (e.changedTouches && e.changedTouches[0]) {
-        const diff = e.changedTouches[0].clientX - startX;
-        if (Math.abs(diff) > 40) {
-          if (diff > 0) show(active - 1);
-          else show(active + 1);
-          restart();
-        }
-      }
-    }, { passive: true });
-
-    restart();
+    dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
+    slider.querySelector('.hero-prev')?.addEventListener('click', () => { show(active - 1); restart(); });
+    slider.querySelector('.hero-next')?.addEventListener('click', () => { show(active + 1); restart(); });
+    pause?.addEventListener('click', () => { paused = !paused; pause.setAttribute('aria-pressed', String(paused)); pause.setAttribute('aria-label', paused ? 'Slaytları otomatik oynat' : 'Slaytları duraklat'); pause.textContent = paused ? 'Oynat' : 'Duraklat'; restart(); });
+    slider.addEventListener('mouseenter', () => { hover = true; restart(); });
+    slider.addEventListener('mouseleave', () => { hover = false; restart(); });
+    slider.addEventListener('focusin', restart); slider.addEventListener('focusout', () => setTimeout(restart, 0));
+    document.addEventListener('visibilitychange', restart);
+    let startX = 0, startY = 0;
+    slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, { passive: true });
+    slider.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX-startX, dy = e.changedTouches[0].clientY-startY; if (Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)) { show(active + (dx < 0 ? 1 : -1)); restart(); } }, { passive: true });
+    show(0);
   }
-
-  const faqs = document.querySelectorAll('.faq-card-item, .faq-pill-item, .faq-item');
-  if (faqs.length) {
-    faqs.forEach((f) => {
-      f.addEventListener('toggle', () => {
-        if (f.open) {
-          faqs.forEach((other) => {
-            if (other !== f) {
-              other.removeAttribute('open');
-            }
-          });
-        }
-      });
-    });
-  }
+  document.querySelectorAll('[data-faq-accordion] details').forEach(detail => detail.addEventListener('toggle', () => {
+    if (detail.open) detail.closest('[data-faq-accordion]').querySelectorAll('details').forEach(other => { if (other !== detail) other.open = false; });
+  }));
+  document.querySelector('.contact-form')?.addEventListener('submit', event => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const body = 'Ad Soyad: ' + data.get('name') + '\nE-posta: ' + data.get('email') + '\nTelefon: ' + data.get('phone') + '\n\n' + data.get('message');
+    window.location.href = 'mailto:info@nextlabcosmetic.com?subject=' + encodeURIComponent(data.get('subject') || 'Nextlab iletişim talebi') + '&body=' + encodeURIComponent(body);
+  });
 });

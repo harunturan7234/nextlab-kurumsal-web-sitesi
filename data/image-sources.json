@@ -1,0 +1,145 @@
+[
+  {
+    "key": "everyday-burun-bandi",
+    "input": "/private/tmp/nextlab-nose-original.jpg",
+    "source": "https://cdn.dsmcdn.com/ty1730/prod/QC_ENRICHMENT/20250818/17/f2217367-1ff4-3ef8-8584-b4fb5d3b06ea/1_org_zoom.jpg",
+    "page": "https://www.trendyol.com/everyday/yetiskin-burun-bandi-12-li-p-955345961",
+    "use": "Ürün 1; hero 1 ve 3; kişisel bakım ve burun bantları kategorileri",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "everyday-nose-patch",
+    "input": "/private/tmp/nextlab-patch-original.jpg",
+    "source": "https://cdn.dsmcdn.com/ty1819/prod/QC_PREP/20260203/13/88e8686c-3eb8-3645-9de5-3acfc272c9a1/1_org_zoom.jpg",
+    "page": "https://www.trendyol.com/everyday/nose-patch-siyah-nokta-ve-gozenek-icin-temizleyici-burun-bandi-6-li-p-1096654617",
+    "use": "Ürün 2; hero 3",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "everyday-akne-bandi",
+    "input": "/private/tmp/nextlab-acne-original.jpg",
+    "source": "https://cdn.dsmcdn.com/ty1739/prod/QC_ENRICHMENT/20250824/22/75e2dcfd-56b7-35b1-8d76-0dda09f6fc04/1_org_zoom.jpg",
+    "page": "https://www.trendyol.com/everyday/akne-bandi-36-adet-bandi-pimple-patch-hidrokolloid-bant-p-955932916",
+    "use": "Ürün 3; hero 1 ve 3; cilt bakım bantları kategorisi",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "ceymop-mikrofiber-mop",
+    "input": "/private/tmp/nextlab-mop.webp",
+    "source": "https://ceymop.com.tr/media/cyp-134.webp",
+    "page": "https://ceymop.com.tr/urun/mikrofiber-mop-cyp-134",
+    "use": "Ürün 11; ilgili temizlik alt kategorisi",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "ceymop-mikrofiber-bez",
+    "input": "/private/tmp/nextlab-cloth.webp",
+    "source": "https://ceymop.com.tr/media/cyp-019.webp",
+    "page": "https://ceymop.com.tr/urun/mikrofiber-bez-mastermop-cyp-019",
+    "use": "Ürün 12; ilgili temizlik alt kategorisi",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "ceymop-kat-arabasi",
+    "input": "/private/tmp/nextlab-cart.webp",
+    "source": "https://ceymop.com.tr/media/cyp-820.webp",
+    "page": "https://ceymop.com.tr/urun/kat-arabasi-cift-cop-toplamali-4-kovali-cyp-820",
+    "use": "Ürün 13; ilgili temizlik alt kategorisi; hero 1",
+    "widths": [
+      320,
+      640,
+      960
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "ceymop-temizlik-banner",
+    "input": "/private/tmp/nextlab-banner.webp",
+    "source": "https://ceymop.com.tr/media/ceymop-banner-01.webp",
+    "page": "https://ceymop.com.tr/",
+    "use": "Hero 2; temizlik kategorisi",
+    "widths": [
+      480,
+      960,
+      1280,
+      1920
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "ceymop-temizlik-mobil",
+    "input": "/private/tmp/nextlab-banner-mobile.webp",
+    "source": "https://ceymop.com.tr/media/ceymop-banner-mobile-01.webp",
+    "page": "https://ceymop.com.tr/",
+    "use": "Hero 2 mobil",
+    "widths": [
+      480,
+      768,
+      1024
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "nextlab-logo",
+    "input": "/Users/behnaaxe/Desktop/nextlab-kurumsal-web-sitesi/assets/images/nextlab-logo-hq.png",
+    "source": "Mevcut proje: assets/images/nextlab-logo-hq.png",
+    "page": "Kullanıcının mevcut onaylı logosu",
+    "use": "Header, footer, Open Graph",
+    "widths": [
+      190,
+      380,
+      760,
+      1200
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "trendyol-icon",
+    "input": "/Users/behnaaxe/Desktop/nextlab-kurumsal-web-sitesi/assets/images/trendyol-icon.png",
+    "source": "Mevcut proje",
+    "page": "https://www.trendyol.com/magaza/nextlab-saglik-ve-kozmetik-m-1110408?sst=0",
+    "use": "Header, footer, ürün detayları",
+    "widths": [
+      40,
+      80
+    ],
+    "checked": "2026-10-12"
+  },
+  {
+    "key": "hepsiburada-icon",
+    "input": "/Users/behnaaxe/Desktop/nextlab-kurumsal-web-sitesi/assets/images/hepsiburada-icon.png",
+    "source": "Mevcut proje",
+    "page": "https://www.hepsiburada.com/magaza/nextlab-saglik-ve-kozmetik-urunleri",
+    "use": "Header, footer, ürün detayları",
+    "widths": [
+      40,
+      80
+    ],
+    "checked": "2026-10-12"
+  }
+]

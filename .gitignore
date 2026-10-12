@@ -1,0 +1,7 @@
+node_modules/
+config.php
+.env
+.DS_Store
+var/
+qa/screenshots/
+*.log

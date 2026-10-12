@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<%= locals.metaDescription || 'Nextlab temizlik, hijyen, kozmetik ve kişisel bakım ürünleri.' %>">
-    <meta name="theme-color" content="#173f61">
+    <meta name="theme-color" content="#d71920">
     <title><%= locals.title ? `${locals.title} | Nextlab` : 'Nextlab | Temizlik ve Kişisel Bakım Ürünleri' %></title>
     <link rel="canonical" href="<%= locals.canonicalUrl || fullUrl(currentPath) %>">
     <meta property="og:type" content="<%= locals.ogType || 'website' %>">
@@ -12,9 +12,11 @@
     <meta property="og:title" content="<%= locals.title ? `${locals.title} | Nextlab` : 'Nextlab Cosmetic' %>">
     <meta property="og:description" content="<%= locals.metaDescription || 'Nextlab ve Everyday ürünlerini keşfedin.' %>">
     <meta property="og:url" content="<%= fullUrl(currentPath) %>">
-    <meta property="og:image" content="<%= locals.ogImage || fullUrl('assets/images/social-share.svg') %>">
+    <meta property="og:image" content="<%= locals.ogImage || fullUrl('assets/images/verified/nextlab-logo-1200.webp') %>">
     <meta name="twitter:card" content="summary_large_image">
     <link rel="stylesheet" href="<%= asset('css/style.css') %>">
+    <link rel="stylesheet" href="<%= asset('css/professional.css') %>">
+    <% if (page === 'search' || page === '404') { %><meta name="robots" content="noindex,follow"><% } %>
     <script defer src="<%= asset('js/app.js') %>"></script>
     <script type="application/ld+json"><%- JSON.stringify(locals.structuredData || {
       '@context': 'https://schema.org',
@@ -25,11 +27,12 @@
         'https://www.instagram.com/nextlabcosmetics/',
         'https://www.linkedin.com/company/nextlabcosmetic/'
       ]
-    }) %></script>
+    }).replace(/</g, '\\u003c') %></script>
 </head>
 <body>
+<a class="skip-link" href="#main-content">İçeriğe geç</a>
 <%- include('partials/header') %>
-<main><%- content %></main>
+<main id="main-content"><%- content %></main>
 <%- include('partials/footer') %>
 <%- include('partials/chatbot') %>
 </body>

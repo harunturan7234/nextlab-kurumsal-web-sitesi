@@ -1,0 +1,236 @@
+[
+  {
+    "id": 1,
+    "slug": "everyday-bakim-bantlari-rehberi",
+    "legacy_slug": "kore-cilt-bakiminda-cift-asamali-temizlik-ve-cam-cilt-rutini",
+    "title": "Everyday bakım bantları: ürünleri yakından tanıyın",
+    "subtitle": "Burun bandı, temizleyici bant ve hidrokolloid bant arasındaki ürün ayrımını keşfedin.",
+    "category": "Kişisel Bakım",
+    "categorySlug": "kisisel-bakim",
+    "badge": "KİŞİSEL BAKIM",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": "images/verified/everyday-akne-bandi-640.webp",
+    "image_alt": "Everyday hidrokolloid akne bandı 36’lı ambalajı",
+    "featured": true,
+    "excerpt": "Burun bandı, temizleyici bant ve hidrokolloid bant arasındaki ürün ayrımını keşfedin.",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Ürün adını ve ambalaj adedini birlikte kontrol edin.",
+      "Yetişkin burun bandı ile temizleyici burun bandı farklı ürünlerdir.",
+      "Uygulama ayrıntıları için ambalajdaki talimatları izleyin."
+    ],
+    "contentHtml": "<h2>Aynı kategoride, farklı ürünler</h2><p>Everyday ailesinde yetişkin burun bandı 12’li, Nose Patch temizleyici burun bandı 6’lı ve hidrokolloid bant 36’lı seçenekleri bulunur. Bir ürünün görseli veya kullanım talimatı diğerine aktarılmamalıdır.</p><h2>Satın almadan önce</h2><p>Ürün adını, paket içeriğini ve satıcı bilgisini birlikte inceleyin. Hassasiyet veya kişisel uygunluk sorularında ürün talimatı ve sağlık uzmanınızın önerisi esas alınmalıdır.</p>"
+  },
+  {
+    "id": 2,
+    "slug": "profesyonel-temizlik-ekipmanlarini-taniyin",
+    "legacy_slug": "hasar-goren-cilt-bariyerini-onarma-sanati-seramidler-cica-ve-centella",
+    "title": "Profesyonel temizlik ekipmanlarını tanıyın",
+    "subtitle": "Ceymop ürün grupları arasında ihtiyaçlarınıza uygun ekipmanı nasıl bulabilirsiniz?",
+    "category": "Temizlik",
+    "categorySlug": "temizlik",
+    "badge": "TEMİZLİK",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": "images/verified/ceymop-mikrofiber-mop-640.webp",
+    "image_alt": "Ceymop CYP-134 mikrofiber mop",
+    "featured": false,
+    "excerpt": "Ceymop ürün grupları arasında ihtiyaçlarınıza uygun ekipmanı nasıl bulabilirsiniz?",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Mop ve temizlik bezlerini ayrı ürün gruplarında inceleyin.",
+      "Ürün kodu, doğru ekipmanı sormayı kolaylaştırır.",
+      "Boyut ve uyumluluk bilgilerini sipariş öncesi teyit edin."
+    ],
+    "contentHtml": "<h2>İhtiyacı ürün grubuyla eşleştirin</h2><p>Kataloğun temizlik bölümünde Ceymop mikrofiber mop, Mastermop mikrofiber bez ve kat arabası yer alır. Ürünler orijinal marka adları ve üretici ürün kodlarıyla gösterilir.</p><h2>Kurumsal tedarik talebi</h2><p>İhtiyacınız olan ürünün kodunu ve miktarını iletişim formunda paylaşabilirsiniz. Birbirine benzeyen ekipmanlarda boyut, bağlantı tipi ve bakım talimatını üretici bilgileri üzerinden kontrol edin.</p>"
+  },
+  {
+    "id": 3,
+    "slug": "nextlab-pazaryeri-magazalari",
+    "legacy_slug": "yeni-nesil-gunes-korumasi-spf-50-pa-ve-mineral-hibrit-filtre-rehberi",
+    "title": "Nextlab mağazalarına ulaşmanın kolay yolu",
+    "subtitle": "Ürün kataloğundan Trendyol ve Hepsiburada mağazalarımıza geçiş rehberi.",
+    "category": "Alışveriş Rehberi",
+    "categorySlug": "magazalar",
+    "badge": "ALIŞVERİŞ REHBERİ",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": "images/verified/everyday-burun-bandi-640.webp",
+    "image_alt": "Everyday yetişkin burun bandı 12’li",
+    "featured": false,
+    "excerpt": "Ürün kataloğundan Trendyol ve Hepsiburada mağazalarımıza geçiş rehberi.",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Bu sitede sepet ve ödeme işlemi bulunmaz.",
+      "Fiyat ve stok bilgileri pazaryerinde görüntülenir.",
+      "Satıcı adı ile ürün ve paket bilgisini kontrol edin."
+    ],
+    "contentHtml": "<h2>Katalogdan mağazaya</h2><p>İlgilendiğiniz ürünün detay sayfasındaki mağaza bağlantısını kullanın. Doğrudan ürün bağlantısı bulunan kayıtlarda ilgili pazaryeri sayfası açılır; diğerlerinde Nextlab mağazasına yönlendirilirsiniz.</p><h2>Siparişi nerede tamamlarsınız?</h2><p>Satıcı seçimi, ödeme, teslimat ve iade işlemlerini alışveriş yaptığınız pazaryerinde yürütürsünüz. Bu kurumsal site ürünleri tanıtır ve size ilgili satış kanalını gösterir.</p>"
+  },
+  {
+    "id": 4,
+    "slug": "urun-ambalajini-okuma-rehberi",
+    "legacy_slug": "gozenek-ve-siyah-nokta-savasinda-bha-salisilik-asit-ile-niasinamid-uyumu",
+    "title": "Ürün ambalajını okurken nelere bakmalı?",
+    "subtitle": "Ürün seçiminizde ad, paket içeriği ve kullanım bilgisini birlikte değerlendirin.",
+    "category": "Kişisel Bakım",
+    "categorySlug": "kisisel-bakim",
+    "badge": "KİŞİSEL BAKIM",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": "images/verified/everyday-nose-patch-640.webp",
+    "image_alt": "Everyday Nose Patch 6’lı ambalajı",
+    "featured": false,
+    "excerpt": "Ürün seçiminizde ad, paket içeriği ve kullanım bilgisini birlikte değerlendirin.",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Aynı markanın farklı ürünlerini ürün adıyla ayırın.",
+      "Paket adedi ile kullanım bilgisini birlikte inceleyin.",
+      "Güncel ambalaj ve üretici talimatını esas alın."
+    ],
+    "contentHtml": "<h2>Ürün kimliğini kontrol edin</h2><p>Marka, ürün adı ve paket içeriği, doğru ürünü bulmanın ilk adımıdır. Katalogdaki fotoğraflar orijinal ambalajı değiştirmeden gösterilir. Yeni ambalaj sürümleri için mağazadaki güncel görseli de kontrol edebilirsiniz.</p><h2>Talimat ve uyarılar</h2><p>Kullanım süresi, uygulama şekli ve saklama koşulları ürüne göre değişebilir. Genel bir bakım yazısını ambalaj talimatının yerine kullanmayın. Belirsiz bir bilgi için üreticiye veya Nextlab ekibine ulaşın.</p>"
+  },
+  {
+    "id": 5,
+    "slug": "ceymop-kurumsal-tedarik",
+    "legacy_slug": "susuz-kalmis-cilde-derinlemesine-sok-nem-cok-katmanli-5d-hyaluronik-asit",
+    "title": "Ceymop ürünleriyle kurumsal tedarik planı",
+    "subtitle": "Temizlik ekipmanı taleplerinizi ürün kodu ve ihtiyaç miktarıyla netleştirin.",
+    "category": "Temizlik",
+    "categorySlug": "temizlik",
+    "badge": "TEMİZLİK",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": "images/verified/ceymop-kat-arabasi-640.webp",
+    "image_alt": "Ceymop CYP-820 dört kovalı kat arabası",
+    "featured": false,
+    "excerpt": "Temizlik ekipmanı taleplerinizi ürün kodu ve ihtiyaç miktarıyla netleştirin.",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Ürünleri orijinal Ceymop veya Mastermop marka adıyla inceleyin.",
+      "İhtiyaç miktarınızı iletişim talebine ekleyin.",
+      "Güncel tedarik koşullarını ekipten öğrenin."
+    ],
+    "contentHtml": "<h2>Ekipmanı tanıyın</h2><p>CYP-820, çift çöp toplama bölümü ve dört kovasıyla Ceymop kat arabaları grubunda yer alır. Fotoğraftaki düzeni inceleyebilir, çalışma alanınıza uygunluğu hakkında ayrıntılı bilgi isteyebilirsiniz.</p><h2>Talebinizi hazırlayın</h2><p>Ürün kodu, adet ve kullanım alanı bilgisi doğru değerlendirmeye yardımcı olur. Teknik ölçüler, sevk seçenekleri ve bulunabilirlik için kurumsal ekibimizle görüşebilirsiniz.</p>"
+  },
+  {
+    "id": 6,
+    "slug": "nextlab-ortam-kokulari-rehberi",
+    "legacy_slug": "yasam-ve-calisma-alanlarinda-koku-mimarisi-soguk-mikro-difuzyon-teknolojisi",
+    "title": "Nextlab ortam kokuları: koleksiyona bir bakış",
+    "subtitle": "Crystal, Surrender, Costus Homme ve Violet seçeneklerini aynı katalogda inceleyin.",
+    "category": "Ortam Kokulandırma",
+    "categorySlug": "ortam-kokulandirma",
+    "badge": "ORTAM KOKULANDIRMA",
+    "readTime": "2 dk okuma",
+    "publishedAt": "12 Ekim 2026",
+    "isoDate": "2026-10-12",
+    "author": {
+      "name": "Nextlab",
+      "role": "Ürün Rehberi",
+      "initials": "NL"
+    },
+    "image_path": null,
+    "image_alt": "",
+    "featured": false,
+    "excerpt": "Crystal, Surrender, Costus Homme ve Violet seçeneklerini aynı katalogda inceleyin.",
+    "keywords": [
+      {
+        "label": "Ürünler",
+        "url": "/urunler"
+      },
+      {
+        "label": "Sıkça Sorulan Sorular",
+        "url": "/sss"
+      }
+    ],
+    "highlightQuote": "Doğru ürün bilgisi, doğru seçimle başlar.",
+    "summaryPoints": [
+      "Kokuların adını ve 350 ml hacim bilgisini kontrol edin.",
+      "Cihaz uyumluluğunu ürün talimatından öğrenin.",
+      "Güncel ürün ve stok bilgisini mağazadan takip edin."
+    ],
+    "contentHtml": "<h2>Ortam kokusu koleksiyonu</h2><p>Crystal, Surrender, Costus Homme ve Violet seçenekleri farklı koku tanımlarıyla mağaza kataloğunda yer alır. Ürün sayfalarından temel bilgileri okuyabilir, Nextlab mağazasına geçebilirsiniz.</p><h2>Cihazla kullanım</h2><p>Bir ortam kokusunu her cihazla uyumlu kabul etmeyin. Kurulum, dolum ve bakım işlemlerinde cihaz kılavuzunu esas alın. Ortam kokuları temizlik kimyasalı veya dezenfektan olarak değerlendirilmemelidir.</p>"
+  }
+]

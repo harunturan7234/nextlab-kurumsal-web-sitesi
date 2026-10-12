@@ -1,0 +1,3 @@
+<?php /* Generated from views/pages/catalog.ejs; retain original layout. */ ?>
+<section class="page-hero"><div class="container"><h1>Ürün Kataloğu</h1><?= view('components/breadcrumb', ['items' => [['label' => 'Katalog']]], get_defined_vars()) ?></div></section>
+<section class="section"><div class="container"><div class="section-heading"><span>KATEGORİLER</span><h2>Nextlab ürün ailelerini inceleyin</h2><p>Dijital katalog dosyası ileride bu alana eklenebilir. Şimdilik güncel ürün gruplarına aşağıdan ulaşabilirsiniz.</p></div><div class="category-grid"><?php foreach ($categories as $category): ?><?= view('components/category-card', ['category' => $category], get_defined_vars()) ?><?php endforeach; ?></div></div></section>

@@ -1,4 +1,4 @@
 <article class="category-card">
-    <a class="category-image" href="<%= url('kategori/' + category.slug) %>"><img src="<%= asset(category.image_path) %>" alt="<%= category.name %>" width="700" height="520"></a>
-    <div><h3><a href="<%= url('kategori/' + category.slug) %>"><%= category.name %></a></h3><p><%= category.description || '' %></p></div>
+    <a class="category-image" href="<%= url('kategori/' + category.slug) %>"><%- imageTag(category.image_path, category.name, { sizes: '(max-width: 680px) 92vw, 46vw' }) %><span class="category-image-label"><%= category.id === 1 ? 'CEYMOP / NEXTLAB' : 'EVERYDAY' %></span></a>
+    <div><h3><a href="<%= url('kategori/' + category.slug) %>"><%= category.name %> <span aria-hidden="true">↗</span></a></h3><p><%= category.description %></p></div>
 </article>

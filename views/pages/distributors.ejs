@@ -1,7 +1,7 @@
 <section class="page-hero">
     <div class="container">
-        <h1>Distribütörlükler</h1>
-        <%- include('../components/breadcrumb', { items: [{ label: 'Distribütörlükler' }] }) %>
+        <h1>Markalar ve İş Birlikleri</h1>
+        <%- include('../components/breadcrumb', { items: [{ label: 'Markalar ve İş Birlikleri' }] }) %>
     </div>
 </section>
 
@@ -9,44 +9,13 @@
     <div class="container">
         <div class="distributors-header-row">
             <div>
-                <span class="eyebrow dark">KÜRESEL MARKA PORTFÖYÜ</span>
-                <h2>Yetkili Distribütörü Olduğumuz Kozmetik Markaları</h2>
-                <p>Nextlab portföyünde yer alan 15 küresel dermokozmetik ve cilt bakım markası; orijinal ürün garantisi, soğuk zincir/güvenli depolama ve doğrudan yetkili temsilcilik standartlarıyla sunulmaktadır.</p>
+                <span class="eyebrow dark">MARKA REHBERİ</span>
+                <h2>Markalar ve Kurumsal Tedarik</h2>
+                <p>Ceymop temizlik ekipmanlarını kataloğumuzdan inceleyebilirsiniz. Diğer markalar bilgi amaçlı listelenir; bu liste yetkili distribütörlük beyanı değildir. Güncel tedarik ve iş birliği bilgisi için bize ulaşın.</p>
             </div>
             <div class="distributors-stat-pill">
-                <strong>15</strong>
-                <span>Seçkin Küresel Marka</span>
-            </div>
-        </div>
-
-        <div class="distributor-features-bar">
-            <div class="feat-item">
-                <span class="feat-icon">✓</span>
-                <div>
-                    <b>%100 Orijinal Ürün</b>
-                    <small>Üreticiden doğrudan ithalat</small>
-                </div>
-            </div>
-            <div class="feat-item">
-                <span class="feat-icon">✓</span>
-                <div>
-                    <b>Sağlık Bakanlığı & ÜTS Kaydı</b>
-                    <small>Tam mevzuat uyumu</small>
-                </div>
-            </div>
-            <div class="feat-item">
-                <span class="feat-icon">✓</span>
-                <div>
-                    <b>Eczane & Seçkin Perakende</b>
-                    <small>Geniş yetkili satış ağı</small>
-                </div>
-            </div>
-            <div class="feat-item">
-                <span class="feat-icon">✓</span>
-                <div>
-                    <b>Klinik ve Dermatolojik Test</b>
-                    <small>Kanıtlanmış etkinlik</small>
-                </div>
+                <strong><%= brands.length %></strong>
+                <span>Marka Rehberi</span>
             </div>
         </div>
 
@@ -90,7 +59,7 @@
             <div class="partner-copy">
                 <span class="eyebrow dark" style="color: #fca5a5;">B2B & BAYİLİK</span>
                 <h3>Distribütörlük ve Toptan Tedarik Talepleri</h3>
-                <p>Eczane, klinik, perakende zinciri veya e-ticaret kanalınız için temsilcisi olduğumuz markaların yetkili satıcısı olmak istiyorsanız kurumsal satış departmanımızla iletişime geçebilirsiniz.</p>
+                <p>Ürün grubu ve ihtiyaç miktarınızı paylaşarak güncel tedarik seçeneklerini kurumsal ekibimizden öğrenebilirsiniz.</p>
             </div>
             <div class="partner-action">
                 <a class="button light" href="<%= url('iletisim') %>">Bayilik Başvurusu Yap</a>
