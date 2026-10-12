@@ -162,16 +162,24 @@
         </div>
     </div>
 </section>
-<?php $nextlabMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode('NextLab Sağlık ve Kozmetik, Üniversite Sokak No: 7/B Işık Plaza, Altunizade, Üsküdar/İstanbul'); ?>
+<?php
+$nextlabAddress = 'Üniversite Sokak No: 7/B, Işık Plaza, Altunizade, Üsküdar / İstanbul';
+$nextlabMapQ    = 'NextLab Sağlık ve Kozmetik, Altunizade, Üsküdar, İstanbul';
+$nextlabMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($nextlabMapQ);
+$nextlabMapEmbed = 'https://www.openstreetmap.org/export/embed.html?bbox=29.0423,41.0184,29.0543,41.0254&layer=mapnik&marker=41.0219,29.0483';
+?>
 <section class="location-section" aria-label="Nextlab konumu">
     <div class="container">
-        <div class="location-heading">
-            <div><span class="eyebrow dark">İSTANBUL • ÜSKÜDAR</span><h2>İhtiyaçlarınızı birlikte konuşalım.</h2><p>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</p></div>
-            <a class="outline-button" href="<?= e($nextlabMapsUrl) ?>" target="_blank" rel="noopener noreferrer">Haritada Aç ↗</a>
+        <div class="location-block">
+            <div class="location-title">
+                <svg class="location-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <h2>Konumumuz</h2>
+            </div>
+            <p class="location-address"><?= e($nextlabAddress) ?></p>
+            <a class="location-map" href="<?= e($nextlabMapsUrl) ?>" target="_blank" rel="noopener noreferrer" aria-label="Google Haritalar'da konumumuzu açın">
+                <iframe title="NextLab konum haritası" src="<?= e($nextlabMapEmbed) ?>" loading="lazy" referrerpolicy="no-referrer-when-downgrade" tabindex="-1"></iframe>
+                <span class="location-map-badge">Google Haritalar'da Aç <svg class="location-ext" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg></span>
+            </a>
         </div>
     </div>
-    <a class="map-link" href="<?= e($nextlabMapsUrl) ?>" target="_blank" rel="noopener noreferrer" aria-label="NextLab konumunu Google Haritalar'da aç">
-        <iframe title="NextLab Sağlık ve Kozmetik konumu" src="https://www.openstreetmap.org/export/embed.html?bbox=29.0423%2C41.0184%2C29.0543%2C41.0254&amp;layer=mapnik&amp;marker=41.0219%2C29.0483" width="100%" height="300" loading="lazy" tabindex="-1"></iframe>
-        <span>Haritada Aç ↗</span>
-    </a>
 </section>

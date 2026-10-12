@@ -149,3 +149,20 @@ button, a, input, summary { -webkit-tap-highlight-color: transparent; }
   .blog-editorial-cover strong { font-size: 21px; }
 }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms!important; transition-duration: .01ms!important; } }
+
+/* Konum bölümü — referans tasarım (ortalı başlık + yuvarlak harita kartı) */
+.location-block { max-width: 1000px; margin: 0 auto; padding: 8px 0 4px; }
+.location-title { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px; }
+.location-title h2 { font-size: clamp(20px, 2.4vw, 24px); font-weight: 900; letter-spacing: -0.02em; color: #0f172a; margin: 0; }
+.location-pin { width: 22px; height: 22px; color: #2563eb; flex-shrink: 0; }
+.location-address { text-align: center; font-size: 14px; color: #475569; max-width: 40rem; margin: 0 auto 18px; line-height: 1.6; }
+.location-map { position: relative; display: block; height: 300px; width: 100%; overflow: hidden; border-radius: 18px; border: 1px solid #e2e8f0; box-shadow: 0 6px 22px -6px rgba(15, 23, 42, 0.18); background: #eef1f4; }
+.location-map iframe { pointer-events: none; height: 100%; width: 100%; border: 0; display: block; }
+.location-map-badge { position: absolute; bottom: 14px; right: 14px; display: inline-flex; align-items: center; gap: 6px; border-radius: 10px; background: rgba(255, 255, 255, 0.96); padding: 9px 14px; font-size: 12.5px; font-weight: 700; color: #0f172a; box-shadow: 0 6px 18px rgba(15, 23, 42, 0.2); border: 1px solid #e2e8f0; transition: color .18s ease; }
+.location-map:hover .location-map-badge { color: #2563eb; }
+.location-map:focus-visible { outline: 2px solid #2563eb; outline-offset: 2px; }
+.location-ext { width: 15px; height: 15px; }
+@media (max-width: 680px) {
+  .location-map { height: 230px; border-radius: 14px; }
+  .location-map-badge { bottom: 10px; right: 10px; padding: 7px 11px; font-size: 11.5px; }
+}
