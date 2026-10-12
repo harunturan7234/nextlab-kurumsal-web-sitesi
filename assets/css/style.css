@@ -2820,3 +2820,16 @@
     padding-bottom: calc(10px + env(safe-area-inset-bottom, 0px));
 }
 
+
+/* Marka kutuları: düz renk yerine görsel arka plan (UI/UX iyileştirme) */
+.brand-tile{position:relative;min-height:300px;border-radius:18px;overflow:hidden;isolation:isolate;box-shadow:0 12px 32px -10px rgba(15,23,42,.3)}
+.brand-tile.everyday,.brand-tile.nextlab{background:transparent}
+.brand-tile::before{content:"";position:absolute;inset:0;z-index:-2;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.2,.6,.2,1)}
+.brand-tile::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,12,22,.12),rgba(8,12,22,.52) 55%,rgba(8,12,22,.85))}
+.brand-tile:hover::before{transform:scale(1.06)}
+.brand-tile.everyday::before{background-image:url(../images/brand/everyday-bg.jpg)}
+.brand-tile.nextlab::before{background-image:url(../images/brand/nextlab-bg.jpg)}
+.brand-tile strong{text-shadow:0 2px 14px rgba(0,0,0,.45)}
+.brand-tile span{opacity:.95;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.brand-tile a{color:#fff;text-shadow:0 1px 10px rgba(0,0,0,.5)}
+.brand-tile a:hover{text-decoration:underline}

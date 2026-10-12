@@ -131,4 +131,4 @@
 
   </div>
 </div>
-<script defer src="<?= e(asset('js/chatbot.js')) ?>"></script>
+<script defer src="<?= e(assetV('js/chatbot.js')) ?>"></script>

@@ -18,6 +18,7 @@ function e(mixed $value): string {
 }
 function url(?string $path = ''): string { return '/' . ltrim($path ?? '', '/'); }
 function asset(?string $path = ''): string { return '/assets/' . ltrim($path ?? '', '/'); }
+function assetV(string $path): string { $f = dirname(__DIR__) . '/assets/' . ltrim($path, '/'); return asset($path) . '?v=' . (@filemtime($f) ?: '1'); }
 function fullUrl(?string $path = ''): string { global $appUrl; return $appUrl . url($path); }
 function mediaSrcset(?string $source): string {
     global $media;
