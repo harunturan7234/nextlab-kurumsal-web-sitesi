@@ -151,7 +151,8 @@ button, a, input, summary { -webkit-tap-highlight-color: transparent; }
 @media(prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *,*::before,*::after { animation-duration: .01ms!important; transition-duration: .01ms!important; } }
 
 /* Konum bölümü — referans tasarım (ortalı başlık + yuvarlak harita kartı) */
-.location-block { max-width: 1000px; margin: 0 auto; padding: 8px 0 4px; }
+.location-block { max-width: 1200px; margin: 0 auto; padding: 8px 0 4px; }
+.location-section > .container { max-width: 1320px; }
 .location-title { display: flex; align-items: center; justify-content: center; gap: 8px; margin-bottom: 12px; }
 .location-title h2 { font-size: clamp(20px, 2.4vw, 24px); font-weight: 900; letter-spacing: -0.02em; color: #0f172a; margin: 0; }
 .location-pin { width: 22px; height: 22px; color: #2563eb; flex-shrink: 0; }
