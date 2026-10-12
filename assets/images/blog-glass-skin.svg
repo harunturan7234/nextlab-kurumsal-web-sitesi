@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fdfbf9"/>
+      <stop offset="40%" stop-color="#f5efe8"/>
+      <stop offset="100%" stop-color="#e8ded1"/>
+    </linearGradient>
+    <radialGradient id="glow1" cx="60%" cy="40%" r="55%">
+      <stop offset="0%" stop-color="#fff8f2" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#eedccd" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#e8ded1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="glass-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.75"/>
+      <stop offset="30%" stop-color="#ffffff" stop-opacity="0.4"/>
+      <stop offset="70%" stop-color="#eeddcd" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#cbb39e" stop-opacity="0.8"/>
+    </linearGradient>
+    <linearGradient id="accent-gold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c9975b"/>
+      <stop offset="100%" stop-color="#9d733e"/>
+    </linearGradient>
+    <filter id="shadow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="18" stdDeviation="25" flood-color="#553a22" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="675" fill="url(#bg-grad1)"/>
+  <rect width="1200" height="675" fill="url(#glow1)"/>
+
+  <!-- Aesthetic geometric / organic background lines -->
+  <circle cx="850" cy="340" r="260" fill="none" stroke="#e0cdbe" stroke-width="1.5" stroke-dasharray="4 6"/>
+  <circle cx="850" cy="340" r="190" fill="#fff" fill-opacity="0.25"/>
+
+  <!-- Botanical Rice & Leaf Accent -->
+  <g transform="translate(680, 160)" opacity="0.35" stroke="#b08d6c" stroke-width="2" fill="none">
+    <path d="M 120,380 C 120,240 240,140 320,80 C 260,180 230,280 200,380"/>
+    <path d="M 160,280 C 190,250 250,230 280,240 C 250,270 210,290 170,295"/>
+    <path d="M 180,210 C 210,180 270,160 300,170 C 270,200 230,220 190,225"/>
+  </g>
+
+  <!-- Editorial Text Left Side -->
+  <g transform="translate(100, 140)">
+    <!-- Category Badge -->
+    <rect x="0" y="0" width="190" height="36" rx="18" fill="#173f61"/>
+    <text x="95" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#ffffff" text-anchor="middle">K-BEAUTY REHBERİ</text>
+
+    <!-- Reading time & date -->
+    <text x="210" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#716b64">5 DK OKUMA • GÜNCEL REHBER</text>
+
+    <!-- Big Headline -->
+    <text x="0" y="95" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" fill="#173f61" line-height="1.2">
+      <tspan x="0" dy="0">Çift Aşamalı Temizlik</tspan>
+      <tspan x="0" dy="54">&amp; Cam Cilt (Glass Skin)</tspan>
+    </text>
+
+    <!-- Tagline -->
+    <text x="0" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#58524a" width="480">
+      <tspan x="0" dy="0">Hassas gözenek arındırma ve nem dengesiyle</tspan>
+      <tspan x="0" dy="28">Kore cilt bakımının en ışıltılı adımı.</tspan>
+    </text>
+
+    <!-- Pill tags preview -->
+    <g transform="translate(0, 290)">
+      <rect x="0" y="0" width="145" height="32" rx="16" fill="#ffffff" stroke="#e0cdbe" stroke-width="1.5"/>
+      <text x="72" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#173f61" text-anchor="middle">Beauty of Joseon</text>
+
+      <rect x="155" y="0" width="80" height="32" rx="16" fill="#ffffff" stroke="#e0cdbe" stroke-width="1.5"/>
+      <text x="195" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#173f61" text-anchor="middle">Anua</text>
+
+      <rect x="245" y="0" width="135" height="32" rx="16" fill="#ffffff" stroke="#e0cdbe" stroke-width="1.5"/>
+      <text x="312" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#173f61" text-anchor="middle">Yağ &amp; Su Bazlı</text>
+    </g>
+  </g>
+
+  <!-- Illustration on Right: Glass Cleansing Oil & Foam Pipette Bottle -->
+  <g transform="translate(800, 160)" filter="url(#shadow1)">
+    <!-- Bottle 1: Cleansing Oil Glass Bottle -->
+    <rect x="-80" y="100" width="130" height="260" rx="28" fill="url(#glass-bottle)" stroke="#ffffff" stroke-width="2"/>
+    <!-- Liquid level -->
+    <rect x="-70" y="160" width="110" height="190" rx="18" fill="#e9c898" fill-opacity="0.35"/>
+    <text x="-15" y="240" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="700" letter-spacing="3" fill="#87582e" text-anchor="middle">CLEANSING OIL</text>
+    <text x="-15" y="260" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" letter-spacing="1" fill="#87582e" text-anchor="middle">PHASE 01 • RICE WATER</text>
+    <rect x="-35" y="65" width="40" height="35" rx="4" fill="url(#accent-gold)"/>
+    <rect x="-20" y="30" width="10" height="35" rx="2" fill="#ffffff"/>
+    <rect x="-40" y="20" width="50" height="15" rx="6" fill="#173f61"/>
+
+    <!-- Bottle 2: Dropper Glass Bottle (Serum / Ampoule) -->
+    <g transform="translate(80, 50)">
+      <rect x="0" y="80" width="100" height="230" rx="24" fill="url(#glass-bottle)" stroke="#ffffff" stroke-width="2"/>
+      <rect x="10" y="130" width="80" height="170" rx="16" fill="#bfe3df" fill-opacity="0.35"/>
+      <text x="50" y="210" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#173f61" text-anchor="middle">GENTLE FOAM</text>
+      <text x="50" y="228" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" letter-spacing="1" fill="#173f61" text-anchor="middle">PHASE 02 • LOW pH</text>
+      <!-- Cap & Pipette bulb -->
+      <rect x="25" y="50" width="50" height="30" rx="4" fill="#ffffff" stroke="#e0cdbe" stroke-width="1"/>
+      <path d="M 35,50 C 35,25 65,25 65,50 Z" fill="#173f61"/>
+    </g>
+
+    <!-- Water Ripples & Droplets -->
+    <ellipse cx="20" cy="380" rx="160" ry="24" fill="#ffffff" fill-opacity="0.5"/>
+    <circle cx="-100" cy="180" r="8" fill="#ffffff" fill-opacity="0.8"/>
+    <circle cx="160" cy="140" r="12" fill="#ffffff" fill-opacity="0.7"/>
+    <circle cx="180" cy="320" r="6" fill="#c9975b" fill-opacity="0.6"/>
+  </g>
+</svg>

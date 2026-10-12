@@ -1,0 +1,258 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <!-- Light Studio Daylight Background Gradients -->
+    <linearGradient id="bg-light-clean" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f5fafd" />
+      <stop offset="75%" stop-color="#eaf4f9" />
+      <stop offset="100%" stop-color="#dcedf5" />
+    </linearGradient>
+
+    <radialGradient id="sunlight-glow" cx="85%" cy="20%" r="65%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#e3f5fc" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+
+    <linearGradient id="marble-pedestal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="35%" stop-color="#ffffff" />
+      <stop offset="70%" stop-color="#eef2f6" />
+      <stop offset="100%" stop-color="#e2e8f0" />
+    </linearGradient>
+
+    <linearGradient id="pedestal-side" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <!-- Translucent Spray Bottle Gradients -->
+    <linearGradient id="spray-bottle-body" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4effa" stop-opacity="0.85" />
+      <stop offset="15%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="45%" stop-color="#ebf7fc" stop-opacity="0.4" />
+      <stop offset="75%" stop-color="#ffffff" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#9dd5ed" stop-opacity="0.9" />
+    </linearGradient>
+
+    <linearGradient id="spray-liquid" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#bceaff" stop-opacity="0.65" />
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.85" />
+    </linearGradient>
+
+    <linearGradient id="trigger-white" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f1f5f9" />
+      <stop offset="80%" stop-color="#cbd5e1" />
+      <stop offset="100%" stop-color="#94a3b8" />
+    </linearGradient>
+
+    <linearGradient id="trigger-accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+
+    <!-- Pump Bottle Gradients -->
+    <linearGradient id="pump-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="60%" stop-color="#f1f5f9" />
+      <stop offset="90%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+
+    <linearGradient id="chrome-dispenser" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#94a3b8" />
+      <stop offset="25%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#cbd5e1" />
+      <stop offset="75%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#64748b" />
+    </linearGradient>
+
+    <!-- Natural Soft Shadow Filters -->
+    <filter id="soft-shadow" x="-30%" y="-30%" width="160%" height="180%">
+      <feGaussianBlur stdDeviation="24" result="blur" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.1  0 0 0 0 0.2  0 0 0 0 0.3  0 0 0 0.18 0"/>
+    </filter>
+
+    <filter id="contact-shadow" x="-20%" y="-20%" width="140%" height="160%">
+      <feGaussianBlur stdDeviation="8" result="blur" />
+      <feColorMatrix type="matrix" values="0 0 0 0 0.08  0 0 0 0 0.15  0 0 0 0 0.22  0 0 0 0.28 0"/>
+    </filter>
+
+    <filter id="droplet-shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="1" dy="3" stdDeviation="2" flood-color="#0284c7" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- 1. Light Studio Background -->
+  <rect width="1600" height="700" fill="url(#bg-light-clean)" />
+  <rect width="1600" height="700" fill="url(#sunlight-glow)" />
+
+  <!-- Soft architectural morning window shadow across the wall -->
+  <g opacity="0.06" fill="#0f172a">
+    <polygon points="900,0 1200,0 1480,700 1180,700" />
+    <polygon points="1250,0 1550,0 1600,700 1530,700" />
+    <polygon points="800,260 1600,260 1600,340 800,340" />
+  </g>
+
+  <!-- Clean floor plane reflection line -->
+  <line x1="600" y1="560" x2="1600" y2="560" stroke="#cbd5e1" stroke-width="1" opacity="0.4" />
+
+  <!-- 2. Architectural Studio Pedestals (Light White Terrazzo / Marble) -->
+  <!-- Main Pedestal Ground Shadow -->
+  <ellipse cx="1220" cy="570" rx="340" ry="45" fill="#000" filter="url(#soft-shadow)" opacity="0.6" />
+
+  <!-- Secondary lower pedestal (Right) -->
+  <g transform="translate(1320, 480)">
+    <ellipse cx="120" cy="80" rx="150" ry="32" fill="#000" filter="url(#contact-shadow)" opacity="0.4" />
+    <path d="M-10,30 L-10,80 C-10,95 250,95 250,80 L250,30 Z" fill="url(#pedestal-side)" />
+    <ellipse cx="120" cy="30" rx="130" ry="28" fill="url(#marble-pedestal)" stroke="#e2e8f0" stroke-width="1.5" />
+  </g>
+
+  <!-- Main Central Pedestal -->
+  <g transform="translate(1010, 430)">
+    <!-- Base front drop -->
+    <path d="M0,60 L0,125 C0,150 420,150 420,125 L420,60 Z" fill="url(#pedestal-side)" />
+    <!-- Top elliptical surface -->
+    <ellipse cx="210" cy="60" rx="210" ry="46" fill="url(#marble-pedestal)" stroke="#e2e8f0" stroke-width="2" />
+    <!-- Fine luxury bevel highlight -->
+    <ellipse cx="210" cy="59" rx="208" ry="44" fill="none" stroke="#ffffff" stroke-width="1.5" />
+    <!-- Polished reflection gloss -->
+    <ellipse cx="170" cy="55" rx="140" ry="22" fill="#ffffff" opacity="0.45" />
+  </g>
+
+  <!-- 3. REALISTIC PRODUCT COMPOSITION -->
+
+  <!-- PRODUCT B: Nextlab 500 ml Pompalı Hijyen Solüsyonu (Left side of pedestal) -->
+  <g transform="translate(1070, 210)">
+    <!-- Bottle Drop Shadow -->
+    <ellipse cx="55" cy="275" rx="55" ry="16" fill="#000" filter="url(#contact-shadow)" opacity="0.4" />
+
+    <!-- Bottle Body (Cylindrical pump dispenser) -->
+    <rect x="10" y="80" width="90" height="190" rx="24" fill="url(#pump-bottle)" stroke="#e2e8f0" stroke-width="1" />
+    <!-- Gloss reflection strip -->
+    <rect x="22" y="86" width="14" height="178" rx="7" fill="#ffffff" opacity="0.75" />
+    <rect x="82" y="86" width="6" height="178" rx="3" fill="#ffffff" opacity="0.4" />
+
+    <!-- Label with realistic typography -->
+    <rect x="14" y="115" width="82" height="110" rx="4" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+    <rect x="24" y="125" width="28" height="4" fill="#d71920" rx="2" />
+    <text x="24" y="145" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="11" font-weight="900" fill="#0f172a" letter-spacing="1">NEXTLAB</text>
+    <text x="24" y="157" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="7" font-weight="700" fill="#0284c7" letter-spacing="0.5">HYGIENE SYSTEM</text>
+    <line x1="24" y1="164" x2="86" y2="164" stroke="#e2e8f0" stroke-width="1" />
+    <text x="24" y="176" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="7" font-weight="600" fill="#475569">DEEP CLEAN WASH</text>
+    <text x="24" y="186" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="6" fill="#94a3b8">Bakteri &amp; Hijyen Bariyeri</text>
+    <text x="24" y="212" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="8" font-weight="800" fill="#0f172a">500 ml e</text>
+
+    <!-- Chrome Collar & Dispenser Neck -->
+    <rect x="42" y="62" width="26" height="18" rx="3" fill="url(#chrome-dispenser)" />
+    <rect x="49" y="44" width="12" height="18" fill="url(#chrome-dispenser)" />
+
+    <!-- Chrome Pump Head -->
+    <path d="M35,32 L75,32 C78,32 80,35 78,38 L72,46 L38,46 C34,46 32,42 33,38 Z" fill="url(#chrome-dispenser)" />
+    <!-- Pump Nozzle Spout -->
+    <path d="M35,34 C25,35 15,38 8,46 C6,48 8,50 11,49 C18,45 27,42 35,40 Z" fill="url(#chrome-dispenser)" />
+  </g>
+
+  <!-- PRODUCT A: Nextlab 750 ml Profesyonel Hijyen & Yüzey Temizleme Spreyi (Center Hero) -->
+  <g transform="translate(1210, 120)">
+    <!-- Main Bottle Shadow -->
+    <ellipse cx="80" cy="365" rx="75" ry="22" fill="#000" filter="url(#contact-shadow)" opacity="0.45" />
+
+    <!-- Transparent Ergonomic Bottle Body -->
+    <path d="M50,110 C50,110 30,140 25,180 C20,220 28,245 20,290 C12,340 25,355 45,360 L115,360 C135,355 148,340 140,290 C132,245 140,220 135,180 C130,140 110,110 110,110 Z" fill="url(#spray-bottle-body)" stroke="#b9e6f7" stroke-width="1.5" />
+
+    <!-- Liquid inside bottle -->
+    <path d="M22,230 C25,230 45,226 80,226 C115,226 135,230 138,230 C132,265 140,285 135,320 C130,352 118,358 112,358 L48,358 C42,358 30,352 25,320 C20,285 28,265 22,230 Z" fill="url(#spray-liquid)" />
+    <!-- Liquid Meniscus Highlight -->
+    <ellipse cx="80" cy="228" rx="58" ry="7" fill="#ffffff" opacity="0.65" />
+
+    <!-- Internal dip tube -->
+    <path d="M78,90 L78,250 C78,290 85,335 72,354" stroke="#ffffff" stroke-width="4" stroke-opacity="0.8" fill="none" stroke-linecap="round" />
+
+    <!-- Realistic Glass Highlights and reflections -->
+    <path d="M34,145 C30,175 35,210 32,250 C28,300 36,340 45,348" stroke="#ffffff" stroke-width="5" stroke-linecap="round" fill="none" opacity="0.85" />
+    <path d="M126,145 C130,175 125,210 128,250 C132,300 124,340 115,348" stroke="#ffffff" stroke-width="3" stroke-linecap="round" fill="none" opacity="0.6" />
+
+    <!-- Premium Printed Silk Label on Bottle -->
+    <g transform="translate(42, 230)">
+      <rect x="0" y="0" width="76" height="105" rx="5" fill="#ffffff" fill-opacity="0.94" stroke="#e0f2fe" stroke-width="1" />
+      <!-- Nextlab Red Brand Accent -->
+      <rect x="10" y="10" width="16" height="3.5" rx="1.5" fill="#d71920" />
+      <text x="10" y="27" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="11" font-weight="900" fill="#0f172a" letter-spacing="1">NEXTLAB</text>
+      <text x="10" y="38" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="6.5" font-weight="800" fill="#0284c7" letter-spacing="0.5">LABORATORY FORMULA</text>
+      <line x1="10" y1="44" x2="66" y2="44" stroke="#e2e8f0" stroke-width="1" />
+      <text x="10" y="55" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="7.5" font-weight="700" fill="#0f172a">SURFACE &amp; HYGIENE</text>
+      <text x="10" y="65" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="6" font-weight="500" fill="#64748b">Aktif Hijyen Kalkanı</text>
+      <text x="10" y="74" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="5.5" font-weight="500" fill="#64748b">İz Bırakmayan Ferahlık</text>
+      <!-- Batch & Volume info -->
+      <rect x="10" y="84" width="56" height="12" rx="2" fill="#f0f9ff" />
+      <text x="14" y="93" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="7" font-weight="800" fill="#0369a1">750 ml e</text>
+    </g>
+
+    <!-- Spray Bottle Collar & Ergonomic Trigger Mechanism -->
+    <rect x="65" y="86" width="30" height="24" rx="4" fill="url(#trigger-white)" stroke="#cbd5e1" stroke-width="1" />
+    <!-- Trigger Body Housing -->
+    <path d="M50,42 L110,42 C118,42 122,48 120,56 L115,86 L45,86 L45,55 C45,46 47,42 50,42 Z" fill="url(#trigger-white)" stroke="#cbd5e1" stroke-width="1" />
+    <!-- Trigger Lever (Blue Accent) -->
+    <path d="M45,52 C35,62 30,85 34,105 C36,110 40,110 42,106 C46,95 48,75 52,62 Z" fill="url(#trigger-accent)" />
+    <!-- Nozzle (Front Left) -->
+    <path d="M45,46 L26,48 C24,48 22,51 22,54 L22,60 C22,63 24,65 26,65 L45,67 Z" fill="url(#trigger-accent)" />
+    <circle cx="22" cy="57" r="3" fill="#ffffff" />
+    <!-- Top Cap Ridge -->
+    <rect x="58" y="38" width="50" height="6" rx="2" fill="#e2e8f0" />
+  </g>
+
+  <!-- 4. Fresh Water Caustics, Dew Droplets & Botanical Touch on Podium -->
+  <!-- Water Splash / Ripple on marble surface -->
+  <g transform="translate(1180, 480)" opacity="0.75">
+    <ellipse cx="60" cy="18" rx="75" ry="14" fill="none" stroke="#38bdf8" stroke-width="1.5" opacity="0.6" />
+    <ellipse cx="60" cy="18" rx="45" ry="8" fill="none" stroke="#bae6fd" stroke-width="1.5" opacity="0.8" />
+  </g>
+
+  <!-- Realistic Crystalline Water Droplets on Pedestal -->
+  <g filter="url(#droplet-shadow)">
+    <ellipse cx="1140" cy="485" rx="8" ry="4.5" fill="#38bdf8" fill-opacity="0.4" stroke="#ffffff" stroke-width="1.2" />
+    <ellipse cx="1138" cy="484" rx="2.5" ry="1.2" fill="#ffffff" />
+
+    <ellipse cx="1160" cy="492" rx="12" ry="6" fill="#38bdf8" fill-opacity="0.35" stroke="#ffffff" stroke-width="1.5" />
+    <ellipse cx="1157" cy="490" rx="4" ry="2" fill="#ffffff" />
+
+    <ellipse cx="1360" cy="488" rx="10" ry="5" fill="#38bdf8" fill-opacity="0.35" stroke="#ffffff" stroke-width="1.2" />
+    <ellipse cx="1358" cy="486" rx="3" ry="1.5" fill="#ffffff" />
+
+    <ellipse cx="1385" cy="495" rx="6" ry="3.5" fill="#38bdf8" fill-opacity="0.4" stroke="#ffffff" stroke-width="1" />
+  </g>
+
+  <!-- Fresh Botanical Sprig (Clean Eucalyptus / Mint leaf on stone) -->
+  <g transform="translate(1410, 470) rotate(-15)">
+    <!-- Leaf shadow -->
+    <path d="M0,10 C25,-5 60,-5 80,10 C60,25 25,25 0,10 Z" fill="#000" filter="url(#contact-shadow)" opacity="0.35" />
+    <!-- Stem -->
+    <path d="M-15,12 Q35,6 95,8" stroke="#15803d" stroke-width="2.5" fill="none" stroke-linecap="round" />
+    <!-- Leaf 1 -->
+    <path d="M10,8 C25,-12 55,-10 65,8 C50,15 25,18 10,8 Z" fill="#22c55e" stroke="#16a34a" stroke-width="1" />
+    <path d="M12,8 Q40,-2 62,8" stroke="#86efac" stroke-width="1" fill="none" />
+    <!-- Leaf 2 -->
+    <path d="M35,7 C55,25 80,22 88,6 C75,-2 50,0 35,7 Z" fill="#16a34a" stroke="#15803d" stroke-width="1" />
+  </g>
+
+  <!-- Floating Quality / Validation Micro-Badge Chips -->
+  <g transform="translate(1390, 240)">
+    <rect x="0" y="0" width="165" height="42" rx="21" fill="#ffffff" filter="url(#soft-shadow)" stroke="#e0f2fe" stroke-width="1.5" />
+    <circle cx="22" cy="21" r="13" fill="#0284c7" />
+    <path d="M16,21 L20,25 L28,17" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round" />
+    <text x="44" y="18" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="9" font-weight="800" fill="#0f172a">LABORATUVAR ONAYLI</text>
+    <text x="44" y="29" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="8" font-weight="600" fill="#0284c7">Maksimum Yüzey Hijyeni</text>
+  </g>
+
+  <g transform="translate(980, 360)">
+    <rect x="0" y="0" width="145" height="38" rx="19" fill="#ffffff" filter="url(#soft-shadow)" stroke="#e2e8f0" stroke-width="1.5" />
+    <circle cx="20" cy="19" r="11" fill="#d71920" />
+    <text x="16" y="23" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="11" font-weight="900" fill="#ffffff">✓</text>
+    <text x="38" y="17" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="8.5" font-weight="800" fill="#0f172a">DOĞRULANMIŞ FORMÜL</text>
+    <text x="38" y="27" font-family="-apple-system, BlinkMacSystemFont, Arial, sans-serif" font-size="7.5" font-weight="600" fill="#64748b">Güvenli Ev &amp; Ofis Bakımı</text>
+  </g>
+</svg>

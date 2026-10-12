@@ -1,0 +1,100 @@
+<section class="page-hero">
+    <div class="container">
+        <h1>Distribütörlükler</h1>
+        <%- include('../components/breadcrumb', { items: [{ label: 'Distribütörlükler' }] }) %>
+    </div>
+</section>
+
+<section class="section distributors-page">
+    <div class="container">
+        <div class="distributors-header-row">
+            <div>
+                <span class="eyebrow dark">KÜRESEL MARKA PORTFÖYÜ</span>
+                <h2>Yetkili Distribütörü Olduğumuz Kozmetik Markaları</h2>
+                <p>Nextlab portföyünde yer alan 15 küresel dermokozmetik ve cilt bakım markası; orijinal ürün garantisi, soğuk zincir/güvenli depolama ve doğrudan yetkili temsilcilik standartlarıyla sunulmaktadır.</p>
+            </div>
+            <div class="distributors-stat-pill">
+                <strong>15</strong>
+                <span>Seçkin Küresel Marka</span>
+            </div>
+        </div>
+
+        <div class="distributor-features-bar">
+            <div class="feat-item">
+                <span class="feat-icon">✓</span>
+                <div>
+                    <b>%100 Orijinal Ürün</b>
+                    <small>Üreticiden doğrudan ithalat</small>
+                </div>
+            </div>
+            <div class="feat-item">
+                <span class="feat-icon">✓</span>
+                <div>
+                    <b>Sağlık Bakanlığı & ÜTS Kaydı</b>
+                    <small>Tam mevzuat uyumu</small>
+                </div>
+            </div>
+            <div class="feat-item">
+                <span class="feat-icon">✓</span>
+                <div>
+                    <b>Eczane & Seçkin Perakende</b>
+                    <small>Geniş yetkili satış ağı</small>
+                </div>
+            </div>
+            <div class="feat-item">
+                <span class="feat-icon">✓</span>
+                <div>
+                    <b>Klinik ve Dermatolojik Test</b>
+                    <small>Kanıtlanmış etkinlik</small>
+                </div>
+            </div>
+        </div>
+
+        <div class="distributor-grid">
+            <% (brands || []).forEach(brand => { %>
+            <article class="distributor-card" id="<%= brand.slug %>">
+                <div class="dist-card-top">
+                    <div class="dist-brand-meta">
+                        <span class="dist-origin-badge">
+                            <span class="flag-dot"></span> <%= brand.origin %>
+                        </span>
+                        <span class="dist-cat-badge"><%= brand.category %></span>
+                    </div>
+                    <h3 class="dist-brand-name"><%= brand.name %></h3>
+                    <p class="dist-highlight"><%= brand.highlight %></p>
+                </div>
+                <div class="dist-card-body">
+                    <p class="dist-desc"><%= brand.description %></p>
+                    <div class="dist-badges-list">
+                        <% brand.badges.forEach(b => { %>
+                        <span class="dist-tag"><%= b %></span>
+                        <% }) %>
+                    </div>
+                    <div class="dist-hero-products">
+                        <small>Öne Çıkan Ürünler:</small>
+                        <ul>
+                            <% brand.key_products.forEach(p => { %>
+                            <li><%= p %></li>
+                            <% }) %>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dist-card-footer">
+                    <a class="button dist-btn" href="<%= url('distributorluk/' + brand.slug) %>">Markayı Keşfet →</a>
+                </div>
+            </article>
+            <% }) %>
+        </div>
+
+        <div class="distributor-partnership-box">
+            <div class="partner-copy">
+                <span class="eyebrow dark" style="color: #fca5a5;">B2B & BAYİLİK</span>
+                <h3>Distribütörlük ve Toptan Tedarik Talepleri</h3>
+                <p>Eczane, klinik, perakende zinciri veya e-ticaret kanalınız için temsilcisi olduğumuz markaların yetkili satıcısı olmak istiyorsanız kurumsal satış departmanımızla iletişime geçebilirsiniz.</p>
+            </div>
+            <div class="partner-action">
+                <a class="button light" href="<%= url('iletisim') %>">Bayilik Başvurusu Yap</a>
+            </div>
+        </div>
+    </div>
+</section>

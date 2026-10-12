@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="<%= locals.metaDescription || 'Nextlab temizlik, hijyen, kozmetik ve kişisel bakım ürünleri.' %>">
+    <meta name="theme-color" content="#173f61">
+    <title><%= locals.title ? `${locals.title} | Nextlab` : 'Nextlab | Temizlik ve Kişisel Bakım Ürünleri' %></title>
+    <link rel="canonical" href="<%= locals.canonicalUrl || fullUrl(currentPath) %>">
+    <meta property="og:type" content="<%= locals.ogType || 'website' %>">
+    <meta property="og:site_name" content="Nextlab Cosmetic">
+    <meta property="og:title" content="<%= locals.title ? `${locals.title} | Nextlab` : 'Nextlab Cosmetic' %>">
+    <meta property="og:description" content="<%= locals.metaDescription || 'Nextlab ve Everyday ürünlerini keşfedin.' %>">
+    <meta property="og:url" content="<%= fullUrl(currentPath) %>">
+    <meta property="og:image" content="<%= locals.ogImage || fullUrl('assets/images/social-share.svg') %>">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="stylesheet" href="<%= asset('css/style.css') %>">
+    <script defer src="<%= asset('js/app.js') %>"></script>
+    <script type="application/ld+json"><%- JSON.stringify(locals.structuredData || {
+      '@context': 'https://schema.org',
+      '@type': 'Organization',
+      'name': 'Nextlab Cosmetic',
+      'url': fullUrl(''),
+      'sameAs': [
+        'https://www.instagram.com/nextlabcosmetics/',
+        'https://www.linkedin.com/company/nextlabcosmetic/'
+      ]
+    }) %></script>
+</head>
+<body>
+<%- include('partials/header') %>
+<main><%- content %></main>
+<%- include('partials/footer') %>
+<%- include('partials/chatbot') %>
+</body>
+</html>

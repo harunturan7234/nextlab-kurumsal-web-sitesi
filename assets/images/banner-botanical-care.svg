@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <!-- Sage green serene studio lighting -->
+    <linearGradient id="sage-wall" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#8d9b89" />
+      <stop offset="40%" stop-color="#9aa896" />
+      <stop offset="75%" stop-color="#a8b5a3" />
+      <stop offset="100%" stop-color="#b6c2b1" />
+    </linearGradient>
+    <radialGradient id="soft-sun-left" cx="25%" cy="20%" r="70%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6" />
+      <stop offset="60%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <!-- Travertine porous stone podiums -->
+    <linearGradient id="travertine-top" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ede9df" />
+      <stop offset="45%" stop-color="#e3ded2" />
+      <stop offset="85%" stop-color="#d5cfbf" />
+      <stop offset="100%" stop-color="#c6bea9" />
+    </linearGradient>
+    <linearGradient id="travertine-side" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#c9c1b0" />
+      <stop offset="100%" stop-color="#ad9e87" />
+    </linearGradient>
+    <!-- Bottles -->
+    <linearGradient id="pink-b12" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fda4af" />
+      <stop offset="50%" stop-color="#f43f5e" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#e11d48" />
+    </linearGradient>
+    <linearGradient id="gold-cvit" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#eab308" />
+      <stop offset="100%" stop-color="#ca8a04" />
+    </linearGradient>
+    <linearGradient id="gold-cap" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" />
+      <stop offset="30%" stop-color="#fff4c2" />
+      <stop offset="70%" stop-color="#c29623" />
+      <stop offset="100%" stop-color="#947010" />
+    </linearGradient>
+    <filter id="podium-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#3f4a3c" flood-opacity="0.25" />
+    </filter>
+  </defs>
+
+  <!-- Background Sage Wall -->
+  <rect width="1600" height="700" fill="url(#sage-wall)" />
+  <rect width="1600" height="700" fill="url(#soft-sun-left)" />
+
+  <!-- Dappled Sunlight Shadows of Olive Branches -->
+  <g opacity="0.22">
+    <path d="M0,0 Q240,160 380,80 Q290,260 480,240 Q380,380 580,360 Q280,480 0,380 Z" fill="#2d372b" />
+    <path d="M1200,0 Q1380,120 1550,60 Q1450,220 1600,240 Q1380,320 1200,0 Z" fill="#2d372b" />
+  </g>
+
+  <!-- Travertine Marble Countertop base -->
+  <path d="M0,500 L1600,500 L1600,700 L0,700 Z" fill="url(#travertine-top)" />
+  <line x1="0" y1="500" x2="1600" y2="500" stroke="#b5ab95" stroke-width="2" />
+
+  <!-- LEFT HERO COPY ACCENT -->
+  <g transform="translate(120, 180)">
+    <rect x="0" y="0" width="260" height="42" rx="21" fill="#ffffff" opacity="0.9" />
+    <circle cx="21" cy="21" r="7" fill="#047857" />
+    <text x="44" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#047857" letter-spacing="1.2">BOTANİK &amp; KLİNİK BAKIM</text>
+    <text x="0" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="900" fill="#0f172a" letter-spacing="-1">B12, C Vitamini &amp;</text>
+    <text x="0" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="900" fill="#047857" letter-spacing="-1">Cica Cream</text>
+    <text x="0" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="500" fill="#2b3b28">Anti-aging, aydınlatıcı ve yoğun nemlendirici klinik bakım uyumu.</text>
+  </g>
+
+  <!-- TRAVERTINE STONE PODIUMS (Right Area) -->
+  <!-- Back Tall Podium -->
+  <g transform="translate(1120, 260)" filter="url(#podium-shadow)">
+    <!-- Top -->
+    <ellipse cx="140" cy="50" rx="140" ry="40" fill="url(#travertine-top)" />
+    <!-- Body -->
+    <path d="M0,50 L0,220 A140,40 0 0,0 280,220 L280,50 Z" fill="url(#travertine-side)" />
+    <ellipse cx="140" cy="220" rx="140" ry="40" fill="url(#travertine-top)" />
+  </g>
+
+  <!-- Front Round Podium -->
+  <g transform="translate(900, 360)" filter="url(#podium-shadow)">
+    <!-- Top -->
+    <ellipse cx="160" cy="60" rx="160" ry="50" fill="url(#travertine-top)" />
+    <path d="M0,60 L0,150 A160,50 0 0,0 320,150 L320,60 Z" fill="url(#travertine-side)" />
+    <ellipse cx="160" cy="150" rx="160" ry="50" fill="url(#travertine-top)" />
+  </g>
+
+  <!-- PRODUCT SHOWCASE (Matches Image 3) -->
+  <!-- 1. B12 Anti-Aging Serum Bottle (Pink Liquid, Front Left Podium) -->
+  <g transform="translate(800, 280)" filter="url(#podium-shadow)">
+    <rect x="20" y="110" width="105" height="150" rx="18" fill="url(#pink-b12)" stroke="#fda4af" stroke-width="2" />
+    <!-- Highlight -->
+    <line x1="32" y1="125" x2="32" y2="240" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.6" />
+    <!-- Label -->
+    <text x="72" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#ffffff" text-anchor="middle">The</text>
+    <text x="72" y="168" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">NextLab</text>
+    <text x="72" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">B12</text>
+    <text x="72" y="210" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="800" fill="#fff1f2" text-anchor="middle">ANTI-AGING SERUM</text>
+    <!-- Gold Collar & White Pipette -->
+    <rect x="42" y="75" width="60" height="35" rx="5" fill="url(#gold-cap)" />
+    <path d="M57,75 C57,45 87,45 87,75 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+  </g>
+
+  <!-- 2. C Vitamin Serum Bottle (Golden Liquid, Back Podium Left) -->
+  <g transform="translate(1120, 180)" filter="url(#podium-shadow)">
+    <rect x="20" y="110" width="105" height="150" rx="18" fill="url(#gold-cvit)" stroke="#fde047" stroke-width="2" />
+    <!-- Highlight -->
+    <line x1="32" y1="125" x2="32" y2="240" stroke="#ffffff" stroke-width="3" stroke-linecap="round" opacity="0.7" />
+    <!-- Label -->
+    <text x="72" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#713f12" text-anchor="middle">The</text>
+    <text x="72" y="168" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#713f12" text-anchor="middle">NextLab</text>
+    <text x="72" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="900" fill="#713f12" text-anchor="middle">C VITAMIN</text>
+    <text x="72" y="212" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#854d0e" text-anchor="middle">SERUM</text>
+    <!-- Gold Cap & White Bulb -->
+    <rect x="42" y="75" width="60" height="35" rx="5" fill="url(#gold-cap)" />
+    <path d="M57,75 C57,45 87,45 87,75 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+  </g>
+
+  <!-- 3. Cica Cream Jar (White Jar with Gold Rim, Front Center) -->
+  <g transform="translate(970, 360)" filter="url(#podium-shadow)">
+    <rect x="20" y="60" width="190" height="90" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+    <!-- Gold Ring under Lid -->
+    <rect x="20" y="55" width="190" height="8" rx="2" fill="url(#gold-cap)" />
+    <!-- Label on Jar -->
+    <text x="115" y="92" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">The</text>
+    <text x="115" y="108" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="900" fill="#0f172a" text-anchor="middle">NextLab</text>
+    <text x="115" y="126" font-family="'Plus Jakarta Sans', sans-serif" font-size="10" font-weight="900" fill="#047857" text-anchor="middle">CICA CREAM</text>
+    <text x="115" y="137" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">YOĞUN NEMLENDİRİCİ</text>
+  </g>
+
+  <!-- 4. SPF 50 Sun Drops Serum (White Bottle with Gold Dropper, Far Right) -->
+  <g transform="translate(1270, 370)" filter="url(#podium-shadow)">
+    <rect x="20" y="90" width="110" height="150" rx="18" fill="#ffffff" stroke="#e2e8f0" stroke-width="2" />
+    <!-- Label -->
+    <text x="75" y="132" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">The</text>
+    <text x="75" y="148" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#0f172a" text-anchor="middle">NextLab</text>
+    <text x="75" y="178" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="900" fill="#d97706" text-anchor="middle">SPF 50</text>
+    <text x="75" y="190" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="800" fill="#0f172a" text-anchor="middle">SUN DROPS SERUM</text>
+    <!-- Gold Cap & White Bulb -->
+    <rect x="45" y="55" width="60" height="35" rx="5" fill="url(#gold-cap)" />
+    <path d="M60,55 C60,25 90,25 90,55 Z" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5" />
+  </g>
+
+  <!-- Jasmine Flowers & Olive Foliage Details -->
+  <g transform="translate(900, 480)">
+    <circle cx="20" cy="20" r="10" fill="#facc15" />
+    <ellipse cx="20" cy="-2" rx="10" ry="15" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+    <ellipse cx="40" cy="12" rx="10" ry="15" transform="rotate(72 40 12)" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+    <ellipse cx="32" cy="38" rx="10" ry="15" transform="rotate(144 32 38)" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+    <ellipse cx="8" cy="38" rx="10" ry="15" transform="rotate(216 8 38)" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+    <ellipse cx="0" cy="12" rx="10" ry="15" transform="rotate(288 0 12)" fill="#ffffff" stroke="#f1f5f9" stroke-width="1" />
+  </g>
+</svg>
