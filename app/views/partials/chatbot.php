@@ -6,15 +6,9 @@
   <button type="button" id="chatbot-launcher-btn" class="chatbot-launcher-btn" aria-label="Nextlab Ürün Rehberine Soru Sor" aria-expanded="false" aria-controls="chatbot-panel" title="Soru Sorun">
     <span class="chatbot-launcher-pulse"></span>
     
-    <!-- Closed Icon: Sleek Dialogue Speech Bubble with Question Mark '?' -->
+    <!-- Closed Icon: Nextlab robot asistan maskotu -->
     <span class="chatbot-launcher-icon icon-open">
-      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <!-- Modern conversational dialogue bubble -->
-        <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" fill="rgba(255,255,255,0.2)" stroke="#ffffff" stroke-width="2"/>
-        <!-- Clear friendly question mark inside -->
-        <path d="M9.5 9.2a2.6 2.6 0 0 1 5.1.8c0 1.6-2.1 2.1-2.1 3.2" stroke="#ffffff" stroke-width="2.2" stroke-linecap="round"/>
-        <circle cx="12.5" cy="16" r="1.15" fill="#ffffff" stroke="none"/>
-      </svg>
+      <img class="chatbot-launcher-robot" src="<?= e(asset('images/chatbot-robot-192.jpg')) ?>" alt="" width="60" height="60" decoding="async" loading="lazy">
     </span>
 
     <!-- Active Icon: Close (X) -->
@@ -37,11 +31,7 @@
       <div class="chatbot-header-info">
         <div class="chatbot-avatar-wrap">
           <div class="chatbot-avatar">
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22z" fill="rgba(255,255,255,0.25)" stroke="#ffffff"/>
-              <path d="M9.8 9.5a2.2 2.2 0 0 1 4.4.6c0 1.3-1.8 1.8-1.8 2.8" stroke="#ffffff" stroke-width="2"/>
-              <circle cx="12.4" cy="15.2" r="1" fill="#ffffff" stroke="none"/>
-            </svg>
+            <img class="chatbot-avatar-img" src="<?= e(asset('images/chatbot-robot-192.jpg')) ?>" alt="" width="36" height="36" decoding="async">
           </div>
           <span class="chatbot-avatar-status"></span>
         </div>

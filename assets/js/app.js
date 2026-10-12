@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const slides = [...slider.querySelectorAll('[data-slide]')];
     const dots = [...slider.querySelectorAll('.slider-dots button')];
     const pause = slider.querySelector('.slider-pause');
-    let active = 0, timer, paused = true, hover = false;
+    let active = 0, timer, paused = false, hover = false;
     const reduced = matchMedia('(prefers-reduced-motion: reduce)');
     const show = index => {
       active = (index + slides.length) % slides.length;
@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     const restart = () => {
       clearInterval(timer);
-      if (!paused && !hover && !document.hidden && !reduced.matches && !slider.matches(':focus-within')) timer = setInterval(() => show(active + 1), 7000);
+      if (!paused && !hover && !document.hidden && !reduced.matches && !slider.matches(':focus-within')) timer = setInterval(() => show(active + 1), 5000);
     };
     dots.forEach((dot, i) => dot.addEventListener('click', () => { show(i); restart(); }));
     slider.querySelector('.hero-prev')?.addEventListener('click', () => { show(active - 1); restart(); });
@@ -43,7 +43,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let startX = 0, startY = 0;
     slider.addEventListener('touchstart', e => { startX = e.touches[0].clientX; startY = e.touches[0].clientY; }, { passive: true });
     slider.addEventListener('touchend', e => { const dx = e.changedTouches[0].clientX-startX, dy = e.changedTouches[0].clientY-startY; if (Math.abs(dx)>60 && Math.abs(dx)>Math.abs(dy)) { show(active + (dx < 0 ? 1 : -1)); restart(); } }, { passive: true });
+    if (pause) {
+      pause.setAttribute('aria-pressed', String(paused));
+      pause.setAttribute('aria-label', paused ? 'Slaytları otomatik oynat' : 'Slaytları duraklat');
+      pause.textContent = paused ? 'Oynat' : 'Duraklat';
+    }
     show(0);
+    restart();
   }
   document.querySelectorAll('[data-faq-accordion] details').forEach(detail => detail.addEventListener('toggle', () => {
     if (detail.open) detail.closest('[data-faq-accordion]').querySelectorAll('details').forEach(other => { if (other !== detail) other.open = false; });
