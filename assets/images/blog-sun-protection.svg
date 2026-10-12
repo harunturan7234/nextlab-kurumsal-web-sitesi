@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-grad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fffdf7"/>
+      <stop offset="45%" stop-color="#fdf6e6"/>
+      <stop offset="100%" stop-color="#faedd3"/>
+    </linearGradient>
+    <radialGradient id="sun-glow" cx="75%" cy="35%" r="55%">
+      <stop offset="0%" stop-color="#fffae6" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#ffdc89" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#faedd3" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sun-burst" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f39c12"/>
+      <stop offset="100%" stop-color="#d35400"/>
+    </linearGradient>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="#73491b" flood-opacity="0.13"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad3)"/>
+  <rect width="1200" height="675" fill="url(#sun-glow)"/>
+
+  <!-- Sun rays & aura -->
+  <g transform="translate(860, 310)" opacity="0.35" stroke="#e67e22" stroke-width="2">
+    <circle cx="0" cy="0" r="180" fill="none" stroke-dasharray="8 6"/>
+    <circle cx="0" cy="0" r="230" fill="none" stroke-dasharray="3 6"/>
+    <line x1="0" y1="-260" x2="0" y2="-200"/>
+    <line x1="0" y1="200" x2="0" y2="260"/>
+    <line x1="-260" y1="0" x2="-200" y2="0"/>
+    <line x1="200" y1="0" x2="260" y2="0"/>
+    <line x1="-180" y1="-180" x2="-140" y2="-140"/>
+    <line x1="140" y1="140" x2="180" y2="180"/>
+    <line x1="140" y1="-140" x2="180" y2="-180"/>
+    <line x1="-180" y1="180" x2="-140" y2="140"/>
+  </g>
+
+  <!-- Left Editorial Block -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="230" height="36" rx="18" fill="#d35400"/>
+    <text x="115" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#ffffff" text-anchor="middle">GÜNEŞ BİLİMİ &amp; KORUMA</text>
+
+    <text x="250" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#8c5828">5 DK OKUMA • FİLTRE REHBERİ</text>
+
+    <text x="0" y="95" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" fill="#5c2e0b" line-height="1.2">
+      <tspan x="0" dy="0">SPF 50+ &amp; PA++++</tspan>
+      <tspan x="0" dy="54">Yeni Nesil Güneş Filtreleri</tspan>
+    </text>
+
+    <text x="0" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#66462c">
+      <tspan x="0" dy="0">Beyazlık bırakmayan, hafif ve su bazlı formüllerle</tspan>
+      <tspan x="0" dy="28">foto-yaşlanmaya karşı tam spektrum koruma.</tspan>
+    </text>
+
+    <g transform="translate(0, 290)">
+      <rect x="0" y="0" width="95" height="32" rx="16" fill="#ffffff" stroke="#f0cf9e" stroke-width="1.5"/>
+      <text x="47" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#a04000" text-anchor="middle">Tocobo</text>
+
+      <rect x="105" y="0" width="115" height="32" rx="16" fill="#ffffff" stroke="#f0cf9e" stroke-width="1.5"/>
+      <text x="162" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#a04000" text-anchor="middle">Round Lab</text>
+
+      <rect x="230" y="0" width="135" height="32" rx="16" fill="#ffffff" stroke="#f0cf9e" stroke-width="1.5"/>
+      <text x="297" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#a04000" text-anchor="middle">SPF 50 Güneş</text>
+    </g>
+  </g>
+
+  <!-- Illustration on Right: Sun Stick & Sunscreen Tube with SPF50+ Badge -->
+  <g transform="translate(780, 150)" filter="url(#shadow3)">
+    <!-- Sun Screen Tube -->
+    <path d="M 0,280 L 15,100 L 95,100 L 110,280 C 110,310 0,310 0,280 Z" fill="#ffffff" stroke="#f39c12" stroke-width="2"/>
+    <rect x="25" y="55" width="60" height="45" rx="6" fill="#f8c471"/>
+    <text x="55" y="160" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="10" font-weight="800" letter-spacing="2" fill="#d35400" text-anchor="middle">RELIEF SUN</text>
+    <text x="55" y="180" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="8" letter-spacing="1" fill="#784212" text-anchor="middle">RICE + PROBIOTICS</text>
+
+    <!-- SPF 50+ Emblem -->
+    <g transform="translate(10, 205)">
+      <rect x="0" y="0" width="90" height="28" rx="14" fill="#d35400"/>
+      <text x="45" y="19" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">SPF 50+ PA++++</text>
+    </g>
+
+    <!-- Sun Stick (Tocobo style turquoise / coral stick) -->
+    <g transform="translate(140, 110)">
+      <rect x="0" y="40" width="90" height="170" rx="20" fill="#76d7c4" stroke="#ffffff" stroke-width="2"/>
+      <rect x="0" y="140" width="90" height="70" rx="14" fill="#48c9b0"/>
+      <!-- Soft stick dome top -->
+      <path d="M 12,40 C 12,15 78,15 78,40 Z" fill="#fcf3cf"/>
+      <text x="45" y="110" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="9" font-weight="800" letter-spacing="1.5" fill="#117864" text-anchor="middle">SUN STICK</text>
+      <text x="45" y="125" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="7" font-weight="700" fill="#117864" text-anchor="middle">MATTE FINISH</text>
+    </g>
+
+    <circle cx="210" cy="50" r="32" fill="url(#sun-burst)" opacity="0.9"/>
+    <circle cx="210" cy="50" r="44" fill="none" stroke="#f39c12" stroke-width="2" stroke-dasharray="4 4"/>
+  </g>
+</svg>

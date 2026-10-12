@@ -1,0 +1,26 @@
+<article class="product-card">
+    <a class="product-image" href="<%= url('urun/' + product.slug) %>" aria-label="<%= product.name %>">
+        <img src="<%= asset(product.image_path) %>" alt="<%= product.name %>" width="600" height="600" loading="lazy">
+        <% if (product.package_info) { %>
+            <span class="product-badge-pill"><%= product.package_info %></span>
+        <% } %>
+    </a>
+    <div class="product-card-body">
+        <div class="product-meta-row">
+            <span class="product-brand"><%= product.brand_name || 'NextLab' %></span>
+            <span class="product-code"><%= product.sku %></span>
+        </div>
+        <h3 class="product-title">
+            <a href="<%= url('urun/' + product.slug) %>"><%= product.name %></a>
+        </h3>
+        <% if (product.short_description) { %>
+            <p class="product-desc"><%= product.short_description %></p>
+        <% } %>
+        <div class="product-card-footer">
+            <a class="product-btn" href="<%= url('urun/' + product.slug) %>">
+                <span>Ürünü İncele</span>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+        </div>
+    </div>
+</article>

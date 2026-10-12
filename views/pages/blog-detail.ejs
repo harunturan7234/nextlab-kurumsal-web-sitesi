@@ -1,0 +1,200 @@
+<article class="blog-detail-article" itemscope itemtype="https://schema.org/BlogPosting">
+    <!-- Breadcrumb -->
+    <nav class="container blog-breadcrumb" aria-label="Sayfa yolu">
+        <a href="<%= url('') %>">Anasayfa</a>
+        <span class="bc-sep">/</span>
+        <a href="<%= url('blog') %>">Blog</a>
+        <span class="bc-sep">/</span>
+        <span class="bc-current" aria-current="page"><%= article.title %></span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="blog-detail-header">
+        <div class="container blog-header-inner">
+            <div class="article-badge-row">
+                <span class="detail-badge"><%= article.badge %></span>
+                <span class="detail-readtime"><%= article.readTime %></span>
+            </div>
+
+            <h1 class="detail-title" itemprop="headline"><%= article.title %></h1>
+            <p class="detail-subtitle" itemprop="description"><%= article.subtitle %></p>
+
+            <div class="detail-author-bar">
+                <div class="author-meta-left" itemprop="author" itemscope itemtype="https://schema.org/Person">
+                    <span class="author-big-avatar" aria-hidden="true"><%= article.author.initials %></span>
+                    <div>
+                        <strong itemprop="name"><%= article.author.name %></strong>
+                        <span><%= article.author.role %></span>
+                    </div>
+                </div>
+                <div class="article-date-meta">
+                    <span class="meta-label">Yayın Tarihi:</span>
+                    <time itemprop="datePublished" datetime="<%= article.isoDate %>"><%= article.publishedAt %></time>
+                </div>
+            </div>
+
+            <!-- Interactive Top Keywords Bar -->
+            <div class="detail-keywords-bar" aria-label="Yazı anahtar kelimeleri ve bağlantıları">
+                <div class="dkw-header">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    <strong>İlgili Anahtar Kelimeler &amp; Sayfa Bağlantıları:</strong>
+                    <small>(İlgili ürüne, markaya veya kategoriye gitmek için tıklayın)</small>
+                </div>
+                <div class="dkw-tags-list">
+                    <% (article.keywords || []).forEach(kw => { %>
+                    <a href="<%= url(kw.url) %>" class="detail-kw-pill" title="<%= kw.label %> sayfasına git">
+                        <span>#</span> <%= kw.label %> <span class="dkw-arrow">↗</span>
+                    </a>
+                    <% }) %>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Visual Cover Image -->
+    <div class="container blog-cover-container">
+        <figure class="detail-cover-figure">
+            <img 
+                src="<%= asset(article.image_path) %>" 
+                alt="<%= article.image_alt %>" 
+                width="1200" 
+                height="675"
+                class="detail-cover-media"
+                itemprop="image"
+                loading="eager"
+            >
+            <figcaption class="cover-caption">Görsel: <%= article.image_alt %> • NextLab Dermo-Danışmanlık Koleksiyonu</figcaption>
+        </figure>
+    </div>
+
+    <!-- Article Content Grid -->
+    <div class="container detail-content-layout">
+        <!-- Main Article Content Body -->
+        <div class="detail-main-prose" itemprop="articleBody">
+            <% if (article.highlightQuote) { %>
+            <blockquote class="editorial-pullquote">
+                <p>“<%= article.highlightQuote %>”</p>
+                <cite>— <%= article.author.name %></cite>
+            </blockquote>
+            <% } %>
+
+            <% if (article.summaryPoints && article.summaryPoints.length > 0) { %>
+            <div class="summary-keypoints-box">
+                <div class="keypoints-title">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    Rehber Özeti &amp; Öne Çıkan Bulgular
+                </div>
+                <ul>
+                    <% article.summaryPoints.forEach(pt => { %>
+                    <li><%= pt %></li>
+                    <% }) %>
+                </ul>
+            </div>
+            <% } %>
+
+            <!-- Raw Editorial Body with Embedded Keyword Hyperlinks -->
+            <div class="prose-body-content">
+                <%- article.contentHtml %>
+            </div>
+
+            <!-- Bottom Interactive Keywords Block -->
+            <div class="article-bottom-tags-section">
+                <span class="bot-tag-title">Yazıda Geçen Konular &amp; Anahtar Kelimeler:</span>
+                <div class="bot-tags-wrap">
+                    <% (article.keywords || []).forEach(kw => { %>
+                    <a href="<%= url(kw.url) %>" class="bot-tag-link">
+                        <%= kw.label %> <span>↗</span>
+                    </a>
+                    <% }) %>
+                </div>
+            </div>
+
+            <!-- Author Card -->
+            <div class="author-full-card">
+                <span class="author-large-avatar"><%= article.author.initials %></span>
+                <div class="author-full-info">
+                    <h4><%= article.author.name %></h4>
+                    <p class="author-role-title"><%= article.author.role %></p>
+                    <p class="author-bio">Cilt biyolojisi, K-Beauty biyoaktif içerikleri ve klinik dermokozmetik formülasyonları üzerine bilimsel araştırmalar yürütmekte; NextLab sağlık ve kozmetik portföyüne danışmanlık vermektedir.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar (Sticky Brand Showcase & Quick Nav) -->
+        <aside class="detail-sidebar" aria-label="İlgili markalar ve içerikler">
+            <!-- Brand Links Card -->
+            <div class="sidebar-card sidebar-distributor-card">
+                <span class="card-eyebrow">RESMİ DİSTRİBÜTÖRLÜKLER</span>
+                <h3>İlgili Markaları İnceleyin</h3>
+                <p>NextLab, küresel ölçekte tanınan 15 dermokozmetik markasının Türkiye yetkili distribütörüdür.</p>
+                <div class="sidebar-brand-links">
+                    <a href="<%= url('distributorluk/beauty-of-joseon') %>" class="sb-brand-row">
+                        <span>Beauty of Joseon</span>
+                        <small>Hanbang Pirinç &amp; Koruma ↗</small>
+                    </a>
+                    <a href="<%= url('distributorluk/skin1004') %>" class="sb-brand-row">
+                        <span>Skin1004</span>
+                        <small>Madagascar Centella ↗</small>
+                    </a>
+                    <a href="<%= url('distributorluk/cosrx') %>" class="sb-brand-row">
+                        <span>Cosrx</span>
+                        <small>BHA &amp; Klinik Çözümler ↗</small>
+                    </a>
+                    <a href="<%= url('distributorluk/tocobo') %>" class="sb-brand-row">
+                        <span>Tocobo</span>
+                        <small>Vegan SPF50+ Güneş ↗</small>
+                    </a>
+                    <a href="<%= url('distributorluk/torriden') %>" class="sb-brand-row">
+                        <span>Torriden</span>
+                        <small>5D Moleküler Nem ↗</small>
+                    </a>
+                </div>
+                <a href="<%= url('distributorlukler') %>" class="sidebar-all-link">Tüm 15 Markayı Gör →</a>
+            </div>
+
+            <!-- FAQ / Support Shortcut -->
+            <div class="sidebar-card sidebar-help-card">
+                <span class="card-eyebrow">DESTEK &amp; MEVZUAT</span>
+                <h3>Sıkça Sorulan Sorular</h3>
+                <p>Ürün güvenliği, ÜTS kayıtları ve sipariş süreçleri hakkında detaylı bilgi alın.</p>
+                <a href="<%= url('sss') %>" class="outline-button full-btn">S.S.S Sayfasına Git</a>
+            </div>
+
+            <!-- Contact / Consultation -->
+            <div class="sidebar-card sidebar-consult-card">
+                <span class="card-eyebrow">KURUMSAL TALEP</span>
+                <h3>B2B Tedarik &amp; Bayilik</h3>
+                <p>Eczane, klinik ve toptan ürün tedariği için kurumsal satış ekibimizle görüşün.</p>
+                <a href="<%= url('iletisim') %>" class="primary-button full-btn">İletişim Formu →</a>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Related Articles -->
+    <% if (relatedArticles && relatedArticles.length > 0) { %>
+    <section class="section related-blogs-section">
+        <div class="container">
+            <div class="section-heading">
+                <span>DİĞER REHBERLER</span>
+                <h2>İlginizi Çekebilecek Yazılar</h2>
+            </div>
+            <div class="blog-grid-cards">
+                <% relatedArticles.forEach(rel => { %>
+                <article class="blog-card">
+                    <div class="card-media-wrap">
+                        <a href="<%= url('blog/' + rel.slug) %>">
+                            <img src="<%= asset(rel.image_path) %>" alt="<%= rel.image_alt %>" width="1200" height="675" loading="lazy" class="card-cover-img">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">
+                            <a href="<%= url('blog/' + rel.slug) %>"><%= rel.title %></a>
+                        </h3>
+                    </div>
+                </article>
+                <% }) %>
+            </div>
+        </div>
+    </section>
+    <% } %>
+</article>

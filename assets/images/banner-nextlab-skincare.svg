@@ -1,0 +1,216 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <!-- Background daylight & marble gradients -->
+    <linearGradient id="skincare-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f7f9f6" />
+      <stop offset="45%" stop-color="#edf4eb" />
+      <stop offset="80%" stop-color="#e3eee0" />
+      <stop offset="100%" stop-color="#d6e6d2" />
+    </linearGradient>
+    <radialGradient id="sun-flare" cx="80%" cy="15%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+      <stop offset="30%" stop-color="#fff9e6" stop-opacity="0.5" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="marble-surface" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fdfdfc" />
+      <stop offset="25%" stop-color="#f5f4ef" />
+      <stop offset="70%" stop-color="#eae6dd" />
+      <stop offset="100%" stop-color="#ded8cb" />
+    </linearGradient>
+    <!-- Gold luxury accents -->
+    <linearGradient id="gold-foil" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbe89d" />
+      <stop offset="35%" stop-color="#d4af37" />
+      <stop offset="70%" stop-color="#aa820a" />
+      <stop offset="100%" stop-color="#eac25e" />
+    </linearGradient>
+    <linearGradient id="gold-metal" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#d4af37" />
+      <stop offset="25%" stop-color="#fff2be" />
+      <stop offset="50%" stop-color="#e5b842" />
+      <stop offset="85%" stop-color="#997008" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+    <!-- Emerald green bottle & branding -->
+    <linearGradient id="emerald-emblem" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#083a2a" />
+      <stop offset="60%" stop-color="#052c20" />
+      <stop offset="100%" stop-color="#021c14" />
+    </linearGradient>
+    <linearGradient id="green-glass" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#053324" />
+      <stop offset="30%" stop-color="#0d523b" />
+      <stop offset="55%" stop-color="#147051" />
+      <stop offset="80%" stop-color="#0a4430" />
+      <stop offset="100%" stop-color="#04261b" />
+    </linearGradient>
+    <linearGradient id="cream-jar-body" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="50%" stop-color="#fdfdfd" />
+      <stop offset="85%" stop-color="#f0eee8" />
+      <stop offset="100%" stop-color="#e2ded4" />
+    </linearGradient>
+    <filter id="soft-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#0f2619" flood-opacity="0.18" />
+    </filter>
+    <filter id="glow-gold" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1600" height="700" fill="url(#skincare-bg)" />
+  <rect width="1600" height="700" fill="url(#sun-flare)" />
+
+  <!-- Botanical Leaf Silhouettes in background -->
+  <g opacity="0.16">
+    <path d="M1250,50 Q1380,120 1480,260 Q1320,240 1250,50 Z" fill="#0d523b" />
+    <path d="M1350,-20 Q1480,40 1560,180 Q1420,150 1350,-20 Z" fill="#0d523b" />
+    <path d="M1100,100 Q1220,180 1280,310 Q1150,280 1100,100 Z" fill="#0d523b" />
+    <path d="M960,160 Q1060,220 1110,340 Q1000,310 960,160 Z" fill="#0d523b" />
+  </g>
+
+  <!-- Golden Ring Mirror with Emerald Marble Inlay in Background -->
+  <g transform="translate(1080, 80)">
+    <circle cx="200" cy="220" r="230" fill="none" stroke="url(#gold-metal)" stroke-width="20" opacity="0.85" filter="url(#glow-gold)" />
+    <circle cx="200" cy="220" r="215" fill="#0a3d2c" opacity="0.25" />
+    <!-- Marble vein details -->
+    <path d="M80,120 Q180,200 240,320 Q290,400 320,430" stroke="#d4af37" stroke-width="2.5" fill="none" opacity="0.4" />
+    <path d="M130,80 Q210,150 280,260" stroke="#ffffff" stroke-width="1.8" fill="none" opacity="0.3" />
+  </g>
+
+  <!-- Luxury Marble Countertop with Reflections -->
+  <path d="M0,490 L1600,490 L1600,700 L0,700 Z" fill="url(#marble-surface)" />
+  <line x1="0" y1="490" x2="1600" y2="490" stroke="#c8c0b2" stroke-width="2" />
+  <!-- Countertop edge depth -->
+  <rect x="0" y="490" width="1600" height="20" fill="#e8e4db" opacity="0.6" />
+
+  <!-- LEFT SIDE: Signature NextLab Skincare Branding (Matches Image 1) -->
+  <g transform="translate(120, 140)">
+    <!-- Pill Badge -->
+    <rect x="0" y="0" width="310" height="42" rx="21" fill="#ffffff" opacity="0.95" stroke="#a7f3d0" stroke-width="1.5" />
+    <circle cx="22" cy="21" r="7" fill="#047857" />
+    <text x="44" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="800" fill="#065f46" letter-spacing="1.2">NEXTLAB YENİ NESİL CİLT BAKIMI</text>
+
+    <!-- NextLab Luxury Emblem Box -->
+    <g transform="translate(0, 60)" filter="url(#soft-shadow)">
+      <rect x="0" y="0" width="250" height="150" rx="24" fill="url(#emerald-emblem)" stroke="url(#gold-foil)" stroke-width="2.5" />
+      <path d="M190,16 Q234,16 234,60" fill="none" stroke="url(#gold-metal)" stroke-width="6" stroke-linecap="round" />
+      <text x="125" y="90" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="46" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="-0.5">Next<tspan fill="url(#gold-metal)">Lab</tspan></text>
+      <text x="125" y="122" font-family="'Plus Jakarta Sans', sans-serif" font-size="12.5" font-weight="700" fill="#a7f3d0" text-anchor="middle" letter-spacing="2.5">SKINCARE</text>
+    </g>
+
+    <!-- Big Title and Tagline -->
+    <text x="0" y="268" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="42" font-weight="900" fill="#083a2a" letter-spacing="-1">Az, Öz, Etkili Cilt Bakımı</text>
+    <text x="0" y="310" font-family="'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif" font-size="18" font-weight="500" fill="#2d4a3b">Hedefe yönelik yüksek saflıkta aktif içeriklerle bilimsel bakım.</text>
+  </g>
+
+  <!-- RIGHT SIDE: Luxury Product Collection Showcase -->
+  <!-- 1. Luxurious Cream Jar with Tilted Gold Lid (Center Front) -->
+  <g transform="translate(860, 420)" filter="url(#soft-shadow)">
+    <!-- Base shadow -->
+    <ellipse cx="140" cy="190" rx="150" ry="22" fill="#0c2016" opacity="0.32" />
+    <!-- Glass Jar base -->
+    <rect x="20" y="70" width="240" height="110" rx="18" fill="url(#cream-jar-body)" stroke="#dcd6c8" stroke-width="2" />
+    <!-- White interior cream reservoir -->
+    <rect x="36" y="82" width="208" height="86" rx="10" fill="#ffffff" />
+    <!-- NextLab Brand on Jar -->
+    <g transform="translate(140, 132)">
+      <rect x="-62" y="-18" width="124" height="34" rx="6" fill="#052c20" />
+      <text x="0" y="5" font-family="'Plus Jakarta Sans', sans-serif" font-size="19" font-weight="800" fill="#ffffff" text-anchor="middle">Next<tspan fill="url(#gold-metal)">Lab</tspan></text>
+    </g>
+    <!-- Gold Ring on Jar Neck -->
+    <rect x="25" y="60" width="230" height="15" rx="4" fill="url(#gold-metal)" />
+
+    <!-- Tilted Gold Lid resting beside jar -->
+    <g transform="translate(-50, 40) rotate(-35)">
+      <ellipse cx="50" cy="50" rx="65" ry="32" fill="url(#gold-metal)" stroke="#fff2be" stroke-width="2" />
+      <ellipse cx="50" cy="46" rx="58" ry="27" fill="url(#gold-foil)" />
+      <ellipse cx="50" cy="44" rx="48" ry="20" fill="#ffffff" opacity="0.4" />
+    </g>
+  </g>
+
+  <!-- 2. Dark Emerald Glass Serum Bottle with Gold Dropper (Center Right) -->
+  <g transform="translate(1130, 270)" filter="url(#soft-shadow)">
+    <!-- Bottle Shadow -->
+    <ellipse cx="80" cy="340" rx="75" ry="18" fill="#0c2016" opacity="0.38" />
+    <!-- Glass Bottle Body -->
+    <rect x="20" y="140" width="120" height="190" rx="20" fill="url(#green-glass)" stroke="#1a5a44" stroke-width="2" />
+    <!-- Glass reflection highlight line -->
+    <path d="M34,155 L34,310" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.5" />
+    <path d="M126,155 L126,310" stroke="#a3e2cb" stroke-width="2.5" stroke-linecap="round" opacity="0.35" />
+    <!-- Gold particles inside bottle -->
+    <circle cx="50" cy="220" r="3" fill="url(#gold-metal)" opacity="0.8" />
+    <circle cx="80" cy="250" r="4" fill="url(#gold-metal)" opacity="0.9" />
+    <circle cx="110" cy="280" r="3" fill="url(#gold-metal)" opacity="0.75" />
+    <circle cx="65" cy="290" r="3.5" fill="url(#gold-metal)" opacity="0.85" />
+    <circle cx="95" cy="205" r="2.5" fill="url(#gold-metal)" opacity="0.8" />
+    <!-- Label on Emerald Bottle -->
+    <rect x="35" y="170" width="90" height="42" rx="6" fill="#042217" stroke="url(#gold-foil)" stroke-width="1.2" />
+    <text x="80" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">Next<tspan fill="url(#gold-metal)">Lab</tspan></text>
+    <!-- Gold Dropper Collar -->
+    <rect x="42" y="98" width="76" height="42" rx="6" fill="url(#gold-metal)" />
+    <!-- White Rubber Pipette Bulb -->
+    <path d="M60,98 C60,60 100,60 100,98 Z" fill="#ffffff" stroke="#e0deda" stroke-width="2" />
+  </g>
+
+  <!-- 3. Tall Golden Essence Bottle (Behind Left) -->
+  <g transform="translate(970, 200)" filter="url(#soft-shadow)">
+    <!-- Base Shadow -->
+    <ellipse cx="65" cy="380" rx="60" ry="14" fill="#0c2016" opacity="0.25" />
+    <!-- Golden Liquid Bottle -->
+    <rect x="20" y="150" width="90" height="220" rx="16" fill="url(#gold-foil)" stroke="#d4af37" stroke-width="1.5" opacity="0.95" />
+    <rect x="25" y="155" width="80" height="210" rx="12" fill="#fffbe8" opacity="0.45" />
+    <!-- Highlight reflection -->
+    <line x1="32" y1="165" x2="32" y2="350" stroke="#ffffff" stroke-width="4" stroke-linecap="round" opacity="0.7" />
+    <!-- Label -->
+    <rect x="32" y="220" width="66" height="32" rx="4" fill="#083a2a" />
+    <text x="65" y="242" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">Next<tspan fill="url(#gold-metal)">Lab</tspan></text>
+    <!-- Gold Cap -->
+    <rect x="32" y="90" width="66" height="60" rx="8" fill="url(#gold-metal)" stroke="#fbe89d" stroke-width="1.5" />
+  </g>
+
+  <!-- 4. Premium White Cream Tube (Far Right) -->
+  <g transform="translate(1310, 200)" filter="url(#soft-shadow)">
+    <ellipse cx="75" cy="390" rx="55" ry="14" fill="#0c2016" opacity="0.25" />
+    <!-- Tube Body -->
+    <path d="M30,130 L120,130 L110,360 L40,360 Z" fill="#ffffff" stroke="#e5e0d5" stroke-width="2" />
+    <!-- Tube Crimp Top -->
+    <rect x="26" y="115" width="98" height="16" rx="3" fill="#e8e2d5" stroke="#d5cebe" stroke-width="1.5" />
+    <!-- Gold Neck & Cap -->
+    <rect x="42" y="360" width="66" height="34" rx="6" fill="url(#gold-metal)" stroke="#fbe89d" stroke-width="1.5" />
+    <!-- Label on Tube -->
+    <g transform="translate(75, 230)">
+      <rect x="-42" y="-14" width="84" height="28" rx="5" fill="#052c20" />
+      <text x="0" y="4" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">Next<tspan fill="url(#gold-metal)">Lab</tspan></text>
+    </g>
+  </g>
+
+  <!-- Fresh White Jasmine Blossoms with Yellow Centers -->
+  <g transform="translate(1250, 440)">
+    <!-- Flower 1 -->
+    <g transform="scale(0.8)">
+      <circle cx="0" cy="0" r="14" fill="#ffd13b" />
+      <ellipse cx="0" cy="-28" rx="14" ry="20" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="26" cy="-10" rx="14" ry="20" transform="rotate(72 26 -10)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="16" cy="24" rx="14" ry="20" transform="rotate(144 16 24)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="-16" cy="24" rx="14" ry="20" transform="rotate(216 -16 24)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="-26" cy="-10" rx="14" ry="20" transform="rotate(288 -26 -10)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <circle cx="0" cy="0" r="9" fill="#f59e0b" />
+    </g>
+  </g>
+  <g transform="translate(770, 520)">
+    <!-- Flower 2 on marble -->
+    <g transform="scale(0.65)">
+      <circle cx="0" cy="0" r="14" fill="#ffd13b" />
+      <ellipse cx="0" cy="-28" rx="14" ry="20" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="26" cy="-10" rx="14" ry="20" transform="rotate(72 26 -10)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="16" cy="24" rx="14" ry="20" transform="rotate(144 16 24)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="-16" cy="24" rx="14" ry="20" transform="rotate(216 -16 24)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <ellipse cx="-26" cy="-10" rx="14" ry="20" transform="rotate(288 -26 -10)" fill="#ffffff" stroke="#f0ebe0" stroke-width="1" />
+      <circle cx="0" cy="0" r="9" fill="#f59e0b" />
+    </g>
+  </g>
+</svg>

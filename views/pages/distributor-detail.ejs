@@ -1,0 +1,87 @@
+<section class="page-hero">
+    <div class="container">
+        <h1><%= brand.name %></h1>
+        <%- include('../components/breadcrumb', { items: [
+            { label: 'Distribütörlükler', url: 'distributorlukler' },
+            { label: brand.name }
+        ] }) %>
+    </div>
+</section>
+
+<section class="section brand-detail-section">
+    <div class="container">
+        <div class="brand-detail-layout">
+            <div class="brand-detail-main">
+                <div class="brand-intro-card">
+                    <div class="brand-origin-pill">
+                        <span class="flag-dot"></span> <%= brand.origin %> &bull; <%= brand.category %>
+                    </div>
+                    <h2><%= brand.name %> Türkiye Yetkili Distribütörlüğü</h2>
+                    <p class="brand-highlight-lead"><%= brand.highlight %></p>
+                    <p class="brand-full-desc"><%= brand.description %></p>
+
+                    <div class="brand-cert-grid">
+                        <div class="cert-box">
+                            <span class="cert-icon">🛡️</span>
+                            <b>%100 Orijinal Ürün</b>
+                            <p>Doğrudan ana üreticiden temin edilen seri numaralı orijinal ambalajlar.</p>
+                        </div>
+                        <div class="cert-box">
+                            <span class="cert-icon">📋</span>
+                            <b>T.C. Sağlık Bakanlığı ÜTS Kayıtlı</b>
+                            <p>Tüm ürünler Ürün Takip Sistemi (ÜTS) bildirimli ve mevzuata tam uygundur.</p>
+                        </div>
+                        <div class="cert-box">
+                            <span class="cert-icon">❄️</span>
+                            <b>İklimlendirilmiş Güvenli Lojistik</b>
+                            <p>Formül stabilitesini koruyan sıcaklık kontrollü kurumsal depolama.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="brand-products-block">
+                    <span class="eyebrow dark">ÖNE ÇIKAN SERİLER</span>
+                    <h3><%= brand.name %> Popüler Ürün Gamı</h3>
+                    <div class="brand-hero-products-grid">
+                        <% brand.key_products.forEach((prod, i) => { %>
+                        <div class="prod-showcase-tile">
+                            <div class="prod-num">0<%= i + 1 %></div>
+                            <h4><%= prod %></h4>
+                            <p><%= brand.name %> laboratuvarlarında geliştirilen, klinik onaylı ve yüksek saflıkta aktif içerik barındıran imza ürün.</p>
+                            <span class="prod-tag"><%= brand.badges[i % brand.badges.length] %></span>
+                        </div>
+                        <% }) %>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="brand-detail-sidebar">
+                <div class="b2b-contact-card">
+                    <h3>Yetkili Satış & Toptan Sipariş</h3>
+                    <p><%= brand.name %> ürünlerini eczanenizde, kliniğinizde veya mağazanızda satışa sunmak için toptan sipariş ve bayi fiyat listesi talep edebilirsiniz.</p>
+                    <ul class="b2b-check-list">
+                        <li>Hızlı sevk ve düzenli stok garantisi</li>
+                        <li>Pazarlama materyalleri ve tester desteği</li>
+                        <li>Personel ürün eğitimleri</li>
+                    </ul>
+                    <a class="button w-full" href="<%= url('iletisim') %>">Toptan / Bayilik İletişimi</a>
+                </div>
+
+                <div class="other-brands-card">
+                    <h4>Diğer Distribütörlüklerimiz</h4>
+                    <ul class="other-brands-list">
+                        <% (allBrands || []).filter(b => b.slug !== brand.slug).slice(0, 6).forEach(other => { %>
+                        <li>
+                            <a href="<%= url('distributorluk/' + other.slug) %>">
+                                <strong><%= other.name %></strong>
+                                <span><%= other.category %></span>
+                            </a>
+                        </li>
+                        <% }) %>
+                    </ul>
+                    <a class="text-link" href="<%= url('distributorlukler') %>" style="margin-top: 14px; display: inline-block;">Tüm 15 Markayı Gör →</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,53 @@
+<section class="page-hero">
+    <div class="container">
+        <h1>İletişim</h1>
+        <%- include('../components/breadcrumb', { items: [{ label: 'İletişim' }] }) %>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container contact-layout">
+        <div class="contact-info">
+            <span class="eyebrow dark">BİZE ULAŞIN</span>
+            <h2>Ürünlerimiz hakkında konuşalım.</h2>
+            <p>Kurumsal talepleriniz, ürün bilgileri, distribütörlük ve toptan tedarik iş ortaklığı sorularınız için bizimle doğrudan iletişime geçebilirsiniz.</p>
+            
+            <div class="contact-card">
+                <span>Merkez Ofis</span>
+                <b>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</b>
+            </div>
+            <div class="contact-card">
+                <span>E-posta</span>
+                <a href="mailto:info@nextlabcosmetic.com">info@nextlabcosmetic.com ↗</a>
+            </div>
+            <div class="contact-card">
+                <span>Çalışma Saatleri</span>
+                <b>Pazartesi – Cuma: 09:00 – 18:00</b>
+            </div>
+            <div class="contact-card">
+                <span>LinkedIn</span>
+                <a href="https://www.linkedin.com/company/nextlabcosmetic/" target="_blank" rel="noopener noreferrer">Nextlab Cosmetic ↗</a>
+            </div>
+            <div class="contact-card">
+                <span>Instagram</span>
+                <a href="https://www.instagram.com/nextlabcosmetics/" target="_blank" rel="noopener noreferrer">@nextlabcosmetics ↗</a>
+            </div>
+        </div>
+
+        <form class="contact-form" action="mailto:info@nextlabcosmetic.com" method="post" enctype="text/plain">
+            <h2>İletişim Formu</h2>
+            <div class="field-row">
+                <label>Ad Soyad*<input name="name" required maxlength="100" placeholder="Adınız ve Soyadınız"></label>
+                <label>Telefon<input name="phone" type="tel" maxlength="30" placeholder="0 (5XX) XXX XX XX"></label>
+            </div>
+            <label>E-posta*<input name="email" type="email" required maxlength="190" placeholder="ornek@sirket.com"></label>
+            <label>Konu / Talep Türü
+                <input name="subject" maxlength="120" placeholder="Ürün Bilgisi, Distribütörlük, B2B Tedarik veya Genel Talep">
+            </label>
+            <label>Mesajınız*<textarea name="message" rows="5" required maxlength="2000" placeholder="Mesajınızı ve sorularınızı buraya yazınız..."></textarea></label>
+            <button class="button" type="submit">Mesajı Gönder</button>
+            <small>Bu form, cihazınızdaki e-posta uygulamasını açar veya mesajınızı doğrudan info@nextlabcosmetic.com adresine iletir.</small>
+        </form>
+    </div>
+</section>
+

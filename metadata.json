@@ -1,0 +1,7 @@
+{
+  "name": "Nextlab Kurumsal Web Sitesi",
+  "description": "Nextlab temizlik, hijyen, kozmetik ve kişisel bakım ürünleri kurumsal web sitesi.",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

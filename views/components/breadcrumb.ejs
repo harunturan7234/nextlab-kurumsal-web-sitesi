@@ -1,0 +1,1 @@
+<nav class="breadcrumb" aria-label="Sayfa yolu"><a href="<%= url('') %>">Anasayfa</a><span>/</span><% items.forEach((item, index) => { %><% if (item.url && index !== items.length - 1) { %><a href="<%= item.url %>"><%= item.label %></a><% } else { %><span aria-current="page"><%= item.label %></span><% } %><% if (index !== items.length - 1) { %><span>/</span><% } %><% }) %></nav>

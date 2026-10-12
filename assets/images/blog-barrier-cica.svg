@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <linearGradient id="bg-grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6f9f6"/>
+      <stop offset="40%" stop-color="#e9f2eb"/>
+      <stop offset="100%" stop-color="#d5e5d8"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="70%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9"/>
+      <stop offset="50%" stop-color="#dfeed2" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#d5e5d8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="cica-leaf" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#5a8b66"/>
+      <stop offset="100%" stop-color="#2c5e3a"/>
+    </linearGradient>
+    <filter id="shadow2" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="22" flood-color="#1e3e26" flood-opacity="0.14"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="675" fill="url(#bg-grad2)"/>
+  <rect width="1200" height="675" fill="url(#glow2)"/>
+
+  <!-- Botanical Centella Asiatica & Cellular rings -->
+  <circle cx="860" cy="340" r="240" fill="none" stroke="#b2d4b9" stroke-width="2" stroke-dasharray="6 8"/>
+  <circle cx="860" cy="340" r="160" fill="#ffffff" fill-opacity="0.3"/>
+
+  <!-- Left Editorial Block -->
+  <g transform="translate(100, 140)">
+    <rect x="0" y="0" width="220" height="36" rx="18" fill="#2c5e3a"/>
+    <text x="110" y="23" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" letter-spacing="2" fill="#ffffff" text-anchor="middle">BARİYER BİLİMİ &amp; CICA</text>
+
+    <text x="240" y="24" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#4d6952">6 DK OKUMA • DERMATOLOJİ</text>
+
+    <text x="0" y="95" font-family="'Playfair Display', Georgia, serif" font-size="44" font-weight="700" fill="#1b3f26" line-height="1.2">
+      <tspan x="0" dy="0">Cilt Bariyeri Onarımı:</tspan>
+      <tspan x="0" dy="54">Seramid &amp; Centella</tspan>
+    </text>
+
+    <text x="0" y="210" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="18" fill="#3a523f">
+      <tspan x="0" dy="0">Tahriş, kızarıklık ve kurulukla yıpranan</tspan>
+      <tspan x="0" dy="28">cildi hücresel düzeyde sakinleştirme rehberi.</tspan>
+    </text>
+
+    <!-- Keyword pills -->
+    <g transform="translate(0, 290)">
+      <rect x="0" y="0" width="105" height="32" rx="16" fill="#ffffff" stroke="#b9d6bf" stroke-width="1.5"/>
+      <text x="52" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#2c5e3a" text-anchor="middle">Skin1004</text>
+
+      <rect x="115" y="0" width="105" height="32" rx="16" fill="#ffffff" stroke="#b9d6bf" stroke-width="1.5"/>
+      <text x="167" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#2c5e3a" text-anchor="middle">Cica Krem</text>
+
+      <rect x="230" y="0" width="135" height="32" rx="16" fill="#ffffff" stroke="#b9d6bf" stroke-width="1.5"/>
+      <text x="297" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13" font-weight="600" fill="#2c5e3a" text-anchor="middle">Bariyer Onarımı</text>
+    </g>
+  </g>
+
+  <!-- Illustration on Right: Madagascar Centella Leaf + Cream Jar + Barrier Shield -->
+  <g transform="translate(800, 160)" filter="url(#shadow2)">
+    <!-- Barrier Shield Shape in Background -->
+    <path d="M 60,60 C 120,60 160,80 180,110 C 180,240 100,320 60,360 C 20,320 -60,240 -60,110 C -40,80 0,60 60,60 Z" fill="#ffffff" fill-opacity="0.5" stroke="#90c29c" stroke-width="3"/>
+
+    <!-- Centella Fan Leaf -->
+    <path d="M 60,260 C 10,220 -30,150 10,100 C 60,130 90,140 120,100 C 160,150 120,220 60,260 Z" fill="url(#cica-leaf)" opacity="0.85"/>
+    <path d="M 60,260 L 60,110" stroke="#7ec48d" stroke-width="2.5"/>
+    <path d="M 60,180 L 25,140" stroke="#7ec48d" stroke-width="1.5"/>
+    <path d="M 60,180 L 95,140" stroke="#7ec48d" stroke-width="1.5"/>
+
+    <!-- Cream Jar -->
+    <g transform="translate(-20, 240)">
+      <rect x="0" y="40" width="160" height="90" rx="18" fill="#ffffff" stroke="#b9d6bf" stroke-width="2"/>
+      <rect x="10" y="60" width="140" height="60" rx="10" fill="#e2f0e4"/>
+      <text x="80" y="95" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="11" font-weight="700" letter-spacing="2" fill="#2c5e3a" text-anchor="middle">MADAGASCAR CICA</text>
+      <!-- Lid -->
+      <rect x="-10" y="15" width="180" height="30" rx="8" fill="#4d6952"/>
+    </g>
+
+    <!-- Floating Droplets of Soothing Essence -->
+    <circle cx="180" cy="180" r="10" fill="#ffffff" stroke="#90c29c" stroke-width="2"/>
+    <circle cx="-40" cy="220" r="7" fill="#7ec48d"/>
+    <circle cx="150" cy="80" r="5" fill="#4d6952"/>
+  </g>
+</svg>

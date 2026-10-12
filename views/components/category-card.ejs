@@ -1,0 +1,4 @@
+<article class="category-card">
+    <a class="category-image" href="<%= url('kategori/' + category.slug) %>"><img src="<%= asset(category.image_path) %>" alt="<%= category.name %>" width="700" height="520"></a>
+    <div><h3><a href="<%= url('kategori/' + category.slug) %>"><%= category.name %></a></h3><p><%= category.description || '' %></p></div>
+</article>

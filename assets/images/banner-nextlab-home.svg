@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 700" width="1600" height="700">
+  <defs>
+    <!-- Outdoor sunlight blue sky & terrace gradients -->
+    <linearGradient id="clean-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="35%" stop-color="#38bdf8" />
+      <stop offset="70%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#e0f2fe" />
+    </linearGradient>
+    <radialGradient id="sun-burst" cx="75%" cy="10%" r="55%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95" />
+      <stop offset="30%" stop-color="#e0f2fe" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+    </radialGradient>
+    <linearGradient id="terrace-glass" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="20%" stop-color="#e0f2fe" />
+      <stop offset="60%" stop-color="#bae6fd" />
+      <stop offset="100%" stop-color="#7dd3fc" />
+    </linearGradient>
+    <!-- Bottles gradients -->
+    <linearGradient id="detergent-jug" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" />
+      <stop offset="40%" stop-color="#f8fafc" />
+      <stop offset="80%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
+    </linearGradient>
+    <linearGradient id="spray-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" stop-opacity="0.85" />
+      <stop offset="50%" stop-color="#38bdf8" stop-opacity="0.95" />
+      <stop offset="100%" stop-color="#0369a1" stop-opacity="0.85" />
+    </linearGradient>
+    <linearGradient id="dishsoap-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#16a34a" />
+      <stop offset="50%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#15803d" />
+    </linearGradient>
+    <linearGradient id="disinfectant-bottle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0369a1" />
+    </linearGradient>
+    <linearGradient id="lemon-yellow" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#eab308" />
+    </linearGradient>
+    <linearGradient id="lime-green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#bbf7d0" />
+      <stop offset="50%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <filter id="splash-shadow" x="-20%" y="-20%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="16" stdDeviation="16" flood-color="#0284c7" flood-opacity="0.22" />
+    </filter>
+  </defs>
+
+  <!-- Sky & Landscape background -->
+  <rect width="1600" height="700" fill="url(#clean-sky)" />
+  <rect width="1600" height="700" fill="url(#sun-burst)" />
+
+  <!-- Mountain silhouette horizon in distance -->
+  <path d="M900,450 L1080,360 L1220,410 L1380,330 L1520,390 L1600,350 L1600,500 L900,500 Z" fill="#93c5fd" opacity="0.45" />
+
+  <!-- Glossy Reflective Terrace Surface with Water Splashes -->
+  <path d="M0,500 L1600,500 L1600,700 L0,700 Z" fill="url(#terrace-glass)" />
+  <line x1="0" y1="500" x2="1600" y2="500" stroke="#bae6fd" stroke-width="2" />
+
+  <!-- Dynamic Water Splashes & Droplets -->
+  <g opacity="0.6">
+    <path d="M850,490 Q920,380 970,420 Q940,490 850,490 Z" fill="#ffffff" />
+    <path d="M1250,510 Q1330,360 1380,410 Q1320,510 1250,510 Z" fill="#ffffff" />
+    <circle cx="890" cy="380" r="14" fill="#ffffff" opacity="0.75" />
+    <circle cx="940" cy="330" r="9" fill="#ffffff" opacity="0.7" />
+    <circle cx="1020" cy="360" r="12" fill="#ffffff" opacity="0.7" />
+    <circle cx="1320" cy="320" r="16" fill="#ffffff" opacity="0.8" />
+    <circle cx="1380" cy="270" r="10" fill="#ffffff" opacity="0.7" />
+    <circle cx="1440" cy="340" r="13" fill="#ffffff" opacity="0.75" />
+  </g>
+
+  <!-- LEFT COPY ACCENT (Subtle branding balance) -->
+  <g transform="translate(120, 180)">
+    <rect x="0" y="0" width="220" height="42" rx="21" fill="#ffffff" opacity="0.9" />
+    <circle cx="21" cy="21" r="7" fill="#0284c7" />
+    <text x="44" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#0284c7" letter-spacing="1.2">THE NEXTLAB HOME</text>
+    <text x="0" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="900" fill="#0f172a" letter-spacing="-1">Tavizsiz Hijyen,</text>
+    <text x="0" y="150" font-family="'Plus Jakarta Sans', sans-serif" font-size="44" font-weight="900" fill="#0284c7" letter-spacing="-1">Doğal Ferahlık.</text>
+    <text x="0" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="500" fill="#334155">Ev, ofis ve profesyonel mekanlar için bitkisel bazlı temizlik.</text>
+  </g>
+
+  <!-- PRODUCT LINEUP: THE NEXTLAB HOME (Matches Image 2) -->
+
+  <!-- Product 1: Spray Bottle "MULTI-SURFACE CLEANER" (Left) -->
+  <g transform="translate(740, 190)" filter="url(#splash-shadow)">
+    <!-- Liquid Bottle Body -->
+    <path d="M40,140 Q65,110 75,110 Q85,110 110,140 L125,320 Q125,335 110,335 L40,335 Q25,335 25,320 Z" fill="url(#spray-bottle)" stroke="#0284c7" stroke-width="1.5" />
+    <!-- White Ergonomic Trigger Sprayer -->
+    <path d="M50,75 L100,75 L100,110 L50,110 Z" fill="#ffffff" />
+    <path d="M30,55 L130,50 L140,80 L80,85 L80,105 L60,105 L60,85 L30,85 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <path d="M30,55 L15,58 L15,80 L35,80 Z" fill="#0284c7" />
+    <!-- Blue neck ring -->
+    <rect x="52" y="96" width="46" height="15" rx="3" fill="#0369a1" />
+    <!-- Label -->
+    <rect x="35" y="160" width="80" height="135" rx="10" fill="#ffffff" opacity="0.95" />
+    <text x="75" y="185" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">THE NEXTLAB</text>
+    <text x="75" y="196" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">HOME</text>
+    <path d="M75,204 Q85,214 75,224 Q65,214 75,204 Z" fill="#16a34a" />
+    <text x="75" y="242" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">MULTI-SURFACE</text>
+    <text x="75" y="254" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">CLEANER</text>
+  </g>
+
+  <!-- Product 2: Big Laundry Detergent Jug (Center Left) -->
+  <g transform="translate(870, 120)" filter="url(#splash-shadow)">
+    <!-- Base Jug with Handle -->
+    <path d="M80,100 Q150,80 200,140 L210,380 Q210,405 185,405 L45,405 Q20,405 20,380 L30,190 Q30,120 80,100 Z" fill="url(#detergent-jug)" stroke="#cbd5e1" stroke-width="2" />
+    <!-- Handle Cutout -->
+    <path d="M150,160 Q180,160 180,240 Q180,310 150,310 Q130,310 130,240 Q130,160 150,160 Z" fill="#cbe4f7" stroke="#93c5fd" stroke-width="2" />
+    <!-- Big Blue Screw Cap -->
+    <rect x="60" y="65" width="60" height="36" rx="6" fill="#0284c7" stroke="#0369a1" stroke-width="2" />
+    <!-- Vertical Grooves on cap -->
+    <line x1="72" y1="68" x2="72" y2="98" stroke="#38bdf8" stroke-width="2" />
+    <line x1="82" y1="68" x2="82" y2="98" stroke="#38bdf8" stroke-width="2" />
+    <line x1="92" y1="68" x2="92" y2="98" stroke="#38bdf8" stroke-width="2" />
+    <line x1="102" y1="68" x2="102" y2="98" stroke="#38bdf8" stroke-width="2" />
+    <!-- Label on Jug -->
+    <rect x="35" y="170" width="105" height="180" rx="14" fill="#ffffff" opacity="0.96" />
+    <text x="87" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">THE NEXTLAB</text>
+    <text x="87" y="213" font-family="'Plus Jakarta Sans', sans-serif" font-size="9" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">HOME</text>
+    <path d="M87,222 Q100,235 87,248 Q74,235 87,222 Z" fill="#0284c7" />
+    <text x="87" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">LAUNDRY</text>
+    <text x="87" y="286" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">DETERGENT</text>
+    <text x="87" y="306" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#64748b" text-anchor="middle">POWERFUL CLEAN</text>
+    <text x="87" y="318" font-family="'Plus Jakarta Sans', sans-serif" font-size="7.5" font-weight="700" fill="#64748b" text-anchor="middle">GENTLE CARE</text>
+  </g>
+
+  <!-- Product 3: Green Dish Soap Pump Bottle (Center Right) -->
+  <g transform="translate(1090, 260)" filter="url(#splash-shadow)">
+    <!-- Bottle body -->
+    <rect x="20" y="90" width="125" height="175" rx="24" fill="url(#dishsoap-bottle)" stroke="#15803d" stroke-width="2" />
+    <!-- Pump Dispenser -->
+    <rect x="68" y="55" width="28" height="35" rx="3" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <path d="M50,45 L100,45 L95,55 L55,55 Z" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Label -->
+    <rect x="32" y="115" width="101" height="125" rx="10" fill="#ffffff" opacity="0.95" />
+    <text x="82" y="136" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#15803d" text-anchor="middle" letter-spacing="1">THE NEXTLAB</text>
+    <text x="82" y="147" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#15803d" text-anchor="middle" letter-spacing="1">HOME</text>
+    <path d="M82,156 Q93,168 82,180 Q71,168 82,156 Z" fill="#16a34a" />
+    <text x="82" y="200" font-family="'Plus Jakarta Sans', sans-serif" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">DISH SOAP</text>
+  </g>
+
+  <!-- Product 4: Blue Disinfectant Bottle (Far Right) -->
+  <g transform="translate(1225, 320)" filter="url(#splash-shadow)">
+    <!-- Bottle body -->
+    <rect x="20" y="60" width="115" height="145" rx="18" fill="url(#disinfectant-bottle)" stroke="#0369a1" stroke-width="2" />
+    <!-- White Screw Cap -->
+    <rect x="52" y="28" width="50" height="32" rx="5" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5" />
+    <!-- Label -->
+    <rect x="30" y="80" width="95" height="105" rx="8" fill="#ffffff" opacity="0.95" />
+    <text x="77" y="100" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">THE NEXTLAB</text>
+    <text x="77" y="111" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="800" fill="#0369a1" text-anchor="middle" letter-spacing="1">HOME</text>
+    <text x="77" y="138" font-family="'Plus Jakarta Sans', sans-serif" font-size="9.5" font-weight="900" fill="#0f172a" text-anchor="middle">DISINFECTANT</text>
+    <text x="77" y="152" font-family="'Plus Jakarta Sans', sans-serif" font-size="7" font-weight="700" fill="#64748b" text-anchor="middle">KILLS 99.9%</text>
+  </g>
+
+  <!-- Fresh Lemon & Lime Accents -->
+  <!-- Fresh Cut Lemon Half (Far Left Foreground) -->
+  <g transform="translate(680, 480)">
+    <circle cx="45" cy="45" r="42" fill="url(#lemon-yellow)" stroke="#ca8a04" stroke-width="2" />
+    <circle cx="45" cy="45" r="35" fill="#ffffff" />
+    <circle cx="45" cy="45" r="30" fill="#fef08a" />
+    <!-- Citrus wedges -->
+    <path d="M45,45 L45,18 A27,27 0 0,1 68,32 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+    <path d="M45,45 L68,32 A27,27 0 0,1 72,55 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+    <path d="M45,45 L72,55 A27,27 0 0,1 55,70 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+    <path d="M45,45 L55,70 A27,27 0 0,1 25,68 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+    <path d="M45,45 L25,68 A27,27 0 0,1 18,45 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+    <path d="M45,45 L18,45 A27,27 0 0,1 45,18 Z" fill="#facc15" stroke="#ffffff" stroke-width="2" />
+  </g>
+
+  <!-- Cut Lime Half (Center Foreground) -->
+  <g transform="translate(1040, 500)">
+    <circle cx="35" cy="35" r="32" fill="url(#lime-green)" stroke="#15803d" stroke-width="2" />
+    <circle cx="35" cy="35" r="26" fill="#ffffff" />
+    <circle cx="35" cy="35" r="22" fill="#bbf7d0" />
+    <!-- Wedges -->
+    <path d="M35,35 L35,15 A20,20 0 0,1 53,28 Z" fill="#4ade80" stroke="#ffffff" stroke-width="1.8" />
+    <path d="M35,35 L53,28 A20,20 0 0,1 50,48 Z" fill="#4ade80" stroke="#ffffff" stroke-width="1.8" />
+    <path d="M35,35 L50,48 A20,20 0 0,1 25,52 Z" fill="#4ade80" stroke="#ffffff" stroke-width="1.8" />
+    <path d="M35,35 L25,52 A20,20 0 0,1 16,35 Z" fill="#4ade80" stroke="#ffffff" stroke-width="1.8" />
+    <path d="M35,35 L16,35 A20,20 0 0,1 35,15 Z" fill="#4ade80" stroke="#ffffff" stroke-width="1.8" />
+  </g>
+
+  <!-- Blue Microfiber Cloth (Left Bottom) -->
+  <g transform="translate(680, 550)">
+    <path d="M20,20 Q80,-5 140,25 Q110,60 50,55 Z" fill="#0284c7" opacity="0.9" stroke="#0369a1" stroke-width="1.5" />
+    <path d="M10,25 Q70,5 130,35 Q100,65 40,60 Z" fill="#38bdf8" opacity="0.4" />
+  </g>
+</svg>
