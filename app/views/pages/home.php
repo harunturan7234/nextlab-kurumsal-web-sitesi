@@ -68,7 +68,7 @@
 </section>
 <section class="approach section">
     <div class="container content-split">
-        <div class="approach-visual"><span>LESS</span><b>IS MORE</b></div>
+        <div class="approach-visual"><img src="<?= e(asset('images/approach-nextlab.jpg')) ?>" alt="NextLab Home temizlik ve hijyen ürünleri" width="1100" height="619" loading="lazy" decoding="async"></div>
         <div class="prose"><span class="eyebrow dark">MARKA YAKLAŞIMI</span><h2>Az içerikle, anlaşılır bakım.</h2><p>Nextlab Cosmetic, cilt sağlığına yönelik çözüm odaklı ürünler geliştirmeyi; sade ve anlaşılır içerik iletişimini merkeze alır.</p><p>Everyday ürün ailesi günlük kullanıma odaklanırken, marka bilinçli cilt bakımı alışkanlıklarını destekleyen açık bir iletişim hedefler.</p><a class="text-link" href="<?= e(url('hakkimizda')) ?>">Nextlab’ı tanıyın →</a></div>
     </div>
 </section>
