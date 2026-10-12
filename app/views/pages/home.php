@@ -44,7 +44,6 @@
             <?php endforeach; ?>
         </div>
         <button class="hero-nav-arrow hero-next" type="button" aria-label="Sonraki slayt">→</button>
-        <button class="slider-pause" type="button" aria-pressed="false" aria-label="Slaytları duraklat">Duraklat</button>
     </div>
 </section>
 <section class="section categories-section">
