@@ -23,21 +23,30 @@ cp "$ROOT/robots.txt"           "$OUT/"
 cp "$ROOT/database.sql"         "$OUT/"
 [ -f "$ROOT/NATRO-KURULUM.md" ] && cp "$ROOT/NATRO-KURULUM.md" "$OUT/"
 
-# --- Uygulama kodu (PHP) ---
+# --- Uygulama kodu (PHP) — app/Admin dahil ---
 cp -R "$ROOT/app"              "$OUT/app"
+
+# --- Yönetim paneli giriş noktası ---
+cp -R "$ROOT/admin"            "$OUT/admin"
 
 # --- Varlıklar: CSS / JS / görseller (kaynak-görseller HARİÇ) ---
 mkdir -p "$OUT/assets"
 cp -R "$ROOT/assets/css"       "$OUT/assets/css"
 cp -R "$ROOT/assets/js"        "$OUT/assets/js"
 cp -R "$ROOT/assets/images"    "$OUT/assets/images"
+cp -R "$ROOT/assets/admin"     "$OUT/assets/admin"
+
+# Panelden yüklenecek görseller için klasör (yazılabilir olmalı, betik çalıştırma kapalı)
+mkdir -p "$OUT/assets/images/uploads"
+cp "$ROOT/assets/images/uploads/.htaccess" "$OUT/assets/images/uploads/" 2>/dev/null || true
 
 # --- Veri: çalışma zamanında gereken JSON dosyaları ---
-# media.json her modda okunur; catalog/blogs yalnızca 'file' moduna (ve config.php yokken demo'ya) gerekir.
+# media.json her modda okunur; catalog/blogs/settings yalnızca 'file' moduna (ve config.php yokken demo'ya) gerekir.
 mkdir -p "$OUT/data"
 cp "$ROOT/data/media.json"     "$OUT/data/"
 cp "$ROOT/data/catalog.json"   "$OUT/data/"
 cp "$ROOT/data/blogs.json"     "$OUT/data/"
+cp "$ROOT/data/settings.json"  "$OUT/data/"
 
 # --- Hassas/gereksiz dosyaların sızmadığını doğrula ---
 LEAK=0

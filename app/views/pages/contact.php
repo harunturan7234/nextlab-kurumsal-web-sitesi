@@ -15,11 +15,11 @@
             
             <div class="contact-card">
                 <span>Merkez Ofis</span>
-                <b>Üniversite Sokak No: 7/B, Işık Plaza<br>Altunizade, Üsküdar / İstanbul</b>
+                <b><?= e(setting('contact.address', 'Altunizade, Üsküdar / İstanbul')) ?></b>
             </div>
             <div class="contact-card">
                 <span>E-posta</span>
-                <a href="mailto:info@nextlabcosmetic.com">info@nextlabcosmetic.com ↗</a>
+                <a href="mailto:<?= e(setting('contact.email', 'info@nextlabcosmetic.com')) ?>"><?= e(setting('contact.email', 'info@nextlabcosmetic.com')) ?> ↗</a>
             </div>
             <div class="contact-card">
                 <span>Ürün ve Kurumsal Talepler</span>
@@ -53,8 +53,8 @@
 </section>
 
 <?php
-$nextlabAddress = 'Üniversite Sokak No: 7/B, Işık Plaza, Altunizade, Üsküdar / İstanbul';
-$nextlabMapQ    = 'NextLab Sağlık ve Kozmetik, Altunizade, Üsküdar, İstanbul';
+$nextlabAddress = (string) setting('contact.address', 'Altunizade, Üsküdar / İstanbul');
+$nextlabMapQ    = (string) setting('contact.map_query', 'NextLab Sağlık ve Kozmetik, Altunizade, Üsküdar, İstanbul');
 $nextlabMapsUrl = 'https://www.google.com/maps/search/?api=1&query=' . rawurlencode($nextlabMapQ);
 $nextlabMapEmbed = 'https://maps.google.com/maps?q=' . rawurlencode($nextlabMapQ) . '&z=15&output=embed';
 ?>

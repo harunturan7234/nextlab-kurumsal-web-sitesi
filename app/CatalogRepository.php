@@ -5,6 +5,7 @@ final class CatalogRepository
 {
     private array $data;
     private array $blogs;
+    private array $settings = [];
 
     public function __construct(array $config)
     {
@@ -16,23 +17,40 @@ final class CatalogRepository
                 $db['user'], $db['password'],
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
             );
+            // Yalnızca YAYINDAKİ sürüm okunur; yayınlanmamış taslaklar siteye sızmaz.
             $decode = static fn(array $rows): array => array_map(static fn(array $r): array => json_decode($r['data_json'], true, 512, JSON_THROW_ON_ERROR), $rows);
             $this->data = [
-                'categories' => $decode($pdo->query('SELECT data_json FROM nextlab_categories ORDER BY sort_order, id')->fetchAll()),
-                'products' => $decode($pdo->query('SELECT data_json FROM nextlab_products ORDER BY sort_order, id')->fetchAll()),
+                'categories' => $decode($pdo->query('SELECT data_json FROM nextlab_categories WHERE data_json IS NOT NULL ORDER BY sort_order, id')->fetchAll()),
+                'products' => $decode($pdo->query('SELECT data_json FROM nextlab_products WHERE data_json IS NOT NULL ORDER BY sort_order, id')->fetchAll()),
             ];
-            $query = $pdo->prepare('SELECT data_json FROM nextlab_content WHERE kind = :kind ORDER BY sort_order, slug');
-            foreach (['banners', 'faqs', 'distributorBrands', 'blogs', 'channels'] as $kind) {
+            $query = $pdo->prepare('SELECT data_json FROM nextlab_content WHERE kind = :kind AND data_json IS NOT NULL ORDER BY sort_order, slug');
+            foreach (['banners', 'faqs', 'distributorBrands', 'blogs', 'channels', 'settings'] as $kind) {
                 $query->execute(['kind' => $kind]);
                 $items = $decode($query->fetchAll());
                 if ($kind === 'blogs') $this->blogs = $items;
+                elseif ($kind === 'settings') $this->settings = $items[0] ?? [];
                 else $this->data[$kind] = $kind === 'channels' ? ($items[0] ?? []) : $items;
             }
             if (!$this->data['products'] || !$this->data['categories']) throw new RuntimeException('Catalog database is empty. Import database.sql.');
         } else {
             $this->data = json_decode(file_get_contents($root . '/data/catalog.json'), true, 512, JSON_THROW_ON_ERROR);
             $this->blogs = json_decode(file_get_contents($root . '/data/blogs.json'), true, 512, JSON_THROW_ON_ERROR);
+            $settingsFile = $root . '/data/settings.json';
+            if (is_file($settingsFile)) {
+                $this->settings = json_decode(file_get_contents($settingsFile), true, 512, JSON_THROW_ON_ERROR);
+            }
         }
+    }
+
+    /** Site geneli ayarlar (sosyal medya, iletişim, kurumsal metin, SEO). */
+    public function settings(): array { return $this->settings; }
+    public function setting(string $path, mixed $default = null): mixed {
+        $value = $this->settings;
+        foreach (explode('.', $path) as $key) {
+            if (!is_array($value) || !array_key_exists($key, $value)) return $default;
+            $value = $value[$key];
+        }
+        return $value === '' || $value === [] ? $default : $value;
     }
 
     public function categories(): array { return $this->data['categories']; }

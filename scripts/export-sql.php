@@ -50,26 +50,31 @@ $out[] = "SET sql_mode = 'STRICT_ALL_TABLES';";
 $out[] = "";
 
 // --- Schema -----------------------------------------------------------------
+// data_json  = YAYINDAKİ sürüm (NULL ise kayıt henüz yayınlanmamış taslaktır)
+// draft_json = PANELDE düzenlenen çalışma sürümü. "Yayına Al" => data_json = draft_json
 $out[] = "DROP TABLE IF EXISTS `nextlab_products`;";
 $out[] = "DROP TABLE IF EXISTS `nextlab_categories`;";
 $out[] = "DROP TABLE IF EXISTS `nextlab_content`;";
+$out[] = "DROP TABLE IF EXISTS `nextlab_admins`;";
 $out[] = "";
 $out[] = "CREATE TABLE `nextlab_categories` (";
-$out[] = "  `id` INT UNSIGNED NOT NULL,";
+$out[] = "  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,";
 $out[] = "  `slug` VARCHAR(160) NOT NULL,";
 $out[] = "  `sort_order` INT NOT NULL DEFAULT 0,";
-$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
+$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,";
+$out[] = "  `draft_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
 $out[] = "  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,";
 $out[] = "  PRIMARY KEY (`id`),";
 $out[] = "  UNIQUE KEY `uq_category_slug` (`slug`)";
 $out[] = ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
 $out[] = "";
 $out[] = "CREATE TABLE `nextlab_products` (";
-$out[] = "  `id` INT UNSIGNED NOT NULL,";
+$out[] = "  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,";
 $out[] = "  `slug` VARCHAR(190) NOT NULL,";
 $out[] = "  `category_id` INT UNSIGNED NOT NULL DEFAULT 0,";
 $out[] = "  `sort_order` INT NOT NULL DEFAULT 0,";
-$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
+$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,";
+$out[] = "  `draft_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
 $out[] = "  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,";
 $out[] = "  PRIMARY KEY (`id`),";
 $out[] = "  UNIQUE KEY `uq_product_slug` (`slug`),";
@@ -81,11 +86,26 @@ $out[] = "  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,";
 $out[] = "  `kind` VARCHAR(40) NOT NULL,";
 $out[] = "  `slug` VARCHAR(190) NOT NULL,";
 $out[] = "  `sort_order` INT NOT NULL DEFAULT 0,";
-$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
+$out[] = "  `data_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL,";
+$out[] = "  `draft_json` LONGTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,";
 $out[] = "  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,";
 $out[] = "  PRIMARY KEY (`id`),";
 $out[] = "  UNIQUE KEY `uq_content_kind_slug` (`kind`, `slug`),";
 $out[] = "  KEY `idx_content_kind` (`kind`, `sort_order`)";
+$out[] = ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
+$out[] = "";
+$out[] = "-- Yönetim paneli kullanıcıları. İlk kullanıcı /admin adresindeki kurulum ekranından oluşturulur.";
+$out[] = "CREATE TABLE `nextlab_admins` (";
+$out[] = "  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,";
+$out[] = "  `email` VARCHAR(190) NOT NULL,";
+$out[] = "  `name` VARCHAR(120) NOT NULL,";
+$out[] = "  `password_hash` VARCHAR(255) NOT NULL,";
+$out[] = "  `failed_attempts` INT NOT NULL DEFAULT 0,";
+$out[] = "  `locked_until` DATETIME NULL,";
+$out[] = "  `last_login_at` DATETIME NULL,";
+$out[] = "  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,";
+$out[] = "  PRIMARY KEY (`id`),";
+$out[] = "  UNIQUE KEY `uq_admin_email` (`email`)";
 $out[] = ") ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;";
 $out[] = "";
 
@@ -94,8 +114,8 @@ $out[] = "-- Kategoriler (" . count($catalog['categories']) . ")";
 $i = 0;
 foreach ($catalog['categories'] as $c) {
     $out[] = sprintf(
-        "INSERT INTO `nextlab_categories` (`id`,`slug`,`sort_order`,`data_json`) VALUES (%d,%s,%d,%s);",
-        (int)$c['id'], $q($c['slug']), $i++, $q($json($c))
+        "INSERT INTO `nextlab_categories` (`id`,`slug`,`sort_order`,`data_json`,`draft_json`) VALUES (%d,%s,%d,%s,%s);",
+        (int)$c['id'], $q($c['slug']), $i++, $q($json($c)), $q($json($c))
     );
 }
 $out[] = "";
@@ -105,8 +125,8 @@ $out[] = "-- Ürünler (" . count($catalog['products']) . ")";
 $i = 0;
 foreach ($catalog['products'] as $p) {
     $out[] = sprintf(
-        "INSERT INTO `nextlab_products` (`id`,`slug`,`category_id`,`sort_order`,`data_json`) VALUES (%d,%s,%d,%d,%s);",
-        (int)$p['id'], $q($p['slug']), (int)($p['category_id'] ?? 0), $i++, $q($json($p))
+        "INSERT INTO `nextlab_products` (`id`,`slug`,`category_id`,`sort_order`,`data_json`,`draft_json`) VALUES (%d,%s,%d,%d,%s,%s);",
+        (int)$p['id'], $q($p['slug']), (int)($p['category_id'] ?? 0), $i++, $q($json($p)), $q($json($p))
     );
 }
 $out[] = "";
@@ -128,11 +148,15 @@ foreach ($blogs as $n => $b) {
 // channels is consumed as a single row ($items[0]) by the repository.
 $contentRows[] = ['channels', 'channels', 0, $catalog['channels']];
 
-$out[] = "-- İçerik: banner, SSS, distribütör markaları, blog, kanallar (" . count($contentRows) . " satır)";
+// Site geneli ayarlar — panelden düzenlenir, header/footer/kurumsal/iletişim okur.
+$settings = json_decode(file_get_contents($root . '/data/settings.json'), true, 512, JSON_THROW_ON_ERROR);
+$contentRows[] = ['settings', 'settings', 0, $settings];
+
+$out[] = "-- İçerik: banner, SSS, markalar, blog, kanallar, ayarlar (" . count($contentRows) . " satır)";
 foreach ($contentRows as [$kind, $slug, $order, $payload]) {
     $out[] = sprintf(
-        "INSERT INTO `nextlab_content` (`kind`,`slug`,`sort_order`,`data_json`) VALUES (%s,%s,%d,%s);",
-        $q($kind), $q((string)$slug), (int)$order, $q($json($payload))
+        "INSERT INTO `nextlab_content` (`kind`,`slug`,`sort_order`,`data_json`,`draft_json`) VALUES (%s,%s,%d,%s,%s);",
+        $q($kind), $q((string)$slug), (int)$order, $q($json($payload)), $q($json($payload))
     );
 }
 $out[] = "";

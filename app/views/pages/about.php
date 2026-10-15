@@ -12,11 +12,11 @@
             <img src="<?= e(asset('images/about-nextlab.jpg')) ?>" alt="NextLab yeni nesil cilt bakımı ürünleri" width="1000" height="563" loading="lazy" decoding="async">
         </div>
         <div class="prose">
-            <span class="eyebrow dark">NEXTLAB KURUMSAL</span>
-            <h2>Azla çok etki, bilimle gerçek çözüm.</h2>
-            <p>Nextlab Kozmetik olarak felsefemiz, cilt sağlığına yönelik çözüm odaklı ürünler geliştirmek üzerine kuruludur. 12 yılı aşkın ilaç ve kozmetik tecrübemizle bilimsel araştırma ve klinik veriler ışığında formüller oluşturuyor; tüketici ihtiyaçlarını merkeze alan sade ama etkili içeriklerle sürdürülebilir güzelliği savunuyoruz.</p>
-            <p>Kendi markamız Everyday ile günlük kullanıma uygun; paraben, alkol, parfüm ve renklendirici içermeyen ürünler sunuyor, formüllerimizin pH dengesi ve aktif stabilitesiyle maksimum etkiyi hedefliyoruz. Hayvanlar üzerinde test yapmıyor, doğaya saygılı bir üretim anlayışı benimsiyoruz.</p>
-            <p>“Az içerikle çok fayda” prensibiyle yalın, anlaşılır ve sonuç odaklı çözümler geliştiriyoruz. Aynı zamanda tüketiciyi eğiten, bilinçli cilt bakımı alışkanlıklarını destekleyen bir bilgi platformu olmayı hedefliyoruz. Çünkü bize göre sağlıklı cilt bir ayrıcalık değil, ulaşılabilir bir haktır.</p>
+            <span class="eyebrow dark"><?= e(setting('about.eyebrow', 'NEXTLAB KURUMSAL')) ?></span>
+            <h2><?= e(setting('about.title', 'Azla çok etki, bilimle gerçek çözüm.')) ?></h2>
+            <?php foreach ((array) setting('about.paragraphs', []) as $aboutParagraph): ?>
+            <p><?= e($aboutParagraph) ?></p>
+            <?php endforeach; ?>
         </div>
     </div>
 </section>

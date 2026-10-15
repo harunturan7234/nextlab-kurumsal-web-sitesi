@@ -6,3 +6,4 @@ dist/
 var/
 qa/screenshots/
 *.log
+.local-admin.txt

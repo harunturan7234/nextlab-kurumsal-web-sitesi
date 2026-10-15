@@ -1,0 +1,5 @@
+# Yüklenen dosyalarda betik çalıştırmayı engelle (güvenlik).
+php_flag engine off
+<FilesMatch "\.(php|phtml|phar|pl|py|cgi|sh|html?)$">
+  Require all denied
+</FilesMatch>

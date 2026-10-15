@@ -2,21 +2,21 @@
 <div class="topbar">
     <div class="container topbar-inner">
         <div class="social-links" aria-label="Sosyal medya">
-            <a class="social-icon facebook-icon" href="https://www.facebook.com/nextlabcosmetics" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Facebook">
+            <a class="social-icon facebook-icon" href="<?= e(setting('social.facebook', '#')) ?>" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Facebook">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1877f2"/><path fill="#fff" d="M15.3 12.5l.42-2.73h-2.62V7.99c0-.75.37-1.48 1.54-1.48h1.19V4.19s-1.08-.18-2.11-.18c-2.15 0-3.56 1.3-3.56 3.67v2.09H8.16v2.73h2.4V19h2.95v-6.5z"/></svg>
             </a>
-            <a class="social-icon instagram-icon" href="https://www.instagram.com/nextlabcosmetics/" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Instagram">
+            <a class="social-icon instagram-icon" href="<?= e(setting('social.instagram', '#')) ?>" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Instagram">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="instagram-header" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffd600"/><stop offset=".45" stop-color="#ff0169"/><stop offset="1" stop-color="#7638fa"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#instagram-header)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.7" r="1.2" fill="#fff"/></svg>
             </a>
-            <a class="social-icon linkedin-icon" href="https://www.linkedin.com/company/nextlabcosmetic/" target="_blank" rel="noopener noreferrer" aria-label="Nextlab LinkedIn">
+            <a class="social-icon linkedin-icon" href="<?= e(setting('social.linkedin', '#')) ?>" target="_blank" rel="noopener noreferrer" aria-label="Nextlab LinkedIn">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="3" fill="#0a66c2"/><circle cx="6.5" cy="7" r="1.5" fill="#fff"/><path fill="#fff" d="M5.15 9.4h2.7V19h-2.7zm4.4 0h2.58v1.31h.04c.36-.68 1.24-1.66 2.55-1.66 2.73 0 3.23 1.8 3.23 4.13V19h-2.69v-5.16c0-1.23-.02-2.82-1.72-2.82-1.72 0-1.98 1.34-1.98 2.73V19H9.55z"/></svg>
             </a>
         </div>
         <div class="marketplace-links" aria-label="Satış kanalları">
-            <a class="marketplace-icon trendyol-market" href="https://www.trendyol.com/magaza/nextlab-saglik-ve-kozmetik-m-1110408?sst=0" target="_blank" rel="noopener noreferrer sponsored" aria-label="Nextlab Trendyol mağazası">
+            <a class="marketplace-icon trendyol-market" href="<?= e(($channels['trendyol'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer sponsored" aria-label="Nextlab Trendyol mağazası">
                 <img src="<?= e(asset('images/verified/trendyol-icon-80.webp')) ?>" alt="" width="447" height="447" aria-hidden="true">
             </a>
-            <a class="marketplace-icon hepsiburada-market" href="https://www.hepsiburada.com/magaza/nextlab-saglik-ve-kozmetik-urunleri" target="_blank" rel="noopener noreferrer sponsored" aria-label="Nextlab Hepsiburada mağazası">
+            <a class="marketplace-icon hepsiburada-market" href="<?= e(($channels['hepsiburada'] ?? '#')) ?>" target="_blank" rel="noopener noreferrer sponsored" aria-label="Nextlab Hepsiburada mağazası">
                 <img src="<?= e(asset('images/verified/hepsiburada-icon-80.webp')) ?>" alt="" width="447" height="447" aria-hidden="true">
             </a>
         </div>

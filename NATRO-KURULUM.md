@@ -85,7 +85,39 @@ Tarayıcıda şu adresleri kontrol edin (alan adınızla):
 - `/sitemap.xml` (XML görünmeli) · `/robots.txt`
 - Olmayan bir adres (ör. `/olmayan-sayfa`) → **404** döndürmeli
 
-## 6. HTTPS ve son kontroller
+## 6. Yönetim panelini açın
+
+Panel adresi: **`https://alanadiniz.com/admin`**
+
+1. **Yazma izni:** Dosya Yöneticisi'nde `assets/images/uploads` klasörüne sağ tıklayıp
+   izinleri **755** (gerekirse 775) yapın. Panelden görsel yükleyebilmek için gereklidir.
+2. `/admin` adresini açın. Henüz yönetici yoksa **“İlk yönetici hesabını oluşturun”**
+   ekranı gelir. Ad, e-posta ve **en az 10 karakterlik** bir parola girin.
+   > Bu ekran yalnızca hiç yönetici yokken görünür; hesap oluşturulduktan sonra
+   > erişim parolayla korunur ve ekran bir daha açılmaz.
+3. Artık panelden şunları yönetebilirsiniz: **Ürünler, Kategoriler, Blog Yazıları,
+   Ana Sayfa Banner, S.S.S, Markalar, Pazaryeri Mağazaları, Site Ayarları** (sosyal medya
+   bağlantıları, adres, e-posta, kurumsal metin, SEO) ve **Görseller**.
+
+### Taslak → Yayın mantığı (önemli)
+
+| Durum | Anlamı |
+|---|---|
+| **Yayında** | Kayıt sitede görünüyor ve güncel. |
+| **Değişiklik var** | Düzenlediniz ama **site hâlâ eski hâli** gösteriyor. |
+| **Taslak** | Yeni eklediniz; **henüz sitede görünmüyor.** |
+
+- **“Taslağa Kaydet”** → değişiklik saklanır, site **değişmez**.
+- **“Kaydet ve Yayına Al”** → değişiklik **anında** siteye yansır.
+- Listede her satırın sağındaki **“Yayına Al”** ile tek kaydı yayınlayabilirsiniz.
+- Sağ üstteki **“Tümünü Yayına Al”** bekleyen tüm değişiklikleri tek seferde yayınlar.
+- Bir kaydı siteden kaldırmak için **⋯ → Yayından kaldır** (kayıt silinmez, panelde kalır).
+
+> **Güvenlik:** Panel; parola karması (bcrypt), CSRF koruması, oturum sertleştirme,
+> 5 hatalı denemede 10 dk kilitleme, PDO prepared statement ve yüklenen dosyalarda
+> betik çalıştırma engeli ile korunur. `/admin` arama motorlarına kapalıdır (noindex).
+
+## 7. HTTPS ve son kontroller
 
 1. Natro'dan **ücretsiz SSL (Let's Encrypt)** sertifikasını etkinleştirin.
 2. `config.php` içindeki `app.url`'in `https://` ile başladığından emin olun.

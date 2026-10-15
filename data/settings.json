@@ -1,0 +1,25 @@
+{
+  "social": {
+    "facebook": "https://www.facebook.com/nextlabcosmetics",
+    "instagram": "https://www.instagram.com/nextlabcosmetics/",
+    "linkedin": "https://www.linkedin.com/company/nextlabcosmetic/"
+  },
+  "contact": {
+    "address": "Üniversite Sokak No: 7/B, Işık Plaza, Altunizade, Üsküdar / İstanbul",
+    "email": "info@nextlabcosmetic.com",
+    "map_query": "NextLab Sağlık ve Kozmetik, Altunizade, Üsküdar, İstanbul"
+  },
+  "about": {
+    "eyebrow": "NEXTLAB KURUMSAL",
+    "title": "Azla çok etki, bilimle gerçek çözüm.",
+    "paragraphs": [
+      "Nextlab Kozmetik olarak felsefemiz, cilt sağlığına yönelik çözüm odaklı ürünler geliştirmek üzerine kuruludur. 12 yılı aşkın ilaç ve kozmetik tecrübemizle bilimsel araştırma ve klinik veriler ışığında formüller oluşturuyor; tüketici ihtiyaçlarını merkeze alan sade ama etkili içeriklerle sürdürülebilir güzelliği savunuyoruz.",
+      "Kendi markamız Everyday ile günlük kullanıma uygun; paraben, alkol, parfüm ve renklendirici içermeyen ürünler sunuyor, formüllerimizin pH dengesi ve aktif stabilitesiyle maksimum etkiyi hedefliyoruz. Hayvanlar üzerinde test yapmıyor, doğaya saygılı bir üretim anlayışı benimsiyoruz.",
+      "“Az içerikle çok fayda” prensibiyle yalın, anlaşılır ve sonuç odaklı çözümler geliştiriyoruz. Aynı zamanda tüketiciyi eğiten, bilinçli cilt bakımı alışkanlıklarını destekleyen bir bilgi platformu olmayı hedefliyoruz. Çünkü bize göre sağlıklı cilt bir ayrıcalık değil, ulaşılabilir bir haktır."
+    ]
+  },
+  "seo": {
+    "site_name": "Nextlab Cosmetic",
+    "default_description": "Everyday kişisel bakım ürünleri, Nextlab ortam kokuları ve profesyonel temizlik ekipmanlarını keşfedin."
+  }
+}
