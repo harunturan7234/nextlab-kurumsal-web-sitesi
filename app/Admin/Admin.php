@@ -41,6 +41,18 @@ final class Admin
         ]);
         session_name('nextlab_admin');
         session_start();
+
+        // Boşta kalan oturumu kapat (8 saat).
+        $idleLimit = 8 * 3600;
+        if (!empty($_SESSION['admin_id'])) {
+            if (isset($_SESSION['seen']) && (time() - (int)$_SESSION['seen']) > $idleLimit) {
+                $_SESSION = [];
+                session_destroy();
+                session_start();
+            } else {
+                $_SESSION['seen'] = time();
+            }
+        }
     }
 
     public function csrfToken(): string
@@ -435,6 +447,21 @@ final class Admin
     }
 
     // ------------------------------------------------------------ yardımcı
+    /** Kategoriye bağlı ürün ve alt kategori sayısı. @return array{products:int,children:int} */
+    public function categoryUsage(int $id): array
+    {
+        $st = $this->pdo->prepare('SELECT COUNT(*) FROM nextlab_products WHERE category_id = ?');
+        $st->execute([$id]);
+        $products = (int)$st->fetchColumn();
+
+        $children = 0;
+        foreach ($this->pdo->query('SELECT draft_json FROM nextlab_categories')->fetchAll() as $r) {
+            $d = json_decode($r['draft_json'], true) ?: [];
+            if ((int)($d['parent_id'] ?? 0) === $id) $children++;
+        }
+        return ['products' => $products, 'children' => $children];
+    }
+
     public function categoryOptions(): array
     {
         $rows = $this->pdo->query('SELECT id, draft_json FROM nextlab_categories ORDER BY sort_order, id')->fetchAll();

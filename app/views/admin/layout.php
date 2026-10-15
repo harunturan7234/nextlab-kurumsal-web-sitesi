@@ -45,7 +45,7 @@ $ico = fn(string $n) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
     </nav>
     <div class="side-foot">
       <a href="/" target="_blank" rel="noopener">Siteyi görüntüle ↗</a>
-      <form method="post" action="/admin/cikis"><button class="linkbtn" type="submit">Çıkış yap</button></form>
+      <form method="post" action="/admin/cikis"><input type="hidden" name="_csrf" value="<?= admin_e($admin->csrfToken()) ?>"><button class="linkbtn" type="submit">Çıkış yap</button></form>
     </div>
   </aside>
 

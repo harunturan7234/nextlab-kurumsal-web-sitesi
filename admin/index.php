@@ -112,6 +112,7 @@ if (($seg[0] ?? '') === 'giris') {
     exit;
 }
 if (($seg[0] ?? '') === 'cikis') {
+    if ($isPost) $admin->checkCsrf();   // zorla çıkış (CSRF) engeli
     $admin->logout();
     admin_redirect('/admin/giris');
 }
@@ -179,6 +180,18 @@ if ($isPost) {
     $id = (int)($_POST['id'] ?? 0);
 
     if ($action === 'sil') {
+        // Kullanımda olan kategori silinirse ürünler sahipsiz kalır — engelle.
+        if ($e['table'] === 'nextlab_categories') {
+            $used = $admin->categoryUsage($id);
+            if ($used['products'] > 0 || $used['children'] > 0) {
+                $parts = [];
+                if ($used['products'] > 0) $parts[] = $used['products'] . ' ürün';
+                if ($used['children'] > 0) $parts[] = $used['children'] . ' alt kategori';
+                admin_flash('err', 'Bu kategori silinemez: ' . admin_e(implode(' ve ', $parts))
+                    . ' buna bağlı. Önce onları başka bir kategoriye taşıyın.');
+                admin_redirect('/admin/' . $key);
+            }
+        }
         $admin->delete($e, $id);
         admin_flash('ok', $e['singular'] . ' silindi.');
         admin_redirect('/admin/' . $key);

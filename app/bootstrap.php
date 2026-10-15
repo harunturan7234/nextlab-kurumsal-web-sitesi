@@ -26,11 +26,24 @@ function mediaSrcset(?string $source): string {
     global $media;
     return implode(', ', array_map(fn($v) => asset($v['file']) . ' ' . $v['width'] . 'w', $media[$source]['variants'] ?? []));
 }
+/** Görselin gerçek boyutunu dosyadan okur (istek başına önbellekli). */
+function imageSize(?string $source): ?array {
+    static $cache = [];
+    if (!$source) return null;
+    if (array_key_exists($source, $cache)) return $cache[$source];
+    $file = dirname(__DIR__) . '/assets/' . ltrim($source, '/');
+    $info = (is_file($file) && is_readable($file)) ? @getimagesize($file) : false;
+    return $cache[$source] = $info ? [$info[0], $info[1]] : null;
+}
+
 function imageTag(?string $source, string $alt, array $options = []): string {
     global $media;
     if (!$source) return '<span class="asset-pending"><span aria-hidden="true">＋</span><span>Ürün fotoğrafı<br>hazırlanıyor</span></span>';
     $m = $media[$source] ?? null;
-    $dimensions = $m ? ' width="' . $m['width'] . '" height="' . $m['height'] . '"' : '';
+    // media.json'da olmayan (panelden yüklenen) görseller için boyutu dosyadan oku:
+    // genişlik/yükseklik olmazsa sayfa yüklenirken zıplar (CLS).
+    $dims = $m ? [$m['width'], $m['height']] : imageSize($source);
+    $dimensions = $dims ? ' width="' . (int)$dims[0] . '" height="' . (int)$dims[1] . '"' : '';
     $responsive = $m ? ' srcset="' . e(mediaSrcset($source)) . '" sizes="' . e($options['sizes'] ?? '100vw') . '"' : '';
     $priority = $options['priority'] ?? false;
     return '<img src="' . e(asset($source)) . '" alt="' . e($alt) . '"' . $dimensions . $responsive . ' decoding="async" loading="' . ($priority ? 'eager' : 'lazy') . '"' . ($priority ? ' fetchpriority="high"' : '') . '>';
