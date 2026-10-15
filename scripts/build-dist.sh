@@ -21,6 +21,7 @@ cp "$ROOT/.htaccess"            "$OUT/"
 cp "$ROOT/config.example.php"   "$OUT/"        # config.php hosting'de buradan türetilir (asla gerçek config gönderilmez)
 cp "$ROOT/robots.txt"           "$OUT/"
 cp "$ROOT/database.sql"         "$OUT/"
+cp "$ROOT/kurulum.php"          "$OUT/"
 [ -f "$ROOT/NATRO-KURULUM.md" ] && cp "$ROOT/NATRO-KURULUM.md" "$OUT/"
 
 # --- Uygulama kodu (PHP) — app/Admin dahil ---

@@ -12,6 +12,8 @@ RewriteRule ^index\.html$ / [R=301,L]
 RewriteRule ^robots\.txt$ index.php [L]
 RewriteRule ^assets/.*\.(?:css|js|png|jpe?g|webp|avif|svg|ico)$ - [L,NC]
 RewriteRule ^assets/ - [R=404,L]
+# Kurulum sihirbazı (kurulumdan sonra kendini kilitler)
+RewriteRule ^kurulum\.php$ - [L]
 # Yönetim paneli — /admin ve alt yolları tek giriş noktasına
 RewriteRule ^admin/index\.php$ - [L]
 RewriteRule ^admin(?:/.*)?$ admin/index.php [QSA,L]
