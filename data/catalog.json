@@ -462,6 +462,42 @@
       "category": "Kurumsal",
       "question": "Toptan ürün ve kurumsal tedarik için nasıl iletişime geçebilirim?",
       "answer": "İletişim sayfamızdan kurumsal talebinizi iletebilir, ürün grubu ve ihtiyaç miktarını paylaşabilirsiniz."
+    },
+    {
+      "id": 7,
+      "category": "Kullanım",
+      "question": "Everyday burun bandı nasıl kullanılır?",
+      "answer": "Bandı temiz ve kuru bir buruna, kanatları hafifçe saracak şekilde yapıştırın. Kullanım, uygunluk ve uyarılar için ürün ambalajındaki talimatları izleyin."
+    },
+    {
+      "id": 8,
+      "category": "Kozmetik",
+      "question": "Everyday ürünleri hangi cilt tipine uygundur?",
+      "answer": "Everyday ürünleri günlük kullanıma yöneliktir. Cilt tipinize uygunluğu için ürün ambalajındaki içerik ve kullanım bilgisini inceleyin; gerekirse bir uzmana danışın."
+    },
+    {
+      "id": 9,
+      "category": "Satış Kanalları",
+      "question": "Siparişim ne zaman kargoya verilir?",
+      "answer": "Siparişler Trendyol ve Hepsiburada mağazalarımız üzerinden işlenir; kargo ve teslimat süreleri ilgili pazaryerinin koşullarına göre belirlenir."
+    },
+    {
+      "id": 10,
+      "category": "Satış Kanalları",
+      "question": "İade ve değişim nasıl yapılır?",
+      "answer": "Pazaryeri üzerinden yapılan alışverişlerde iade ve değişim, ilgili platformun iade politikasına tabidir. Detaylar için sipariş verdiğiniz mağazayı inceleyebilirsiniz."
+    },
+    {
+      "id": 11,
+      "category": "Temizlik",
+      "question": "Mikrofiber bez ve moplar nasıl yıkanır?",
+      "answer": "Mikrofiber ürünler genellikle yumuşatıcı kullanılmadan yıkanır. Uzun ömür için ürün etiketindeki bakım talimatlarını izleyin."
+    },
+    {
+      "id": 12,
+      "category": "Ortam Kokulandırma",
+      "question": "Koku makinesi hangi alanlarda kullanılır?",
+      "answer": "NextLab Koku Makinesi; mağaza, ofis ve karşılama alanı gibi mekânlarda esansı kontrollü biçimde yaymak için uygundur."
     }
   ],
   "distributorBrands": [
