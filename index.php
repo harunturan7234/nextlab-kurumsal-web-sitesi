@@ -61,7 +61,9 @@ try {
         case '/iletisim':
             renderPage('contact',['page'=>'contact','title'=>'İletişim','metaDescription'=>'Nextlab ürün bilgileri, kurumsal talepler ve tedarik seçenekleri için bizimle iletişime geçin.']); break;
         case '/sss':
-            renderPage('faq',['page'=>'faq','title'=>'Sıkça Sorulan Sorular','metaDescription'=>'Nextlab ürünleri, markalar, kullanım bilgisi ve pazaryeri mağazaları hakkında yanıtlar.','faqs'=>$repo->faqs()]); break;
+            $faqItems = $repo->faqs();
+            renderPage('faq',['page'=>'faq','title'=>'Sıkça Sorulan Sorular','metaDescription'=>'Nextlab ürünleri, markalar, kullanım bilgisi ve pazaryeri mağazaları hakkında yanıtlar.','faqs'=>$faqItems,
+                'structuredData'=>['@context'=>'https://schema.org','@type'=>'FAQPage','mainEntity'=>array_map(fn($f)=>['@type'=>'Question','name'=>$f['question'],'acceptedAnswer'=>['@type'=>'Answer','text'=>$f['answer']]],$faqItems)]]); break;
         case '/cerez-politikasi':
             renderPage('cookie-policy',['page'=>'cookie-policy','title'=>'Çerez ve Site Kullanımı','metaDescription'=>'Nextlab sitesinde oturum depolaması, ürün rehberi ve harici bağlantılar hakkında bilgi.']); break;
         case '/katalog':
