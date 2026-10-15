@@ -22,6 +22,10 @@ ob_start();
     <div class="eb-l">
       <a class="back" href="/admin/<?= admin_e($e['key']) ?>">← <?= admin_e($e['label']) ?></a>
       <?php if (empty($e['single'])): ?><span class="badge <?= $badge[1] ?>"><?= $badge[0] ?></span><?php endif; ?>
+      <?php $pubSlug = (string) Admin::get($data, 'slug', ''); ?>
+      <?php if (!$isNew && !empty($e['public']) && $pubSlug !== '' && $status !== 'draft'): ?>
+        <a class="back" href="/<?= admin_e(sprintf($e['public'], $pubSlug)) ?>" target="_blank" rel="noopener">Sayfayı gör ↗</a>
+      <?php endif; ?>
     </div>
     <div class="eb-r">
       <button class="btn" type="submit" name="_save" value="1">Taslağa Kaydet</button>

@@ -25,7 +25,14 @@ ob_start();
           <img src="/assets/<?= admin_e($f) ?>" alt="" loading="lazy">
           <figcaption>
             <code><?= admin_e(basename($f)) ?></code>
-            <button type="button" class="btn btn-sm copy" data-copy="<?= admin_e($f) ?>">Yolu kopyala</button>
+            <div class="media-acts">
+              <button type="button" class="btn btn-sm copy" data-copy="<?= admin_e($f) ?>">Yolu kopyala</button>
+              <form method="post" action="/admin/medya/sil" class="inline" data-confirm="Bu görsel kalıcı olarak silinecek. Kullanıldığı yerlerde kırık görünebilir. Onaylıyor musunuz?">
+                <input type="hidden" name="_csrf" value="<?= admin_e($admin->csrfToken()) ?>">
+                <input type="hidden" name="file" value="<?= admin_e(basename($f)) ?>">
+                <button type="submit" class="btn btn-sm">Sil</button>
+              </form>
+            </div>
           </figcaption>
         </figure>
       <?php endforeach; ?>

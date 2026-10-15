@@ -123,7 +123,7 @@ final class Admin
     {
         return [
             'urunler' => [
-                'label' => 'Ürünler', 'singular' => 'Ürün', 'icon' => 'box',
+                'label' => 'Ürünler', 'singular' => 'Ürün', 'icon' => 'box', 'public' => 'urun/%s',
                 'table' => 'nextlab_products', 'kind' => null,
                 'title_field' => 'name',
                 'list_columns' => [['name', 'Ürün'], ['brand_name', 'Marka'], ['category_name', 'Kategori']],
@@ -146,7 +146,7 @@ final class Admin
                 ],
             ],
             'kategoriler' => [
-                'label' => 'Kategoriler', 'singular' => 'Kategori', 'icon' => 'folder',
+                'label' => 'Kategoriler', 'singular' => 'Kategori', 'icon' => 'folder', 'public' => 'kategori/%s',
                 'table' => 'nextlab_categories', 'kind' => null,
                 'title_field' => 'name',
                 'list_columns' => [['name', 'Kategori'], ['slug', 'URL']],
@@ -159,7 +159,7 @@ final class Admin
                 ],
             ],
             'bloglar' => [
-                'label' => 'Blog Yazıları', 'singular' => 'Blog Yazısı', 'icon' => 'doc',
+                'label' => 'Blog Yazıları', 'singular' => 'Blog Yazısı', 'icon' => 'doc', 'public' => 'blog/%s',
                 'table' => 'nextlab_content', 'kind' => 'blogs',
                 'title_field' => 'title',
                 'list_columns' => [['title', 'Başlık'], ['category', 'Kategori'], ['publishedAt', 'Tarih']],
@@ -172,8 +172,7 @@ final class Admin
                     ['key' => 'categorySlug', 'label' => 'Kategori URL', 'type' => 'slug', 'from' => 'category'],
                     ['key' => 'badge', 'label' => 'Rozet', 'type' => 'text'],
                     ['key' => 'readTime', 'label' => 'Okuma Süresi', 'type' => 'text', 'placeholder' => '3 dk okuma'],
-                    ['key' => 'publishedAt', 'label' => 'Yayın Tarihi (görünen)', 'type' => 'text', 'placeholder' => '12 Ekim 2026'],
-                    ['key' => 'isoDate', 'label' => 'Yayın Tarihi (ISO)', 'type' => 'date', 'help' => 'Arama motorları bu tarihi okur.'],
+                    ['key' => 'isoDate', 'label' => 'Yayın Tarihi', 'type' => 'date', 'help' => 'Sayfada görünen tarih ve arama motoru tarihi bu alandan üretilir.'],
                     ['key' => 'image_path', 'label' => 'Kapak Görseli', 'type' => 'image'],
                     ['key' => 'image_alt', 'label' => 'Görsel Alt Metni (SEO)', 'type' => 'text'],
                     ['key' => 'author.name', 'label' => 'Yazar Adı', 'type' => 'text'],
@@ -215,7 +214,7 @@ final class Admin
                 ],
             ],
             'markalar' => [
-                'label' => 'Markalar', 'singular' => 'Marka', 'icon' => 'tag',
+                'label' => 'Markalar', 'singular' => 'Marka', 'icon' => 'tag', 'public' => 'distributorluk/%s',
                 'table' => 'nextlab_content', 'kind' => 'distributorBrands',
                 'title_field' => 'name',
                 'list_columns' => [['name', 'Marka'], ['category', 'Kategori'], ['origin', 'Menşe']],
@@ -287,10 +286,22 @@ final class Admin
         return $rows;
     }
 
+    /**
+     * Kayıt gerçekten bu varlığa mı ait? nextlab_content tablosunu birden çok
+     * varlık (blog, SSS, banner, marka, kanal, ayarlar) paylaşır; bu yüzden
+     * id ile yapılan HER işlem 'kind' ile sınırlandırılmalıdır.
+     * @return array{0:string,1:array}
+     */
+    private function scope(array $e): array
+    {
+        return $e['kind'] === null ? ['', []] : [' AND kind = ?', [$e['kind']]];
+    }
+
     public function find(array $e, int $id): ?array
     {
-        $st = $this->pdo->prepare("SELECT id, slug, data_json, draft_json, updated_at FROM {$e['table']} WHERE id = ?");
-        $st->execute([$id]);
+        [$w, $p] = $this->scope($e);
+        $st = $this->pdo->prepare("SELECT id, slug, data_json, draft_json, updated_at FROM {$e['table']} WHERE id = ?{$w}");
+        $st->execute([$id, ...$p]);
         $r = $st->fetch();
         if (!$r) return null;
         $r['data'] = json_decode($r['draft_json'] ?: ($r['data_json'] ?? '{}'), true) ?: [];
@@ -345,13 +356,19 @@ final class Admin
                 $st = $this->pdo->prepare("UPDATE {$e['table']} SET slug = ?, draft_json = ?{$extra} WHERE id = ?");
                 $st->execute([$slug, $json, $id]);
             } else {
-                $st = $this->pdo->prepare("UPDATE {$e['table']} SET slug = ?, draft_json = ? WHERE id = ?");
-                $st->execute([$slug, $json, $id]);
+                $st = $this->pdo->prepare("UPDATE {$e['table']} SET slug = ?, draft_json = ? WHERE id = ? AND kind = ?");
+                $st->execute([$slug, $json, $id, $e['kind']]);
             }
             return $id;
         }
         // yeni kayıt
-        $order = (int)$this->pdo->query("SELECT COALESCE(MAX(sort_order),0)+1 FROM {$e['table']}")->fetchColumn();
+        if ($e['kind'] === null) {
+            $order = (int)$this->pdo->query("SELECT COALESCE(MAX(sort_order),0)+1 FROM {$e['table']}")->fetchColumn();
+        } else {
+            $st = $this->pdo->prepare("SELECT COALESCE(MAX(sort_order),0)+1 FROM {$e['table']} WHERE kind = ?");
+            $st->execute([$e['kind']]);
+            $order = (int)$st->fetchColumn();
+        }
         if ($e['kind'] === null) {
             $cat = $e['table'] === 'nextlab_products' ? (int)($data['category_id'] ?? 0) : null;
             if ($e['table'] === 'nextlab_products') {
@@ -375,22 +392,28 @@ final class Admin
 
     public function publish(array $e, int $id): void
     {
-        $this->pdo->prepare("UPDATE {$e['table']} SET data_json = draft_json WHERE id = ?")->execute([$id]);
+        [$w, $p] = $this->scope($e);
+        $this->pdo->prepare("UPDATE {$e['table']} SET data_json = draft_json WHERE id = ?{$w}")->execute([$id, ...$p]);
     }
 
     public function unpublish(array $e, int $id): void
     {
-        $this->pdo->prepare("UPDATE {$e['table']} SET data_json = NULL WHERE id = ?")->execute([$id]);
+        [$w, $p] = $this->scope($e);
+        $this->pdo->prepare("UPDATE {$e['table']} SET data_json = NULL WHERE id = ?{$w}")->execute([$id, ...$p]);
     }
 
     public function discardDraft(array $e, int $id): void
     {
-        $this->pdo->prepare("UPDATE {$e['table']} SET draft_json = data_json WHERE id = ? AND data_json IS NOT NULL")->execute([$id]);
+        [$w, $p] = $this->scope($e);
+        $this->pdo->prepare("UPDATE {$e['table']} SET draft_json = data_json WHERE id = ? AND data_json IS NOT NULL{$w}")->execute([$id, ...$p]);
     }
 
     public function delete(array $e, int $id): void
     {
-        $this->pdo->prepare("DELETE FROM {$e['table']} WHERE id = ?")->execute([$id]);
+        // Tekil varlıklar (ayarlar, kanallar) silinemez — site onlara bağımlıdır.
+        if (!empty($e['single'])) return;
+        [$w, $p] = $this->scope($e);
+        $this->pdo->prepare("DELETE FROM {$e['table']} WHERE id = ?{$w}")->execute([$id, ...$p]);
     }
 
     /** Tüm bekleyen değişiklikleri tek seferde yayına alır. */
@@ -498,6 +521,16 @@ final class Admin
         $name = date('Ymd') . '-' . bin2hex(random_bytes(6)) . '.' . $ext;
         if (!@move_uploaded_file($file['tmp_name'], $dir . '/' . $name)) return [null, 'Dosya kaydedilemedi (klasör yazma izni?).'];
         return ['images/uploads/' . $name, null];
+    }
+
+    /** Yüklenen bir görseli siler. Yalnızca uploads klasörü içinde çalışır. */
+    public function deleteUpload(string $name): bool
+    {
+        if (!preg_match('/^[A-Za-z0-9._-]+\.(jpe?g|png|webp|gif)$/i', $name)) return false;
+        $dir = dirname(__DIR__, 2) . '/assets/images/uploads';
+        $real = realpath($dir . '/' . $name);
+        if (!$real || !str_starts_with($real, realpath($dir) . DIRECTORY_SEPARATOR)) return false;
+        return @unlink($real);
     }
 
     /** Yüklenmiş görselleri listeler. */

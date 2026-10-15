@@ -46,6 +46,9 @@ ob_start();
       <td><span class="badge <?= $bc ?>"><?= $bl ?></span></td>
       <td class="ta-r actions">
         <a class="btn btn-sm" href="/admin/<?= admin_e($e['key']) ?>/<?= (int)$r['id'] ?>">Düzenle</a>
+        <?php if (!empty($e['public']) && $r['status'] !== 'draft' && ($rs = (string)Admin::get($r['data'], 'slug', '')) !== ''): ?>
+          <a class="btn btn-sm" href="/<?= admin_e(sprintf($e['public'], $rs)) ?>" target="_blank" rel="noopener" title="Sayfayı yeni sekmede aç">Gör ↗</a>
+        <?php endif; ?>
         <?php if ($r['status'] !== 'published'): ?>
           <form method="post" action="/admin/<?= admin_e($e['key']) ?>/yayinla" class="inline">
             <input type="hidden" name="_csrf" value="<?= admin_e($admin->csrfToken()) ?>">

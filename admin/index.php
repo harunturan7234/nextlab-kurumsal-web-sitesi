@@ -43,6 +43,17 @@ function admin_view(string $tpl, array $vars = []): void
     require dirname(__DIR__) . '/app/views/admin/' . $tpl . '.php';
 }
 
+// Beklenmeyen hatalarda beyaz ekran yerine anlaşılır sayfa göster.
+set_exception_handler(function (Throwable $err): void {
+    error_log('Nextlab admin error: ' . $err->getMessage());
+    if (!headers_sent()) { http_response_code(500); header('Content-Type: text/html; charset=utf-8'); }
+    admin_view('bare', [
+        'title' => 'İşlem tamamlanamadı',
+        'body'  => '<p>Beklenmeyen bir hata oluştu ve işlem tamamlanamadı. Lütfen tekrar deneyin.</p>'
+                 . '<p><a class="btn btn-primary full" href="/admin">Panoya dön</a></p>',
+    ]);
+});
+
 // --------------------------------------------------------------- yapılandırma
 if (!is_file($root . '/config.php')) {
     http_response_code(503);
@@ -119,6 +130,11 @@ if ($isPost && ($seg[0] ?? '') === 'yayinla-tumu') {
 if (($seg[0] ?? '') === 'medya') {
     if ($isPost) {
         $admin->checkCsrf();
+        if (($seg[1] ?? '') === 'sil') {
+            $ok = $admin->deleteUpload(basename((string)($_POST['file'] ?? '')));
+            admin_flash($ok ? 'ok' : 'err', $ok ? 'Görsel silindi.' : 'Görsel silinemedi.');
+            admin_redirect('/admin/medya');
+        }
         [$p, $err] = $admin->uploadImage($_FILES['file'] ?? []);
         admin_flash($err ? 'err' : 'ok', $err ?: 'Görsel yüklendi.');
         admin_redirect('/admin/medya');
@@ -200,6 +216,17 @@ if ($isPost) {
         $slug = $admin->uniqueSlug($e, $slugSource, $id ?: null);
         if ($slugField) Admin::set($data, 'slug', $slug);
 
+        // blogda görünen tarihi ISO tarihten türet (iki alanın tutarsızlaşmasını önler)
+        if (($e['kind'] ?? null) === 'blogs') {
+            $iso = (string) Admin::get($data, 'isoDate', '');
+            $ts = $iso !== '' ? strtotime($iso) : false;
+            if ($ts !== false) {
+                $ay = [1 => 'Ocak', 'Şubat', 'Mart', 'Nisan', 'Mayıs', 'Haziran',
+                       'Temmuz', 'Ağustos', 'Eylül', 'Ekim', 'Kasım', 'Aralık'];
+                Admin::set($data, 'publishedAt', date('j', $ts) . ' ' . $ay[(int)date('n', $ts)] . ' ' . date('Y', $ts));
+            }
+        }
+
         // ürünlerde kategori adı/slug'ını senkron tut
         if ($e['table'] === 'nextlab_products') {
             $meta = $admin->categoryMeta((int)(Admin::get($data, 'category_id', 0)));
@@ -207,6 +234,20 @@ if ($isPost) {
             $data['category_slug'] = $meta['slug'];
         }
         $data['updated_at'] = date('Y-m-d');
+
+        // Zorunlu alanlar sunucu tarafında da doğrulanır (tarayıcı kontrolü atlanabilir).
+        $invalid = [];
+        foreach ($e['fields'] as $f) {
+            if (empty($f['required'])) continue;
+            $val = Admin::get($data, $f['key'], '');
+            if ($val === '' || $val === null || $val === []) $invalid[] = $f['label'];
+        }
+        if ($invalid) {
+            admin_flash('err', 'Şu alanlar zorunludur: <strong>' . admin_e(implode(', ', $invalid)) . '</strong>');
+            $row = $id ? $admin->find($e, $id) : null;
+            admin_view('form', ['admin' => $admin, 'user' => $user, 'e' => $e, 'row' => $row, 'data' => $data, 'isNew' => !$id]);
+            exit;
+        }
 
         $newId = $admin->saveDraft($e, $id ?: null, $data, $slug);
         if (($_POST['_publish'] ?? '') === '1') {
