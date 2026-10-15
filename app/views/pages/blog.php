@@ -36,12 +36,7 @@
                 <article class="blog-card" aria-label="<?= e(($article['title'] ?? null)) ?>">
                     <div class="card-media-wrap">
                         <a href="<?= e(url(('blog/' . ($article['slug'] ?? null)))) ?>" aria-label="<?= e(($article['title'] ?? null)) ?> yazısını oku">
-                            <?php if (($article['image_path'] ?? null)): ?><?= imageTag(($article['image_path'] ?? null), ($article['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 400px']) ?><?php else: ?><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><?= e(($article['category'] ?? null)) ?></strong></span><?php endif; ?>" 
-                                width="800" 
-                                height="500"
-                                loading="lazy"
-                                class="card-cover-img"
-                            >
+                            <?php if (($article['image_path'] ?? null)): ?><?= imageTag(($article['image_path'] ?? null), ($article['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 360px']) ?><?php else: ?><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><?= e(($article['category'] ?? null)) ?></strong></span><?php endif; ?>
                         </a>
                     </div>
 

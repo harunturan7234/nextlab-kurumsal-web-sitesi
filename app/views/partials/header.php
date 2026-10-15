@@ -2,6 +2,9 @@
 <div class="topbar">
     <div class="container topbar-inner">
         <div class="social-links" aria-label="Sosyal medya">
+            <a class="social-icon facebook-icon" href="https://www.facebook.com/nextlabcosmetics" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Facebook">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect width="24" height="24" rx="6" fill="#1877f2"/><path fill="#fff" d="M15.3 12.5l.42-2.73h-2.62V7.99c0-.75.37-1.48 1.54-1.48h1.19V4.19s-1.08-.18-2.11-.18c-2.15 0-3.56 1.3-3.56 3.67v2.09H8.16v2.73h2.4V19h2.95v-6.5z"/></svg>
+            </a>
             <a class="social-icon instagram-icon" href="https://www.instagram.com/nextlabcosmetics/" target="_blank" rel="noopener noreferrer" aria-label="Nextlab Instagram">
                 <svg viewBox="0 0 24 24" aria-hidden="true"><defs><linearGradient id="instagram-header" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#ffd600"/><stop offset=".45" stop-color="#ff0169"/><stop offset="1" stop-color="#7638fa"/></linearGradient></defs><rect x="2" y="2" width="20" height="20" rx="6" fill="url(#instagram-header)"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="#fff" stroke-width="2"/><circle cx="17.4" cy="6.7" r="1.2" fill="#fff"/></svg>
             </a>

@@ -34,37 +34,17 @@
                 </div>
             </div>
 
-            <!-- Interactive Top Keywords Bar -->
-            <div class="detail-keywords-bar" aria-label="Yazı anahtar kelimeleri ve bağlantıları">
-                <div class="dkw-header">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
-                    <strong>İlgili Anahtar Kelimeler &amp; Sayfa Bağlantıları:</strong>
-                    <small>(İlgili ürüne, markaya veya kategoriye gitmek için tıklayın)</small>
-                </div>
-                <div class="dkw-tags-list">
-                    <?php foreach ((($article['keywords'] ?? null) ?: []) as $kw): ?>
-                    <a href="<?= e(url(($kw['url'] ?? null))) ?>" class="detail-kw-pill" title="<?= e(($kw['label'] ?? null)) ?> sayfasına git">
-                        <span>#</span> <?= e(($kw['label'] ?? null)) ?> <span class="dkw-arrow">↗</span>
-                    </a>
-                    <?php endforeach; ?>
-                </div>
-            </div>
         </div>
     </header>
 
     <!-- Main Visual Cover Image -->
+    <?php if (($article['image_path'] ?? null)): ?>
     <div class="container blog-cover-container">
-        <figure class="detail-cover-figure">
-            <?php if (($article['image_path'] ?? null)): ?><?= imageTag(($article['image_path'] ?? null), ($article['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 400px']) ?><?php else: ?><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><?= e(($article['category'] ?? null)) ?></strong></span><?php endif; ?>" 
-                width="1200" 
-                height="675"
-                class="detail-cover-media"
-                itemprop="image"
-                loading="eager"
-            >
-            <figcaption class="cover-caption">Görsel: <?= e(($article['image_alt'] ?? null)) ?> • NextLab Dermo-Danışmanlık Koleksiyonu</figcaption>
-        </figure>
+        <div class="detail-cover-figure">
+            <?= imageTag(($article['image_path'] ?? null), ($article['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 720px', 'priority' => true]) ?>
+        </div>
     </div>
+    <?php endif; ?>
 
     <!-- Article Content Grid -->
     <div class="container detail-content-layout">
@@ -157,7 +137,7 @@
                 <article class="blog-card">
                     <div class="card-media-wrap">
                         <a href="<?= e(url(('blog/' . ($rel['slug'] ?? null)))) ?>">
-                            <?php if (($rel['image_path'] ?? null)): ?><?= imageTag(($rel['image_path'] ?? null), ($rel['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 400px']) ?><?php else: ?><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><?= e(($rel['category'] ?? null)) ?></strong></span><?php endif; ?>" width="1200" height="675" loading="lazy" class="card-cover-img">
+                            <?php if (($rel['image_path'] ?? null)): ?><?= imageTag(($rel['image_path'] ?? null), ($rel['image_alt'] ?? null), ['sizes' => '(max-width: 680px) 92vw, 360px']) ?><?php else: ?><span class="blog-editorial-cover"><small>NEXTLAB REHBERİ</small><strong><?= e(($rel['category'] ?? null)) ?></strong></span><?php endif; ?>
                         </a>
                     </div>
                     <div class="card-body">

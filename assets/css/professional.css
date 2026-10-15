@@ -178,3 +178,12 @@ button, a, input, summary { -webkit-tap-highlight-color: transparent; }
 /* Yaklaşım bölümü görseli (NextLab Home temizlik) */
 .approach-visual { padding: 0 !important; overflow: hidden; background: #0f172a; aspect-ratio: 1100 / 619; min-height: 0; }
 .approach-visual img { width: 100%; height: 100%; object-fit: cover; display: block; border-radius: var(--radius); }
+
+/* Blog detay kapak görseli — makul boyut, caption kaldırıldı */
+.blog-cover-container { max-width: 760px; }
+.detail-cover-figure { margin: 0 0 8px; border-radius: 16px; overflow: hidden; background: #fafaf9; }
+.detail-cover-figure img { width: 100%; height: auto; max-height: 420px; object-fit: contain; display: block; }
+
+/* Blog içeriği bağlantıları — tıklanabilir görünüm */
+.prose-body-content a { color: #c0362a; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; transition: color .15s ease; }
+.prose-body-content a:hover { color: #9a2a20; text-decoration-thickness: 2px; }
