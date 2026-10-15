@@ -440,6 +440,38 @@ final class Admin
         return $n;
     }
 
+    /**
+     * Slug değişince eski adresi yenisine bağlar (301).
+     * Zincir ve döngü oluşmasını engeller.
+     */
+    public function recordRedirect(string $from, string $to): void
+    {
+        if ($from === '' || $to === '' || $from === $to) return;
+        try {
+            // Eskiden bu adrese işaret edenleri doğrudan yeni hedefe çevir (zincir olmasın).
+            $this->pdo->prepare('UPDATE nextlab_redirects SET to_path = ? WHERE to_path = ?')->execute([$to, $from]);
+            // Yeni adres bir kaynak olarak duruyorsa kaldır (döngü olmasın).
+            $this->pdo->prepare('DELETE FROM nextlab_redirects WHERE from_path = ?')->execute([$to]);
+            $this->pdo->prepare('INSERT INTO nextlab_redirects (from_path, to_path) VALUES (?,?)
+                                 ON DUPLICATE KEY UPDATE to_path = VALUES(to_path)')->execute([$from, $to]);
+        } catch (Throwable) {
+            // Yönlendirme tablosu yoksa (eski kurulum) kayıt sessizce atlanır.
+        }
+    }
+
+    /** Kaydı listede bir sıra yukarı/aşağı taşır. */
+    public function move(array $e, int $id, string $dir): void
+    {
+        $rows = $this->all($e);
+        $ids = array_map(fn($r) => (int)$r['id'], $rows);
+        $i = array_search($id, $ids, true);
+        if ($i === false) return;
+        $j = $dir === 'up' ? $i - 1 : $i + 1;
+        if ($j < 0 || $j >= count($ids)) return;
+        [$ids[$i], $ids[$j]] = [$ids[$j], $ids[$i]];
+        $this->reorder($e, $ids);
+    }
+
     public function reorder(array $e, array $idsInOrder): void
     {
         $st = $this->pdo->prepare("UPDATE {$e['table']} SET sort_order = ? WHERE id = ?");

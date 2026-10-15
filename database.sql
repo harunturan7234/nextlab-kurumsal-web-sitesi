@@ -10,6 +10,7 @@ DROP TABLE IF EXISTS `nextlab_products`;
 DROP TABLE IF EXISTS `nextlab_categories`;
 DROP TABLE IF EXISTS `nextlab_content`;
 DROP TABLE IF EXISTS `nextlab_admins`;
+DROP TABLE IF EXISTS `nextlab_redirects`;
 
 CREATE TABLE `nextlab_categories` (
   `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -60,6 +61,16 @@ CREATE TABLE `nextlab_admins` (
   `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   UNIQUE KEY `uq_admin_email` (`email`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Slug değişikliklerinde eski adresleri yenisine 301 ile yönlendirir (SEO).
+CREATE TABLE `nextlab_redirects` (
+  `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
+  `from_path` VARCHAR(190) NOT NULL,
+  `to_path` VARCHAR(190) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uq_redirect_from` (`from_path`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- Kategoriler (9)

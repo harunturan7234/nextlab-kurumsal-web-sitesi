@@ -71,6 +71,17 @@ Sitenin **tüm** içeriği buradan yönetilir:
 - Sağ üstteki **"Tümünü Yayına Al"** bekleyen tüm değişiklikleri tek seferde yayınlar
 - **⋯ → Yayından kaldır** kaydı siteden gizler (silmez)
 - **⋯ → Değişiklikleri geri al** yayınlanmamış düzenlemeleri iptal eder
+- **↑ ↓ okları** sıralamayı değiştirir ve **anında** siteye yansır (yayınlamaya gerek yok)
+
+### Adres (slug) değiştirirseniz — SEO korunur
+
+Bir ürünün, kategorinin, blog yazısının veya markanın adresini değiştirirseniz
+sistem **eski adresi otomatik olarak yenisine 301 ile yönlendirir**. Böylece:
+
+- Google'daki sıralamanız ve eski bağlantılar kaybolmaz
+- Paylaşılmış linkler çalışmaya devam eder
+- Birden çok kez isim değiştirseniz bile zincir oluşmaz; tüm eski adresler
+  doğrudan **en güncel** adrese gider
 
 ---
 

@@ -97,6 +97,9 @@ try {
                 $image = $article['image_path'] ? fullUrl('assets/'.$article['image_path']) : fullUrl('assets/images/verified/nextlab-logo-1200.webp');
                 $schema = ['@context'=>'https://schema.org','@type'=>'BlogPosting','headline'=>$article['title'],'description'=>$article['subtitle'],'image'=>[$image],'datePublished'=>$article['isoDate'],'dateModified'=>$article['isoDate'],'author'=>['@type'=>'Organization','name'=>'Nextlab'],'publisher'=>['@type'=>'Organization','name'=>'Nextlab','logo'=>['@type'=>'ImageObject','url'=>fullUrl('assets/images/verified/nextlab-logo-380.webp')]],'mainEntityOfPage'=>fullUrl('blog/'.$article['slug'])];
                 renderPage('blog-detail',['page'=>'blog-detail','title'=>$article['title'],'metaDescription'=>$article['subtitle'],'ogType'=>'article','ogImage'=>$image,'structuredData'=>$schema,'article'=>$article,'relatedArticles'=>$repo->relatedBlogs($article['id'])]);
+            } elseif (($moved = $repo->redirectFor($path)) !== null) {
+                // Panelde adres (slug) değiştiyse eski bağlantı kaybolmaz: kalıcı yönlendir.
+                header('Location: ' . $moved, true, 301); exit;
             } else {
                 renderPage('404',['page'=>'404','title'=>'Sayfa Bulunamadı','metaDescription'=>'Aradığınız sayfa bulunamadı. Nextlab ürün kataloğuna dönün.'],404);
             }

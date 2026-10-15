@@ -211,6 +211,10 @@ if ($isPost) {
         admin_flash('ok', 'Yayınlanmamış değişiklikler geri alındı.');
         admin_redirect('/admin/' . $key);
     }
+    if ($action === 'tasi') {
+        $admin->move($e, $id, (string)($_POST['dir'] ?? 'up') === 'down' ? 'down' : 'up');
+        admin_redirect('/admin/' . $key);
+    }
     if ($action === 'sirala') {
         $admin->reorder($e, array_map('intval', (array)($_POST['order'] ?? [])));
         admin_flash('ok', 'Sıralama güncellendi.');
@@ -260,6 +264,14 @@ if ($isPost) {
             $row = $id ? $admin->find($e, $id) : null;
             admin_view('form', ['admin' => $admin, 'user' => $user, 'e' => $e, 'row' => $row, 'data' => $data, 'isNew' => !$id]);
             exit;
+        }
+
+        // Adres (slug) değiştiyse eski bağlantı ölmesin: kalıcı yönlendirme kaydet.
+        if ($existing && !empty($e['public'])) {
+            $oldSlug = (string)($existing['slug'] ?? '');
+            if ($oldSlug !== '' && $oldSlug !== $slug) {
+                $admin->recordRedirect('/' . sprintf($e['public'], $oldSlug), '/' . sprintf($e['public'], $slug));
+            }
         }
 
         $newId = $admin->saveDraft($e, $id ?: null, $data, $slug);

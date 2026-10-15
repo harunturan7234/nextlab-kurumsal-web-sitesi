@@ -6,6 +6,7 @@ final class CatalogRepository
     private array $data;
     private array $blogs;
     private array $settings = [];
+    private ?PDO $pdo = null;
 
     public function __construct(array $config)
     {
@@ -18,6 +19,7 @@ final class CatalogRepository
                 [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION, PDO::ATTR_EMULATE_PREPARES => false, PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]
             );
             // Yalnızca YAYINDAKİ sürüm okunur; yayınlanmamış taslaklar siteye sızmaz.
+            $this->pdo = $pdo;
             $decode = static fn(array $rows): array => array_map(static fn(array $r): array => json_decode($r['data_json'], true, 512, JSON_THROW_ON_ERROR), $rows);
             $this->data = [
                 'categories' => $decode($pdo->query('SELECT data_json FROM nextlab_categories WHERE data_json IS NOT NULL ORDER BY sort_order, id')->fetchAll()),
@@ -39,6 +41,23 @@ final class CatalogRepository
             if (is_file($settingsFile)) {
                 $this->settings = json_decode(file_get_contents($settingsFile), true, 512, JSON_THROW_ON_ERROR);
             }
+        }
+    }
+
+    /**
+     * Eski bir adres için yeni hedefi döndürür (301). Dosya modunda veya tablo
+     * yoksa null döner — yönlendirme olmadan normal 404 akışı sürer.
+     */
+    public function redirectFor(string $path): ?string
+    {
+        if (!$this->pdo) return null;
+        try {
+            $st = $this->pdo->prepare('SELECT to_path FROM nextlab_redirects WHERE from_path = ? LIMIT 1');
+            $st->execute([$path]);
+            $to = $st->fetchColumn();
+            return $to !== false && $to !== '' ? (string)$to : null;
+        } catch (Throwable) {
+            return null;   // tablo yoksa (eski kurulum) sessizce geç
         }
     }
 

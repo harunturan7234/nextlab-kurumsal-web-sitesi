@@ -25,15 +25,30 @@ ob_start();
 <table class="tbl">
   <thead>
     <tr>
+      <th class="col-ord" title="Sıra">Sıra</th>
       <?php foreach ($e['list_columns'] as [$col, $label]): ?><th><?= admin_e($label) ?></th><?php endforeach; ?>
       <th>Durum</th>
       <th class="ta-r">İşlem</th>
     </tr>
   </thead>
   <tbody>
-  <?php foreach ($rows as $r): ?>
+  <?php foreach ($rows as $rowIndex => $r): ?>
     <?php [$bl, $bc] = $badge[$r['status']]; ?>
     <tr data-search="<?= admin_e(strtolower(implode(' ', array_map(fn($c) => (string)Admin::get($r['data'], $c[0], ''), $e['list_columns'])))) ?>">
+      <td class="col-ord">
+        <div class="ordbtns">
+          <form method="post" action="/admin/<?= admin_e($e['key']) ?>/tasi" class="inline">
+            <input type="hidden" name="_csrf" value="<?= admin_e($admin->csrfToken()) ?>">
+            <input type="hidden" name="id" value="<?= (int)$r['id'] ?>"><input type="hidden" name="dir" value="up">
+            <button type="submit" title="Yukarı taşı" aria-label="Yukarı taşı" <?= $rowIndex === 0 ? 'disabled' : '' ?>>↑</button>
+          </form>
+          <form method="post" action="/admin/<?= admin_e($e['key']) ?>/tasi" class="inline">
+            <input type="hidden" name="_csrf" value="<?= admin_e($admin->csrfToken()) ?>">
+            <input type="hidden" name="id" value="<?= (int)$r['id'] ?>"><input type="hidden" name="dir" value="down">
+            <button type="submit" title="Aşağı taşı" aria-label="Aşağı taşı" <?= $rowIndex === count($rows) - 1 ? 'disabled' : '' ?>>↓</button>
+          </form>
+        </div>
+      </td>
       <?php foreach ($e['list_columns'] as $i => [$col, $label]): ?>
         <td>
           <?php if ($i === 0): ?>
@@ -87,7 +102,7 @@ ob_start();
   </tbody>
 </table>
 </div>
-<p class="hint">Sıra, listedeki sırayla aynıdır. Durum “Değişiklik var” ise site hâlâ eski hâli gösterir; “Yayına Al” deyince güncellenir.</p>
+<p class="hint"><strong>Sıralama</strong> oklarla değiştirilir ve <strong>anında</strong> siteye yansır (yayınlamaya gerek yoktur). İçerik düzenlemeleri ise “Yayına Al” denene kadar sitede görünmez.<br> Durum “Değişiklik var” ise site hâlâ eski hâli gösterir; “Yayına Al” deyince güncellenir.</p>
 <?php endif; ?>
 <?php
 $content = ob_get_clean();
