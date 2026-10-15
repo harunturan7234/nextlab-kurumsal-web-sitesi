@@ -123,6 +123,61 @@ final class Admin
         return null;
     }
 
+    /** @return string|null Hata; başarıda null. */
+    public function updateProfile(int $id, string $name, string $email): ?string
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return 'Geçerli bir e-posta adresi girin.';
+        if (trim($name) === '') return 'Ad boş olamaz.';
+        $st = $this->pdo->prepare('SELECT id FROM nextlab_admins WHERE email = ? AND id <> ?');
+        $st->execute([$email, $id]);
+        if ($st->fetch()) return 'Bu e-posta başka bir hesapta kullanılıyor.';
+        $this->pdo->prepare('UPDATE nextlab_admins SET name = ?, email = ? WHERE id = ?')
+            ->execute([trim($name), $email, $id]);
+        $this->user = null;
+        return null;
+    }
+
+    /** @return string|null Hata; başarıda null. */
+    public function changePassword(int $id, string $current, string $new, string $again): ?string
+    {
+        if (strlen($new) < 10) return 'Yeni parola en az 10 karakter olmalıdır.';
+        if ($new !== $again) return 'Yeni parolalar birbiriyle eşleşmiyor.';
+        $st = $this->pdo->prepare('SELECT password_hash FROM nextlab_admins WHERE id = ?');
+        $st->execute([$id]);
+        $hash = (string)$st->fetchColumn();
+        if (!$hash || !password_verify($current, $hash)) return 'Mevcut parolanız hatalı.';
+        $this->pdo->prepare('UPDATE nextlab_admins SET password_hash = ? WHERE id = ?')
+            ->execute([password_hash($new, PASSWORD_DEFAULT), $id]);
+        return null;
+    }
+
+    public function listAdmins(): array
+    {
+        return $this->pdo->query('SELECT id, name, email, last_login_at, created_at FROM nextlab_admins ORDER BY id')->fetchAll();
+    }
+
+    /** @return string|null Hata; başarıda null. */
+    public function addAdmin(string $name, string $email, string $pass): ?string
+    {
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) return 'Geçerli bir e-posta adresi girin.';
+        if (trim($name) === '') return 'Ad boş olamaz.';
+        if (strlen($pass) < 10) return 'Parola en az 10 karakter olmalıdır.';
+        $st = $this->pdo->prepare('SELECT id FROM nextlab_admins WHERE email = ?');
+        $st->execute([$email]);
+        if ($st->fetch()) return 'Bu e-posta zaten kayıtlı.';
+        $this->createAdmin($email, trim($name), $pass);
+        return null;
+    }
+
+    /** @return string|null Hata; başarıda null. */
+    public function removeAdmin(int $id, int $currentUserId): ?string
+    {
+        if ($id === $currentUserId) return 'Kendi hesabınızı silemezsiniz.';
+        if ($this->adminCount() <= 1) return 'Son yönetici hesabı silinemez.';
+        $this->pdo->prepare('DELETE FROM nextlab_admins WHERE id = ?')->execute([$id]);
+        return null;
+    }
+
     public function logout(): void
     {
         $_SESSION = [];
@@ -564,22 +619,83 @@ final class Admin
         }
     }
 
+    // ------------------------------------------------------------- yedek
+    /** Tüm içeriği (yayın + taslak) tek bir diziye çıkarır. */
+    public function exportAll(): array
+    {
+        $dump = ['version' => 1, 'created_at' => date('c'), 'tables' => []];
+        foreach (['nextlab_categories', 'nextlab_products', 'nextlab_content'] as $t) {
+            $cols = $t === 'nextlab_products'
+                ? 'id, slug, category_id, sort_order, data_json, draft_json'
+                : ($t === 'nextlab_content'
+                    ? 'id, kind, slug, sort_order, data_json, draft_json'
+                    : 'id, slug, sort_order, data_json, draft_json');
+            $dump['tables'][$t] = $this->pdo->query("SELECT {$cols} FROM {$t} ORDER BY id")->fetchAll();
+        }
+        return $dump;
+    }
+
+    /**
+     * Yedeği geri yükler. Yöneticiler ve yönlendirmeler korunur.
+     * @return string|null Hata; başarıda null.
+     */
+    public function importAll(array $dump): ?string
+    {
+        if (($dump['version'] ?? 0) !== 1 || !is_array($dump['tables'] ?? null)) {
+            return 'Dosya tanınmadı. Lütfen bu panelden indirilmiş bir yedek dosyası seçin.';
+        }
+        $allowed = ['nextlab_categories', 'nextlab_products', 'nextlab_content'];
+        foreach ($allowed as $t) {
+            if (!isset($dump['tables'][$t]) || !is_array($dump['tables'][$t])) return "Yedek eksik: {$t}.";
+        }
+        // Boş yedekle içeriği silmeyi engelle.
+        if (!$dump['tables']['nextlab_products'] && !$dump['tables']['nextlab_content']) {
+            return 'Yedek boş görünüyor; güvenlik için geri yükleme yapılmadı.';
+        }
+
+        $this->pdo->beginTransaction();
+        try {
+            foreach ($allowed as $t) {
+                $this->pdo->exec("DELETE FROM {$t}");
+                foreach ($dump['tables'][$t] as $row) {
+                    if (!is_array($row)) continue;
+                    $cols = array_keys($row);
+                    $ph = implode(',', array_fill(0, count($cols), '?'));
+                    $sql = "INSERT INTO {$t} (`" . implode('`,`', $cols) . "`) VALUES ({$ph})";
+                    $this->pdo->prepare($sql)->execute(array_values($row));
+                }
+            }
+            $this->pdo->commit();
+            return null;
+        } catch (Throwable $e) {
+            $this->pdo->rollBack();
+            return 'Geri yükleme başarısız: ' . $e->getMessage();
+        }
+    }
+
     // ------------------------------------------------------------- görsel
-    /** @return array{0:?string,1:?string} [yol, hata] */
+    /** @return array{0:?string,1:?string,2:?string} [yol, hata, uyarı] */
     public function uploadImage(array $file): array
     {
-        if (($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) return [null, null];
-        if (($file['error'] ?? 1) !== UPLOAD_ERR_OK) return [null, 'Yükleme başarısız (kod ' . $file['error'] . ').'];
-        if (($file['size'] ?? 0) > 6 * 1024 * 1024) return [null, 'Dosya 6 MB sınırını aşıyor.'];
+        if (($file['error'] ?? UPLOAD_ERR_NO_FILE) === UPLOAD_ERR_NO_FILE) return [null, null, null];
+        if (($file['error'] ?? 1) !== UPLOAD_ERR_OK) return [null, 'Yükleme başarısız (kod ' . $file['error'] . ').', null];
+        if (($file['size'] ?? 0) > 6 * 1024 * 1024) return [null, 'Dosya 6 MB sınırını aşıyor.', null];
         $info = @getimagesize($file['tmp_name']);
-        if (!$info) return [null, 'Geçerli bir görsel dosyası değil.'];
+        if (!$info) return [null, 'Geçerli bir görsel dosyası değil.', null];
         $ext = [IMAGETYPE_JPEG => 'jpg', IMAGETYPE_PNG => 'png', IMAGETYPE_WEBP => 'webp', IMAGETYPE_GIF => 'gif'][$info[2]] ?? null;
-        if (!$ext) return [null, 'Yalnızca JPG, PNG, WEBP veya GIF yükleyebilirsiniz.'];
+        if (!$ext) return [null, 'Yalnızca JPG, PNG, WEBP veya GIF yükleyebilirsiniz.', null];
         $dir = dirname(__DIR__, 2) . '/assets/images/uploads';
-        if (!is_dir($dir) && !@mkdir($dir, 0775, true)) return [null, 'Yükleme klasörü oluşturulamadı.'];
+        if (!is_dir($dir) && !@mkdir($dir, 0775, true)) return [null, 'Yükleme klasörü oluşturulamadı.', null];
         $name = date('Ymd') . '-' . bin2hex(random_bytes(6)) . '.' . $ext;
-        if (!@move_uploaded_file($file['tmp_name'], $dir . '/' . $name)) return [null, 'Dosya kaydedilemedi (klasör yazma izni?).'];
-        return ['images/uploads/' . $name, null];
+        if (!@move_uploaded_file($file['tmp_name'], $dir . '/' . $name)) return [null, 'Dosya kaydedilemedi (klasör yazma izni?).', null];
+        // Sunucuda görsel küçültme (GD/Imagick) olmayabilir; çok büyük görseller
+        // sayfayı yavaşlatır. Kullanıcıyı bilgilendir.
+        $warn = null;
+        if ($info[0] > 2000) {
+            $warn = 'Görsel ' . $info[0] . ' piksel genişliğinde. Sitenin hızlı açılması için '
+                  . 'yüklemeden önce genişliği 1600 piksel altına düşürmeniz önerilir.';
+        }
+        return ['images/uploads/' . $name, null, $warn];
     }
 
     /** Yüklenen bir görseli siler. Yalnızca uploads klasörü içinde çalışır. */

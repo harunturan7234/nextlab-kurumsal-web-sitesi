@@ -17,6 +17,8 @@ $icons = [
     'cart' => '<circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>',
     'cog' => '<circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/>',
     'home' => '<path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>',
+    'user' => '<path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>',
+    'save' => '<path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/>',
 ];
 $ico = fn(string $n) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' . ($icons[$n] ?? $icons['doc']) . '</svg>';
 ?><!doctype html>
@@ -42,6 +44,8 @@ $ico = fn(string $n) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
         <a href="/admin/<?= admin_e($k) ?>" class="<?= $currentKey === $k ? 'on' : '' ?>"><?= $ico($ent['icon']) ?><span><?= admin_e($ent['label']) ?></span></a>
       <?php endforeach; ?>
       <a href="/admin/medya" class="<?= ($activeKey ?? '') === 'medya' ? 'on' : '' ?>"><?= $ico('image') ?><span>Görseller</span></a>
+      <a href="/admin/yedek" class="<?= ($activeKey ?? '') === 'yedek' ? 'on' : '' ?>"><?= $ico('save') ?><span>Yedek</span></a>
+      <a href="/admin/hesap" class="<?= ($activeKey ?? '') === 'hesap' ? 'on' : '' ?>"><?= $ico('user') ?><span>Hesabım</span></a>
     </nav>
     <div class="side-foot">
       <a href="/" target="_blank" rel="noopener">Siteyi görüntüle ↗</a>
@@ -66,7 +70,7 @@ $ico = fn(string $n) => '<svg viewBox="0 0 24 24" fill="none" stroke="currentCol
         <?php else: ?>
           <span class="live">● Site güncel</span>
         <?php endif; ?>
-        <span class="who"><?= admin_e($user['name'] ?? '') ?></span>
+        <a class="who" href="/admin/hesap" title="Hesap ayarları"><?= admin_e($user['name'] ?? '') ?></a>
       </div>
     </header>
 

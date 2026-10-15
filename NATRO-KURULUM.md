@@ -56,6 +56,8 @@ Sitenin **tüm** içeriği buradan yönetilir:
 | **Pazaryeri Mağazaları** | Trendyol / Hepsiburada bağlantıları |
 | **Site Ayarları** | Sosyal medya, adres, e-posta, harita, kurumsal metin, SEO |
 | **Görseller** | Görsel yükleme ve kitaplık |
+| **Yedek** | İçeriğin tamamını indir / yedekten geri yükle |
+| **Hesabım** | Parola değiştirme, bilgi güncelleme, yeni yönetici ekleme |
 
 ### Taslak → Yayın mantığı (en önemli kısım)
 
@@ -84,6 +86,26 @@ sistem **eski adresi otomatik olarak yenisine 301 ile yönlendirir**. Böylece:
   doğrudan **en güncel** adrese gider
 
 ---
+
+## Yedek alma (önerilir)
+
+Büyük bir değişiklik yapmadan önce **Yedek → Yedeği İndir** ile tüm içeriğin
+bir kopyasını bilgisayarınıza alın. Bir şey ters giderse aynı sayfadan
+**Geri Yükle** ile eski hâline dönebilirsiniz.
+
+> Geri yükleme mevcut içeriğin yerine yedektekini koyar; yöneticiler, parolalar
+> ve adres yönlendirmeleri etkilenmez. Bozuk/boş dosyalar reddedilir.
+
+## Parola ve yöneticiler
+
+**Hesabım** sayfasından parolanızı değiştirebilir, bilgilerinizi güncelleyebilir
+ve panele erişecek **yeni yönetici** ekleyebilirsiniz. Güvenlik kuralları:
+parola değişimi mevcut parolayı ister, kendi hesabınızı ve son yöneticiyi silemezsiniz.
+
+## Görsel yükleme notu
+
+Sunucuda otomatik küçültme yapılmaz. **1600 piksel genişliğin altındaki** görselleri
+yükleyin; daha büyüklerinde panel sizi uyarır. Böylece sayfalar hızlı açılır.
 
 ## Güvenlik
 

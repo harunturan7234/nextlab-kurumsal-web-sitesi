@@ -127,6 +127,57 @@ if ($isPost && ($seg[0] ?? '') === 'yayinla-tumu') {
     admin_redirect($_POST['_back'] ?? '/admin');
 }
 
+// --- yedek al / geri yükle ---
+if (($seg[0] ?? '') === 'yedek') {
+    if (($seg[1] ?? '') === 'indir') {
+        $json = json_encode($admin->exportAll(), JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT);
+        header('Content-Type: application/json; charset=utf-8');
+        header('Content-Disposition: attachment; filename="nextlab-yedek-' . date('Y-m-d-Hi') . '.json"');
+        header('Content-Length: ' . strlen((string)$json));
+        echo $json;
+        exit;
+    }
+    if ($isPost) {
+        $admin->checkCsrf();
+        $f = $_FILES['backup'] ?? null;
+        if (!$f || ($f['error'] ?? 1) !== UPLOAD_ERR_OK) {
+            admin_flash('err', 'Dosya yüklenemedi.');
+        } else {
+            $raw = (string)file_get_contents($f['tmp_name']);
+            $dump = json_decode($raw, true);
+            $err = is_array($dump) ? $admin->importAll($dump) : 'Dosya geçerli bir JSON değil.';
+            admin_flash($err ? 'err' : 'ok', $err ?: 'Yedek geri yüklendi. Sitenin güncel hâli için değişiklikleri yayına almayı unutmayın.');
+        }
+        admin_redirect('/admin/yedek');
+    }
+    admin_view('backup', ['admin' => $admin, 'user' => $user]);
+    exit;
+}
+
+// --- hesap yönetimi ---
+if (($seg[0] ?? '') === 'hesap') {
+    if ($isPost) {
+        $admin->checkCsrf();
+        $what = (string)($_POST['what'] ?? '');
+        if ($what === 'profil') {
+            $err = $admin->updateProfile((int)$user['id'], (string)($_POST['name'] ?? ''), trim((string)($_POST['email'] ?? '')));
+            admin_flash($err ? 'err' : 'ok', $err ?: 'Hesap bilgileriniz güncellendi.');
+        } elseif ($what === 'parola') {
+            $err = $admin->changePassword((int)$user['id'], (string)($_POST['current'] ?? ''), (string)($_POST['new'] ?? ''), (string)($_POST['again'] ?? ''));
+            admin_flash($err ? 'err' : 'ok', $err ?: 'Parolanız değiştirildi.');
+        } elseif ($what === 'ekle') {
+            $err = $admin->addAdmin((string)($_POST['name'] ?? ''), trim((string)($_POST['email'] ?? '')), (string)($_POST['password'] ?? ''));
+            admin_flash($err ? 'err' : 'ok', $err ?: 'Yeni yönetici eklendi.');
+        } elseif ($what === 'sil') {
+            $err = $admin->removeAdmin((int)($_POST['id'] ?? 0), (int)$user['id']);
+            admin_flash($err ? 'err' : 'ok', $err ?: 'Yönetici silindi.');
+        }
+        admin_redirect('/admin/hesap');
+    }
+    admin_view('account', ['admin' => $admin, 'user' => $admin->user(), 'admins' => $admin->listAdmins()]);
+    exit;
+}
+
 // --- medya kitaplığı ---
 if (($seg[0] ?? '') === 'medya') {
     if ($isPost) {
@@ -136,8 +187,9 @@ if (($seg[0] ?? '') === 'medya') {
             admin_flash($ok ? 'ok' : 'err', $ok ? 'Görsel silindi.' : 'Görsel silinemedi.');
             admin_redirect('/admin/medya');
         }
-        [$p, $err] = $admin->uploadImage($_FILES['file'] ?? []);
+        [$p, $err, $warn] = $admin->uploadImage($_FILES['file'] ?? []);
         admin_flash($err ? 'err' : 'ok', $err ?: 'Görsel yüklendi.');
+        if ($warn) admin_flash('err', admin_e($warn));
         admin_redirect('/admin/medya');
     }
     admin_view('media', ['admin' => $admin, 'user' => $user, 'files' => $admin->mediaLibrary()]);
@@ -334,8 +386,9 @@ function admin_field_value(array $f, Admin $admin): mixed
             // Yeni dosya yüklendiyse onu kullan, yoksa seçili/eski yolu koru.
             $file = $_FILES[$name] ?? null;
             if ($file && ($file['error'] ?? UPLOAD_ERR_NO_FILE) !== UPLOAD_ERR_NO_FILE) {
-                [$p, $err] = $admin->uploadImage($file);
+                [$p, $err, $warn] = $admin->uploadImage($file);
                 if ($err) admin_flash('err', $f['label'] . ': ' . $err);
+                if ($warn) admin_flash('err', admin_e($f['label'] . ': ' . $warn));
                 if ($p) return $p;
             }
             return trim((string)$raw);
