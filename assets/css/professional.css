@@ -187,3 +187,8 @@ button, a, input, summary { -webkit-tap-highlight-color: transparent; }
 /* Blog içeriği bağlantıları — tıklanabilir görünüm */
 .prose-body-content a { color: #c0362a; font-weight: 600; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1px; transition: color .15s ease; }
 .prose-body-content a:hover { color: #9a2a20; text-decoration-thickness: 2px; }
+
+/* Üst bar — profesyonel koyu zemin (sosyal/pazaryeri ikonları öne çıkar) */
+.topbar { background: #17181c; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.topbar a { color: #fff; }
+.topbar span, .topbar .bc-sep { color: rgba(255,255,255,0.6); }
