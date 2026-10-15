@@ -22,6 +22,30 @@
     <input type="password" name="password" required autocomplete="current-password">
   </label>
   <button class="btn btn-primary full" type="submit">Giriş Yap</button>
+
+  <?php if (!empty($demo)): ?>
+    <div class="demo-box">
+      <div class="demo-head">
+        <strong>Deneme bilgileri</strong>
+        <span class="demo-tag">yalnızca yerel</span>
+      </div>
+      <dl class="demo-list">
+        <dt>E-posta</dt><dd><code><?= admin_e($demo['email']) ?></code></dd>
+        <dt>Parola</dt><dd><code><?= admin_e($demo['password']) ?></code></dd>
+      </dl>
+      <button type="button" class="btn btn-sm full" id="demoFill">Bilgileri doldur</button>
+      <small class="demo-note">Bu kutu yalnızca 127.0.0.1 / localhost üzerinde görünür.
+        Canlı sitede <strong>asla</strong> gösterilmez.</small>
+    </div>
+    <script>
+      document.getElementById('demoFill').addEventListener('click', function () {
+        var f = this.closest('form');
+        f.querySelector('[name=email]').value = <?= json_encode($demo['email'], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+        f.querySelector('[name=password]').value = <?= json_encode($demo['password'], JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT) ?>;
+      });
+    </script>
+  <?php endif; ?>
+
   <p class="auth-foot"><a href="/">← Siteye dön</a></p>
 </form>
 </body>

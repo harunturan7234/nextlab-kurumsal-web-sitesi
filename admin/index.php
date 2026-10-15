@@ -97,7 +97,7 @@ if (($seg[0] ?? '') === 'giris') {
         $error = $admin->login(trim((string)($_POST['email'] ?? '')), (string)($_POST['password'] ?? ''));
         if ($error === null) admin_redirect('/admin');
     }
-    admin_view('login', ['admin' => $admin, 'error' => $error]);
+    admin_view('login', ['admin' => $admin, 'error' => $error, 'demo' => admin_demo_credentials($root)]);
     exit;
 }
 if (($seg[0] ?? '') === 'cikis') {
@@ -276,4 +276,25 @@ function admin_field_value(array $f, Admin $admin): mixed
         default:
             return trim((string)$raw);
     }
+}
+
+/**
+ * Deneme giriş bilgileri — YALNIZCA yerel geliştirmede gösterilir.
+ * Canlı alan adında (Natro) asla döndürmez; parola kimseye görünmez.
+ */
+function admin_demo_credentials(string $root): ?array
+{
+    $host = strtolower((string)($_SERVER['HTTP_HOST'] ?? ''));
+    $hostOnly = explode(':', $host)[0];
+    $isLocal = in_array($hostOnly, ['127.0.0.1', 'localhost', '::1', '[::1]'], true)
+        || str_ends_with($hostOnly, '.test') || str_ends_with($hostOnly, '.localhost');
+    if (!$isLocal) return null;
+
+    $file = $root . '/.local-admin.txt';
+    if (!is_file($file)) return null;
+    $txt = (string)file_get_contents($file);
+    $mail = $pass = null;
+    if (preg_match('/^E-posta\s*:\s*(.+)$/mu', $txt, $m)) $mail = trim($m[1]);
+    if (preg_match('/^Parola\s*:\s*(.+)$/mu', $txt, $m)) $pass = trim($m[1]);
+    return ($mail && $pass) ? ['email' => $mail, 'password' => $pass] : null;
 }
